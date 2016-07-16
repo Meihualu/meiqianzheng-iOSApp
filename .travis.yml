@@ -1,0 +1,9 @@
+language: objective-c
+cache:
+skip_bundle_clean: true
+osx_image: xcode7.2
+before_script:
+- rvm get head
+script:
+- xctool -workspace MeiQianZheng.xcworkspace -scheme MeiQianZheng -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xctool test -workspace MeiQianZheng.xcworkspace -scheme MeiQianZhengTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
