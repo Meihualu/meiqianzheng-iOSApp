@@ -16,6 +16,20 @@
 		7A271FE91D369D6A003DA7EF /* MeiQianZhengTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */; };
 		7A271FF41D369D6A003DA7EF /* MeiQianZhengUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FF31D369D6A003DA7EF /* MeiQianZhengUITests.m */; };
 		7A2720041D36A003003DA7EF /* SimpleStringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2720031D36A003003DA7EF /* SimpleStringSpec.m */; };
+		7AD62EFB1D3A7D02006FDBCC /* CommodityListViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */; };
+		7AD62EFC1D3A7D02006FDBCC /* CommodityModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF31D3A7D02006FDBCC /* CommodityModelSpec.m */; };
+		7AD62EFD1D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF51D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m */; };
+		7AD62EFE1D3A7D02006FDBCC /* ListTableViewDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF61D3A7D02006FDBCC /* ListTableViewDelegateSpec.m */; };
+		7AD62EFF1D3A7D02006FDBCC /* CommodityListViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF81D3A7D02006FDBCC /* CommodityListViewModelSpec.m */; };
+		7AD62F001D3A7D02006FDBCC /* CommodityListCellSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EFA1D3A7D02006FDBCC /* CommodityListCellSpec.m */; };
+		7AD62F181D3A7D18006FDBCC /* CommodityListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F031D3A7D18006FDBCC /* CommodityListViewController.m */; };
+		7AD62F191D3A7D18006FDBCC /* CommodityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F071D3A7D18006FDBCC /* CommodityModel.m */; };
+		7AD62F1A1D3A7D18006FDBCC /* ListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F0A1D3A7D18006FDBCC /* ListTableViewDataSource.m */; };
+		7AD62F1B1D3A7D18006FDBCC /* ListTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F0C1D3A7D18006FDBCC /* ListTableViewDelegate.m */; };
+		7AD62F1C1D3A7D18006FDBCC /* YiRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F0F1D3A7D18006FDBCC /* YiRefreshFooter.m */; };
+		7AD62F1D1D3A7D18006FDBCC /* YiRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F111D3A7D18006FDBCC /* YiRefreshHeader.m */; };
+		7AD62F1E1D3A7D18006FDBCC /* CommodityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F141D3A7D18006FDBCC /* CommodityListCell.m */; };
+		7AD62F1F1D3A7D18006FDBCC /* CommodityListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F171D3A7D18006FDBCC /* CommodityListViewModel.m */; };
 		AB55904755423BF0A004BF85 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DB04C9CA42C5CAF17EF632 /* libPods.a */; };
 		FFB35EED8A81807A3CEA59AA /* libPods-MeiQianZhengTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09615327314E89A3021E8791 /* libPods-MeiQianZhengTests.a */; };
 /* End PBXBuildFile section */
@@ -599,6 +613,29 @@
 		7A2722171D36A249003DA7EF /* CJSONSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		7A2722181D36A249003DA7EF /* CJSONSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		7A2722191D36A249003DA7EF /* JSONRepresentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListViewControllerSpec.m; sourceTree = "<group>"; };
+		7AD62EF31D3A7D02006FDBCC /* CommodityModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityModelSpec.m; sourceTree = "<group>"; };
+		7AD62EF51D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDataSourceSpec.m; sourceTree = "<group>"; };
+		7AD62EF61D3A7D02006FDBCC /* ListTableViewDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDelegateSpec.m; sourceTree = "<group>"; };
+		7AD62EF81D3A7D02006FDBCC /* CommodityListViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListViewModelSpec.m; sourceTree = "<group>"; };
+		7AD62EFA1D3A7D02006FDBCC /* CommodityListCellSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListCellSpec.m; sourceTree = "<group>"; };
+		7AD62F021D3A7D18006FDBCC /* CommodityListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityListViewController.h; sourceTree = "<group>"; };
+		7AD62F031D3A7D18006FDBCC /* CommodityListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListViewController.m; sourceTree = "<group>"; };
+		7AD62F041D3A7D18006FDBCC /* MeiQianZheng.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeiQianZheng.pch; sourceTree = "<group>"; };
+		7AD62F061D3A7D18006FDBCC /* CommodityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityModel.h; sourceTree = "<group>"; };
+		7AD62F071D3A7D18006FDBCC /* CommodityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityModel.m; sourceTree = "<group>"; };
+		7AD62F091D3A7D18006FDBCC /* ListTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewDataSource.h; sourceTree = "<group>"; };
+		7AD62F0A1D3A7D18006FDBCC /* ListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDataSource.m; sourceTree = "<group>"; };
+		7AD62F0B1D3A7D18006FDBCC /* ListTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewDelegate.h; sourceTree = "<group>"; };
+		7AD62F0C1D3A7D18006FDBCC /* ListTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDelegate.m; sourceTree = "<group>"; };
+		7AD62F0E1D3A7D18006FDBCC /* YiRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiRefreshFooter.h; sourceTree = "<group>"; };
+		7AD62F0F1D3A7D18006FDBCC /* YiRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiRefreshFooter.m; sourceTree = "<group>"; };
+		7AD62F101D3A7D18006FDBCC /* YiRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiRefreshHeader.h; sourceTree = "<group>"; };
+		7AD62F111D3A7D18006FDBCC /* YiRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiRefreshHeader.m; sourceTree = "<group>"; };
+		7AD62F131D3A7D18006FDBCC /* CommodityListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityListCell.h; sourceTree = "<group>"; };
+		7AD62F141D3A7D18006FDBCC /* CommodityListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListCell.m; sourceTree = "<group>"; };
+		7AD62F161D3A7D18006FDBCC /* CommodityListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityListViewModel.h; sourceTree = "<group>"; };
+		7AD62F171D3A7D18006FDBCC /* CommodityListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListViewModel.m; sourceTree = "<group>"; };
 		95DB04C9CA42C5CAF17EF632 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A7BCE3E1BE71405EB05704 /* Pods-MeiQianZhengTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeiQianZhengTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeiQianZhengTests/Pods-MeiQianZhengTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -655,6 +692,12 @@
 		7A271FCD1D369D6A003DA7EF /* MeiQianZheng */ = {
 			isa = PBXGroup;
 			children = (
+				7AD62F011D3A7D18006FDBCC /* Controller */,
+				7AD62F051D3A7D18006FDBCC /* Model */,
+				7AD62F081D3A7D18006FDBCC /* TableViewProtocal */,
+				7AD62F0D1D3A7D18006FDBCC /* Tools */,
+				7AD62F121D3A7D18006FDBCC /* View */,
+				7AD62F151D3A7D18006FDBCC /* ViewModel */,
 				7A271FD11D369D6A003DA7EF /* AppDelegate.h */,
 				7A271FD21D369D6A003DA7EF /* AppDelegate.m */,
 				7A271FD41D369D6A003DA7EF /* ViewController.h */,
@@ -671,6 +714,7 @@
 		7A271FCE1D369D6A003DA7EF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7AD62F041D3A7D18006FDBCC /* MeiQianZheng.pch */,
 				7A271FCF1D369D6A003DA7EF /* main.m */,
 			);
 			name = "Supporting Files";
@@ -679,6 +723,11 @@
 		7A271FE71D369D6A003DA7EF /* MeiQianZhengTests */ = {
 			isa = PBXGroup;
 			children = (
+				7AD62EF01D3A7D02006FDBCC /* ControllerTest */,
+				7AD62EF21D3A7D02006FDBCC /* ModelTest */,
+				7AD62EF41D3A7D02006FDBCC /* TableViewProtocalTest */,
+				7AD62EF71D3A7D02006FDBCC /* ViewModelTest */,
+				7AD62EF91D3A7D02006FDBCC /* ViewTest */,
 				7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */,
 				7A271FEA1D369D6A003DA7EF /* Info.plist */,
 				7A2720031D36A003003DA7EF /* SimpleStringSpec.m */,
@@ -1503,6 +1552,105 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		7AD62EF01D3A7D02006FDBCC /* ControllerTest */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */,
+			);
+			path = ControllerTest;
+			sourceTree = "<group>";
+		};
+		7AD62EF21D3A7D02006FDBCC /* ModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62EF31D3A7D02006FDBCC /* CommodityModelSpec.m */,
+			);
+			path = ModelTest;
+			sourceTree = "<group>";
+		};
+		7AD62EF41D3A7D02006FDBCC /* TableViewProtocalTest */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62EF51D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m */,
+				7AD62EF61D3A7D02006FDBCC /* ListTableViewDelegateSpec.m */,
+			);
+			path = TableViewProtocalTest;
+			sourceTree = "<group>";
+		};
+		7AD62EF71D3A7D02006FDBCC /* ViewModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62EF81D3A7D02006FDBCC /* CommodityListViewModelSpec.m */,
+			);
+			path = ViewModelTest;
+			sourceTree = "<group>";
+		};
+		7AD62EF91D3A7D02006FDBCC /* ViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62EFA1D3A7D02006FDBCC /* CommodityListCellSpec.m */,
+			);
+			path = ViewTest;
+			sourceTree = "<group>";
+		};
+		7AD62F011D3A7D18006FDBCC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62F021D3A7D18006FDBCC /* CommodityListViewController.h */,
+				7AD62F031D3A7D18006FDBCC /* CommodityListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7AD62F051D3A7D18006FDBCC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62F061D3A7D18006FDBCC /* CommodityModel.h */,
+				7AD62F071D3A7D18006FDBCC /* CommodityModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7AD62F081D3A7D18006FDBCC /* TableViewProtocal */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62F091D3A7D18006FDBCC /* ListTableViewDataSource.h */,
+				7AD62F0A1D3A7D18006FDBCC /* ListTableViewDataSource.m */,
+				7AD62F0B1D3A7D18006FDBCC /* ListTableViewDelegate.h */,
+				7AD62F0C1D3A7D18006FDBCC /* ListTableViewDelegate.m */,
+			);
+			path = TableViewProtocal;
+			sourceTree = "<group>";
+		};
+		7AD62F0D1D3A7D18006FDBCC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62F0E1D3A7D18006FDBCC /* YiRefreshFooter.h */,
+				7AD62F0F1D3A7D18006FDBCC /* YiRefreshFooter.m */,
+				7AD62F101D3A7D18006FDBCC /* YiRefreshHeader.h */,
+				7AD62F111D3A7D18006FDBCC /* YiRefreshHeader.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		7AD62F121D3A7D18006FDBCC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62F131D3A7D18006FDBCC /* CommodityListCell.h */,
+				7AD62F141D3A7D18006FDBCC /* CommodityListCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7AD62F151D3A7D18006FDBCC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7AD62F161D3A7D18006FDBCC /* CommodityListViewModel.h */,
+				7AD62F171D3A7D18006FDBCC /* CommodityListViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A06F1A829E312EEFC2A0FCFB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1811,9 +1959,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD62F1F1D3A7D18006FDBCC /* CommodityListViewModel.m in Sources */,
+				7AD62F1A1D3A7D18006FDBCC /* ListTableViewDataSource.m in Sources */,
+				7AD62F1E1D3A7D18006FDBCC /* CommodityListCell.m in Sources */,
+				7AD62F181D3A7D18006FDBCC /* CommodityListViewController.m in Sources */,
 				7A271FD61D369D6A003DA7EF /* ViewController.m in Sources */,
 				7A271FD31D369D6A003DA7EF /* AppDelegate.m in Sources */,
+				7AD62F1C1D3A7D18006FDBCC /* YiRefreshFooter.m in Sources */,
 				7A271FD01D369D6A003DA7EF /* main.m in Sources */,
+				7AD62F1B1D3A7D18006FDBCC /* ListTableViewDelegate.m in Sources */,
+				7AD62F1D1D3A7D18006FDBCC /* YiRefreshHeader.m in Sources */,
+				7AD62F191D3A7D18006FDBCC /* CommodityModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1821,8 +1977,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD62EFC1D3A7D02006FDBCC /* CommodityModelSpec.m in Sources */,
+				7AD62EFE1D3A7D02006FDBCC /* ListTableViewDelegateSpec.m in Sources */,
+				7AD62EFF1D3A7D02006FDBCC /* CommodityListViewModelSpec.m in Sources */,
+				7AD62EFB1D3A7D02006FDBCC /* CommodityListViewControllerSpec.m in Sources */,
 				7A271FE91D369D6A003DA7EF /* MeiQianZhengTests.m in Sources */,
 				7A2720041D36A003003DA7EF /* SimpleStringSpec.m in Sources */,
+				7AD62F001D3A7D02006FDBCC /* CommodityListCellSpec.m in Sources */,
+				7AD62EFD1D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1960,8 +2122,8 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MeiQianZheng/MeiQianZheng.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",
@@ -1988,8 +2150,8 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
-				GCC_PREFIX_HEADER = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/MeiQianZheng/MeiQianZheng.pch";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/Headers/Public\"",

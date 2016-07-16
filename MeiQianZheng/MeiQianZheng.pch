@@ -1,0 +1,32 @@
+//
+//  MeiQianZheng.pch
+//  MeiQianZheng
+//
+//  Created by msn on 16/7/15.
+//  Copyright © 2016年 ZYL. All rights reserved.
+//
+
+#ifndef MeiQianZheng_pch
+#define MeiQianZheng_pch
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define kViewWidth  self.view.frame.size.width
+#define kViewHeight  self.view.frame.size.height
+#define KScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define kDefaultBackgroundColor [UIColor colorWithRed:96.73 /255.0f green: 128.94/255.0f blue:128.96/255.0f alpha:1.0f]
+#define kDefaultColor [UIColor colorWithRed:93.73 /255.0f green: 111.94/255.0f blue:116.96/255.0f alpha:0.3f]
+
+#import <SystemConfiguration/SystemConfiguration.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#define AFNETWORKING_ALLOW_INVALID_SSL_CERTIFICATES
+
+const static CGFloat kMargin = 10.0f;
+const static CGFloat kDetailCellHeight = 35.0f;
+const static CGFloat kDetailCellWidth = 100.0f;
+
+#endif /* MeiQianZheng_pch */
