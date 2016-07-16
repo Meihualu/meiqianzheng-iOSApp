@@ -1,0 +1,28 @@
+PODS:
+  - AFNetworking (1.3.4)
+  - Base64 (1.0.1)
+  - Kiwi (2.4.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - TouchJSON (1.1)
+
+DEPENDENCIES:
+  - AFNetworking (~> 1.3.0)
+  - Base64 (~> 1.0.1)
+  - Kiwi
+  - ReactiveCocoa
+  - TouchJSON (~> 1.1)
+
+SPEC CHECKSUMS:
+  AFNetworking: cf8e418e16f0c9c7e5c3150d019a3c679d015018
+  Base64: 4924bf3ca6fa559a5161ef717291bd450eb7bd1a
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  TouchJSON: 39be3595ebe489095311d97ce0c824417324cb74
+
+COCOAPODS: 0.39.0
