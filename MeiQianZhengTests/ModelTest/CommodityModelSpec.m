@@ -12,24 +12,40 @@
 
 SPEC_BEGIN(CommodityModelSpec)
 
-describe(@"CommodityModel", ^{
-    context(@"when create", ^{
-        __block CommodityModel * model = nil;
+describe(@"CommodityItemTest", ^{
+    context(@"when created", ^{
+        __block CommodityModel * item = nil;
         beforeEach(^{
-            model = [[CommodityModel alloc] init];
+            item = [CommodityModel new];
         });
         
         afterEach(^{
-            model = nil;
+            item = nil;
         });
         
-        it(@"should have the class CommodityModel", ^{
+        it(@"should have the class CommdityItem", ^{
             [[[CommodityModel class] shouldNot] beNil];
         });
         
-        it(@"should exist model", ^{
-            [[model shouldNot] beNil];
+        it(@"should exist", ^{
+            [[item shouldNot] beNil];
         });
+        
+        it(@"should be init by custom init method", ^{
+            CommodityModel * item = [[CommodityModel alloc] initWithBarcode:@"mybarcode"
+                                                                       name:@"myname"
+                                                                       unit:@"myunit"
+                                                                   category:@"mycategory"
+                                                                subCategory:@"mysubcategory"
+                                                                      price:100.0f promotionType:[NSArray array]];
+            [[item.barcode should] equal:@"mybarcode"];
+            [[item.name should] equal:@"myname"];
+            [[item.unit should] equal:@"myunit"];
+            [[item.category should] equal:@"mycategory"];
+            [[item.subCategory should] equal:@"mysubcategory"];
+            [[theValue(item.price) should] equal:theValue(100.0f)];
+        });
+        
     });
 });
 

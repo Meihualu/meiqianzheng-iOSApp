@@ -8,7 +8,8 @@
 
 #import <Kiwi/Kiwi.h>
 #import "CommodityListViewModel.h"
-
+#import "YiRefreshHeader.h"
+#import "YiRefreshFooter.h"
 
 SPEC_BEGIN(CommodityListViewModelSpec)
 
@@ -30,6 +31,41 @@ describe(@"CommodityListViewModel", ^{
         it(@"should exist viewModel", ^{
             [[viewModel shouldNot] beNil];
         });
+        
+    });
+    
+    context(@"when after execute the refresh function", ^{
+        __block CommodityListViewModel * viewModel = nil;
+        __block YiRefreshFooter * refreshFooter = nil;
+        __block YiRefreshHeader * refreshHeader = nil;
+        beforeEach(^{
+            viewModel = [[CommodityListViewModel alloc] init];
+            refreshHeader = [[YiRefreshHeader alloc] init];
+            refreshFooter = [[YiRefreshFooter alloc] init];
+        });
+        
+        afterEach(^{
+            viewModel = nil;
+            refreshHeader = nil;
+            refreshFooter = nil;
+        });
+        
+        it(@"the dataSource should not be nil after execute headerRefreshRequestWithCallback", ^{
+            [viewModel headerRefreshRequestWithCallback:^(NSArray *array) {
+                [[array shouldNot] beNil];
+                [[theValue(array.count) shouldNot] equal:theValue(0)];
+                [refreshHeader endRefreshing];
+            }];
+        });
+        
+        it(@"the dataSource should not be nil after execute footerRefreshRequestWithCallback", ^{
+            [viewModel footerRefreshRequestWithCallback:^(NSArray *array) {
+                [[array shouldNot] beNil];
+                [[theValue(array.count) shouldNot] equal:theValue(0)];
+                [refreshFooter endRefreshing];
+            }];
+        });
+        
     });
 });
 

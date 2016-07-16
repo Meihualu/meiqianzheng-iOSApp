@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-//#import "CommodityListViewController.h"
+#import "CommodityListViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +17,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    /*
+    /**/
     [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance]setBarTintColor:[UIColor redColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
@@ -28,7 +28,7 @@
     navController.navigationBar.translucent = NO;
     self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
-    */
+    
      return YES;
 }
 

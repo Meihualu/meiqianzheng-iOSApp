@@ -10,9 +10,10 @@
 typedef void (^callback) (NSArray *array);
 @interface CommodityListViewModel : NSObject
 
-
+@property (nonatomic,strong) NSMutableArray * dataSource;
 //tableView头部刷新的网络请求
 - (void)headerRefreshRequestWithCallback:(callback)callback;
+
 //tableView底部刷新的网络请求
 - (void)footerRefreshRequestWithCallback:(callback)callback;
 

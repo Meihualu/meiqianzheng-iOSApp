@@ -13,22 +13,32 @@
 SPEC_BEGIN(CommodityListCellSpec)
 
 describe(@"CommodityListCell", ^{
-    context(@"when create", ^{
-        __block CommodityListCell * listCell = nil;
+    context(@"when create CommodityListCell ", ^{
+        __block CommodityListCell * cell = nil;
+        __block UITableView * table = nil;
         beforeEach(^{
-            listCell = [[CommodityListCell alloc] init];
+            table = [[UITableView alloc] init];
+            cell = [CommodityListCell cellWithTableView:table];
         });
         
         afterEach(^{
-            listCell = nil;
+            table = nil;
+            cell = nil;
         });
         
-        it(@"should have the class CommodityListCell", ^{
-            [[[CommodityListCell class] shouldNot] beNil];
+        it(@"should can be init with tableView", ^{
+            [[cell shouldNot] beNil];
         });
         
-        it(@"should exist listCell", ^{
-            [[listCell shouldNot] beNil];
+        it(@"the cellHeight should be init ", ^{
+            [[theValue(cell.cellHeight) should] equal:theValue(45.0f)];
+        });
+        
+        it(@"should can be set the model", ^{
+            CommodityModel * model = [[CommodityModel alloc] init];
+            model.name = @"测试";
+            [cell setModel:model];
+            [[cell.model.name should] equal:@"测试"];
         });
     });
 });

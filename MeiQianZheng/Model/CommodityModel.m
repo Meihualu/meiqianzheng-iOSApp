@@ -18,7 +18,7 @@
         _category = [category copy];
         _subCategory = [subCategory copy];
         _price = price;
-        promotionType = [NSArray array];
+        _promotionType = [promotionType copy];
     }
     return self;
 }

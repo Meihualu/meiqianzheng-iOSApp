@@ -30,6 +30,7 @@
 		7AD62F1D1D3A7D18006FDBCC /* YiRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F111D3A7D18006FDBCC /* YiRefreshHeader.m */; };
 		7AD62F1E1D3A7D18006FDBCC /* CommodityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F141D3A7D18006FDBCC /* CommodityListCell.m */; };
 		7AD62F1F1D3A7D18006FDBCC /* CommodityListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F171D3A7D18006FDBCC /* CommodityListViewModel.m */; };
+		7AD62F221D3A8AD9006FDBCC /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F211D3A8AD9006FDBCC /* HttpTool.m */; };
 		AB55904755423BF0A004BF85 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DB04C9CA42C5CAF17EF632 /* libPods.a */; };
 		FFB35EED8A81807A3CEA59AA /* libPods-MeiQianZhengTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09615327314E89A3021E8791 /* libPods-MeiQianZhengTests.a */; };
 /* End PBXBuildFile section */
@@ -636,6 +637,8 @@
 		7AD62F141D3A7D18006FDBCC /* CommodityListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListCell.m; sourceTree = "<group>"; };
 		7AD62F161D3A7D18006FDBCC /* CommodityListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityListViewModel.h; sourceTree = "<group>"; };
 		7AD62F171D3A7D18006FDBCC /* CommodityListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListViewModel.m; sourceTree = "<group>"; };
+		7AD62F201D3A8AD9006FDBCC /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
+		7AD62F211D3A8AD9006FDBCC /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
 		95DB04C9CA42C5CAF17EF632 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A7BCE3E1BE71405EB05704 /* Pods-MeiQianZhengTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeiQianZhengTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeiQianZhengTests/Pods-MeiQianZhengTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1625,6 +1628,8 @@
 		7AD62F0D1D3A7D18006FDBCC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7AD62F201D3A8AD9006FDBCC /* HttpTool.h */,
+				7AD62F211D3A8AD9006FDBCC /* HttpTool.m */,
 				7AD62F0E1D3A7D18006FDBCC /* YiRefreshFooter.h */,
 				7AD62F0F1D3A7D18006FDBCC /* YiRefreshFooter.m */,
 				7AD62F101D3A7D18006FDBCC /* YiRefreshHeader.h */,
@@ -1970,6 +1975,7 @@
 				7AD62F1B1D3A7D18006FDBCC /* ListTableViewDelegate.m in Sources */,
 				7AD62F1D1D3A7D18006FDBCC /* YiRefreshHeader.m in Sources */,
 				7AD62F191D3A7D18006FDBCC /* CommodityModel.m in Sources */,
+				7AD62F221D3A8AD9006FDBCC /* HttpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
