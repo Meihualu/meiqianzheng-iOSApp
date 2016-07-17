@@ -8,13 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "CommodityModel.h"
-
+typedef void (^callback) (NSArray *category , NSArray*dataSource);
 @interface ShoppingCarViewModel : NSObject
 
-+ (NSArray *)categories;
-+ (NSArray *)commoditiesWithCategory:(NSInteger )categoryId;
-+ (void) addCommodity:(CommodityModel *)item;
-+ (BOOL)isDiscountCommodity:(CommodityModel *)item;
-+ (void) addDiscount_3:(NSArray *)barcodeArray;
+@property (nonatomic,strong) NSMutableArray * dataSource;
+//tableView头部刷新的网络请求
+- (void)headerRefreshRequestWithCallback:(callback)callback;
+
+//tableView底部刷新的网络请求
+- (void)footerRefreshRequestWithCallback:(callback)callback;
 
 @end

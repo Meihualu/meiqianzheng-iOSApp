@@ -24,6 +24,19 @@
 		7AB4DD2F1D3B9CA20071FAFB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AB4DD291D3B9CA20071FAFB /* Info.plist */; };
 		7AB4DD311D3B9CF30071FAFB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB4DD301D3B9CF30071FAFB /* libsqlite3.0.tbd */; };
 		7AB4DD341D3B9E510071FAFB /* CommodityDetaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD331D3B9E510071FAFB /* CommodityDetaiViewController.m */; };
+		7AB4DD371D3BA40E0071FAFB /* ShoppingCarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD351D3BA40E0071FAFB /* ShoppingCarViewController.m */; };
+		7AB4DD3A1D3BA41E0071FAFB /* ShoppingCarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD381D3BA41E0071FAFB /* ShoppingCarViewModel.m */; };
+		7AB4DD3D1D3BA5F50071FAFB /* CommodityManageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD3C1D3BA5F50071FAFB /* CommodityManageTool.m */; };
+		7AB4DD401D3BC28C0071FAFB /* ShoppingCarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD3F1D3BC28C0071FAFB /* ShoppingCarCell.m */; };
+		7AB4DD451D3BC2ED0071FAFB /* Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD421D3BC2ED0071FAFB /* Alert.m */; };
+		7AB4DD461D3BC2ED0071FAFB /* CommodityCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD441D3BC2ED0071FAFB /* CommodityCountView.m */; };
+		7AB4DD481D3BD5090071FAFB /* ShoppingCarViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD471D3BD5090071FAFB /* ShoppingCarViewControllerSpec.m */; };
+		7AB4DD4A1D3BD7F60071FAFB /* ShoppingCarViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD491D3BD7F60071FAFB /* ShoppingCarViewModelSpec.m */; };
+		7AB4DD4C1D3BD82E0071FAFB /* ShoppingCarCellSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD4B1D3BD82E0071FAFB /* ShoppingCarCellSpec.m */; };
+		7AB4DD4F1D3BD8900071FAFB /* ShoppingCarTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD4E1D3BD8900071FAFB /* ShoppingCarTableViewDelegate.m */; };
+		7AB4DD521D3BD8A30071FAFB /* ShoppingCarTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD511D3BD8A30071FAFB /* ShoppingCarTableViewDataSource.m */; };
+		7AB4DD541D3BDAF80071FAFB /* ShoppingCarTableViewDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD531D3BDAF80071FAFB /* ShoppingCarTableViewDelegateSpec.m */; };
+		7AB4DD561D3BDB0D0071FAFB /* ShoppingCarTableViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD551D3BDB0D0071FAFB /* ShoppingCarTableViewDataSourceSpec.m */; };
 		7AD62EFB1D3A7D02006FDBCC /* CommodityListViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */; };
 		7AD62EFC1D3A7D02006FDBCC /* CommodityModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF31D3A7D02006FDBCC /* CommodityModelSpec.m */; };
 		7AD62EFD1D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF51D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m */; };
@@ -646,6 +659,27 @@
 		7AB4DD301D3B9CF30071FAFB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		7AB4DD321D3B9E510071FAFB /* CommodityDetaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityDetaiViewController.h; sourceTree = "<group>"; };
 		7AB4DD331D3B9E510071FAFB /* CommodityDetaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityDetaiViewController.m; sourceTree = "<group>"; };
+		7AB4DD351D3BA40E0071FAFB /* ShoppingCarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarViewController.m; sourceTree = "<group>"; };
+		7AB4DD361D3BA40E0071FAFB /* ShoppingCarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarViewController.h; sourceTree = "<group>"; };
+		7AB4DD381D3BA41E0071FAFB /* ShoppingCarViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarViewModel.m; sourceTree = "<group>"; };
+		7AB4DD391D3BA41E0071FAFB /* ShoppingCarViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarViewModel.h; sourceTree = "<group>"; };
+		7AB4DD3B1D3BA5F50071FAFB /* CommodityManageTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityManageTool.h; sourceTree = "<group>"; };
+		7AB4DD3C1D3BA5F50071FAFB /* CommodityManageTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityManageTool.m; sourceTree = "<group>"; };
+		7AB4DD3E1D3BC28C0071FAFB /* ShoppingCarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarCell.h; sourceTree = "<group>"; };
+		7AB4DD3F1D3BC28C0071FAFB /* ShoppingCarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarCell.m; sourceTree = "<group>"; };
+		7AB4DD411D3BC2ED0071FAFB /* Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alert.h; sourceTree = "<group>"; };
+		7AB4DD421D3BC2ED0071FAFB /* Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alert.m; sourceTree = "<group>"; };
+		7AB4DD431D3BC2ED0071FAFB /* CommodityCountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityCountView.h; sourceTree = "<group>"; };
+		7AB4DD441D3BC2ED0071FAFB /* CommodityCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityCountView.m; sourceTree = "<group>"; };
+		7AB4DD471D3BD5090071FAFB /* ShoppingCarViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarViewControllerSpec.m; sourceTree = "<group>"; };
+		7AB4DD491D3BD7F60071FAFB /* ShoppingCarViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarViewModelSpec.m; sourceTree = "<group>"; };
+		7AB4DD4B1D3BD82E0071FAFB /* ShoppingCarCellSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarCellSpec.m; sourceTree = "<group>"; };
+		7AB4DD4D1D3BD8900071FAFB /* ShoppingCarTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarTableViewDelegate.h; sourceTree = "<group>"; };
+		7AB4DD4E1D3BD8900071FAFB /* ShoppingCarTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarTableViewDelegate.m; sourceTree = "<group>"; };
+		7AB4DD501D3BD8A30071FAFB /* ShoppingCarTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingCarTableViewDataSource.h; sourceTree = "<group>"; };
+		7AB4DD511D3BD8A30071FAFB /* ShoppingCarTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarTableViewDataSource.m; sourceTree = "<group>"; };
+		7AB4DD531D3BDAF80071FAFB /* ShoppingCarTableViewDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarTableViewDelegateSpec.m; sourceTree = "<group>"; };
+		7AB4DD551D3BDB0D0071FAFB /* ShoppingCarTableViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingCarTableViewDataSourceSpec.m; sourceTree = "<group>"; };
 		7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListViewControllerSpec.m; sourceTree = "<group>"; };
 		7AD62EF31D3A7D02006FDBCC /* CommodityModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityModelSpec.m; sourceTree = "<group>"; };
 		7AD62EF51D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDataSourceSpec.m; sourceTree = "<group>"; };
@@ -1625,6 +1659,7 @@
 			children = (
 				7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */,
 				7AD62F981D3B9576006FDBCC /* CommodityDetaiViewControllerSpec.m */,
+				7AB4DD471D3BD5090071FAFB /* ShoppingCarViewControllerSpec.m */,
 			);
 			path = ControllerTest;
 			sourceTree = "<group>";
@@ -1644,6 +1679,8 @@
 				7AD62EF61D3A7D02006FDBCC /* ListTableViewDelegateSpec.m */,
 				7AD62F9A1D3B958D006FDBCC /* DetailTableViewDataSourceSpec.m */,
 				7AD62F9C1D3B95A0006FDBCC /* DetailTableViewDelegateSpec.m */,
+				7AB4DD531D3BDAF80071FAFB /* ShoppingCarTableViewDelegateSpec.m */,
+				7AB4DD551D3BDB0D0071FAFB /* ShoppingCarTableViewDataSourceSpec.m */,
 			);
 			path = TableViewProtocalTest;
 			sourceTree = "<group>";
@@ -1653,6 +1690,7 @@
 			children = (
 				7AD62EF81D3A7D02006FDBCC /* CommodityListViewModelSpec.m */,
 				7AD62F9E1D3B95B3006FDBCC /* CommodityDetailViewModelSpec.m */,
+				7AB4DD491D3BD7F60071FAFB /* ShoppingCarViewModelSpec.m */,
 			);
 			path = ViewModelTest;
 			sourceTree = "<group>";
@@ -1662,6 +1700,7 @@
 			children = (
 				7AD62EFA1D3A7D02006FDBCC /* CommodityListCellSpec.m */,
 				7AD62FA01D3B95C9006FDBCC /* CommodityDetailCellSpec.m */,
+				7AB4DD4B1D3BD82E0071FAFB /* ShoppingCarCellSpec.m */,
 			);
 			path = ViewTest;
 			sourceTree = "<group>";
@@ -1673,6 +1712,8 @@
 				7AD62F031D3A7D18006FDBCC /* CommodityListViewController.m */,
 				7AB4DD321D3B9E510071FAFB /* CommodityDetaiViewController.h */,
 				7AB4DD331D3B9E510071FAFB /* CommodityDetaiViewController.m */,
+				7AB4DD361D3BA40E0071FAFB /* ShoppingCarViewController.h */,
+				7AB4DD351D3BA40E0071FAFB /* ShoppingCarViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1697,6 +1738,10 @@
 				7AD62F281D3B1771006FDBCC /* DetailTableViewDataSource.m */,
 				7AD62F291D3B1771006FDBCC /* DetailTableViewDelegate.h */,
 				7AD62F2A1D3B1771006FDBCC /* DetailTableViewDelegate.m */,
+				7AB4DD4D1D3BD8900071FAFB /* ShoppingCarTableViewDelegate.h */,
+				7AB4DD4E1D3BD8900071FAFB /* ShoppingCarTableViewDelegate.m */,
+				7AB4DD501D3BD8A30071FAFB /* ShoppingCarTableViewDataSource.h */,
+				7AB4DD511D3BD8A30071FAFB /* ShoppingCarTableViewDataSource.m */,
 			);
 			path = TableViewProtocal;
 			sourceTree = "<group>";
@@ -1711,6 +1756,8 @@
 				7AD62F0F1D3A7D18006FDBCC /* YiRefreshFooter.m */,
 				7AD62F101D3A7D18006FDBCC /* YiRefreshHeader.h */,
 				7AD62F111D3A7D18006FDBCC /* YiRefreshHeader.m */,
+				7AB4DD3B1D3BA5F50071FAFB /* CommodityManageTool.h */,
+				7AB4DD3C1D3BA5F50071FAFB /* CommodityManageTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1722,6 +1769,12 @@
 				7AD62F141D3A7D18006FDBCC /* CommodityListCell.m */,
 				7AD62F2D1D3B177E006FDBCC /* CommodityDetailCell.h */,
 				7AD62F2E1D3B177E006FDBCC /* CommodityDetailCell.m */,
+				7AB4DD3E1D3BC28C0071FAFB /* ShoppingCarCell.h */,
+				7AB4DD3F1D3BC28C0071FAFB /* ShoppingCarCell.m */,
+				7AB4DD411D3BC2ED0071FAFB /* Alert.h */,
+				7AB4DD421D3BC2ED0071FAFB /* Alert.m */,
+				7AB4DD431D3BC2ED0071FAFB /* CommodityCountView.h */,
+				7AB4DD441D3BC2ED0071FAFB /* CommodityCountView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1733,6 +1786,8 @@
 				7AD62F171D3A7D18006FDBCC /* CommodityListViewModel.m */,
 				7AD62F791D3B8AAB006FDBCC /* CommodityDetailViewModel.h */,
 				7AD62F7A1D3B8AAB006FDBCC /* CommodityDetailViewModel.m */,
+				7AB4DD391D3BA41E0071FAFB /* ShoppingCarViewModel.h */,
+				7AB4DD381D3BA41E0071FAFB /* ShoppingCarViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2049,25 +2104,33 @@
 			files = (
 				7AD62F1F1D3A7D18006FDBCC /* CommodityListViewModel.m in Sources */,
 				7AD62F1A1D3A7D18006FDBCC /* ListTableViewDataSource.m in Sources */,
+				7AB4DD4F1D3BD8900071FAFB /* ShoppingCarTableViewDelegate.m in Sources */,
 				7AD62F1E1D3A7D18006FDBCC /* CommodityListCell.m in Sources */,
+				7AB4DD371D3BA40E0071FAFB /* ShoppingCarViewController.m in Sources */,
+				7AB4DD461D3BC2ED0071FAFB /* CommodityCountView.m in Sources */,
 				7AB4DD2A1D3B9CA20071FAFB /* FMDatabase.m in Sources */,
 				7AD62F181D3A7D18006FDBCC /* CommodityListViewController.m in Sources */,
 				7AD62F2C1D3B1771006FDBCC /* DetailTableViewDelegate.m in Sources */,
 				7AB4DD341D3B9E510071FAFB /* CommodityDetaiViewController.m in Sources */,
 				7A271FD61D369D6A003DA7EF /* ViewController.m in Sources */,
+				7AB4DD451D3BC2ED0071FAFB /* Alert.m in Sources */,
 				7AB4DD2E1D3B9CA20071FAFB /* FMResultSet.m in Sources */,
 				7A271FD31D369D6A003DA7EF /* AppDelegate.m in Sources */,
 				7AD62F2F1D3B177E006FDBCC /* CommodityDetailCell.m in Sources */,
+				7AB4DD3D1D3BA5F50071FAFB /* CommodityManageTool.m in Sources */,
 				7AD62F1C1D3A7D18006FDBCC /* YiRefreshFooter.m in Sources */,
 				7A271FD01D369D6A003DA7EF /* main.m in Sources */,
 				7AD62F1B1D3A7D18006FDBCC /* ListTableViewDelegate.m in Sources */,
 				7AD62F1D1D3A7D18006FDBCC /* YiRefreshHeader.m in Sources */,
+				7AB4DD521D3BD8A30071FAFB /* ShoppingCarTableViewDataSource.m in Sources */,
 				7AD62F2B1D3B1771006FDBCC /* DetailTableViewDataSource.m in Sources */,
 				7AB4DD2B1D3B9CA20071FAFB /* FMDatabaseAdditions.m in Sources */,
 				7AD62F191D3A7D18006FDBCC /* CommodityModel.m in Sources */,
+				7AB4DD3A1D3BA41E0071FAFB /* ShoppingCarViewModel.m in Sources */,
 				7AB4DD2D1D3B9CA20071FAFB /* FMDatabaseQueue.m in Sources */,
 				7AB4DD2C1D3B9CA20071FAFB /* FMDatabasePool.m in Sources */,
 				7AD62F7B1D3B8AAB006FDBCC /* CommodityDetailViewModel.m in Sources */,
+				7AB4DD401D3BC28C0071FAFB /* ShoppingCarCell.m in Sources */,
 				7AD62F221D3A8AD9006FDBCC /* HttpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2076,17 +2139,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB4DD561D3BDB0D0071FAFB /* ShoppingCarTableViewDataSourceSpec.m in Sources */,
+				7AB4DD481D3BD5090071FAFB /* ShoppingCarViewControllerSpec.m in Sources */,
 				7AD62EFC1D3A7D02006FDBCC /* CommodityModelSpec.m in Sources */,
 				7AD62F9D1D3B95A0006FDBCC /* DetailTableViewDelegateSpec.m in Sources */,
 				7AD62EFE1D3A7D02006FDBCC /* ListTableViewDelegateSpec.m in Sources */,
 				7AD62F9B1D3B958D006FDBCC /* DetailTableViewDataSourceSpec.m in Sources */,
+				7AB4DD4A1D3BD7F60071FAFB /* ShoppingCarViewModelSpec.m in Sources */,
 				7AD62F9F1D3B95B3006FDBCC /* CommodityDetailViewModelSpec.m in Sources */,
 				7AD62EFF1D3A7D02006FDBCC /* CommodityListViewModelSpec.m in Sources */,
 				7AD62F991D3B9576006FDBCC /* CommodityDetaiViewControllerSpec.m in Sources */,
+				7AB4DD4C1D3BD82E0071FAFB /* ShoppingCarCellSpec.m in Sources */,
 				7AD62EFB1D3A7D02006FDBCC /* CommodityListViewControllerSpec.m in Sources */,
 				7AD62FA11D3B95C9006FDBCC /* CommodityDetailCellSpec.m in Sources */,
 				7A271FE91D369D6A003DA7EF /* MeiQianZhengTests.m in Sources */,
 				7A2720041D36A003003DA7EF /* SimpleStringSpec.m in Sources */,
+				7AB4DD541D3BDAF80071FAFB /* ShoppingCarTableViewDelegateSpec.m in Sources */,
 				7AD62F001D3A7D02006FDBCC /* CommodityListCellSpec.m in Sources */,
 				7AD62EFD1D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m in Sources */,
 			);

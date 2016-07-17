@@ -20,6 +20,7 @@
     YiRefreshFooter          * _refreshFooter;
     
     NSMutableArray           * _totalSource;
+    NSMutableArray           * _categories;
     
     CommodityListViewModel           * _tableViewModel;
     
@@ -77,9 +78,13 @@
 
 - (void)headerRefreshAction
 {
-    [_tableViewModel headerRefreshRequestWithCallback:^(NSArray *array){
-        _totalSource=(NSMutableArray *)array;
-        _tableViewDataSource.array = _totalSource;
+    [_tableViewModel headerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
+        _totalSource=[NSMutableArray arrayWithArray:dataSource];
+        _categories = [NSMutableArray arrayWithArray:categories];
+        
+        _tableViewDataSource.dataSource = _totalSource;
+        _tableViewDataSource.categories = _categories;
+        
         _tableViewDelegate.array = _totalSource;
         [_refreshHeader endRefreshing];
         [_tableView reloadData];
@@ -88,9 +93,12 @@
 
 - (void)footerRefreshAction
 {
-    [_tableViewModel footerRefreshRequestWithCallback:^(NSArray *array){
-        [_totalSource addObjectsFromArray:array] ;
-        _tableViewDataSource.array=_totalSource;
+    [_tableViewModel footerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
+        _totalSource=[NSMutableArray arrayWithArray:dataSource];
+        _categories = [NSMutableArray arrayWithArray:categories];
+        
+        _tableViewDataSource.dataSource = _totalSource;
+        _tableViewDataSource.categories = _categories;
         _tableViewDelegate.array=_totalSource;
         [_refreshFooter endRefreshing];
         [_tableView reloadData];

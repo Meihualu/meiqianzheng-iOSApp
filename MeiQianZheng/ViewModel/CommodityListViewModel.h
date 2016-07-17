@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef void (^callback) (NSArray *array);
+typedef void (^callback) (NSArray *category , NSArray*dataSource);
 @interface CommodityListViewModel : NSObject
 
 @property (nonatomic,strong) NSMutableArray * dataSource;

@@ -10,8 +10,7 @@
 #define MeiQianZheng_pch
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "CommodityManageTool.h"
 
 #define kViewWidth  self.view.frame.size.width
 #define kViewHeight  self.view.frame.size.height
@@ -33,5 +32,6 @@
 const static CGFloat kMargin = 10.0f;
 const static CGFloat kDetailCellHeight = 30.0f;
 const static CGFloat kDetailCellWidth = 100.0f;
+
 
 #endif /* MeiQianZheng_pch */

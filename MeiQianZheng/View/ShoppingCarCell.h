@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommodityModel.h"
 
 @interface ShoppingCarCell : UITableViewCell
+
+@property (nonatomic,strong) CommodityModel * model;
+- (void)setCount;
+- (void)setChecked:(BOOL)checked;
+
+@property (nonatomic,assign) CGFloat cellHeight;
++ (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

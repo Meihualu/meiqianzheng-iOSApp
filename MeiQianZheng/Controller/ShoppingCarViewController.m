@@ -7,15 +7,12 @@
 //
 
 #import "ShoppingCarViewController.h"
-
-@interface ShoppingCarViewController ()
-
 #import "YiRefreshHeader.h"
 #import "YiRefreshFooter.h"
 #import "CommodityListViewModel.h"
+#import "ShoppingCarTableViewDelegate.h"
+#import "ShoppingCarTableViewDataSource.h"
 
-#import "ListTableViewDataSource.h"
-#import "ListTableViewDelegate.h"
 
 @interface ShoppingCarViewController ()
 {
@@ -23,13 +20,14 @@
     YiRefreshFooter          * _refreshFooter;
     
     NSMutableArray           * _totalSource;
+    NSMutableArray           * _categories;
     
     CommodityListViewModel           * _tableViewModel;
     
     UITableView              * _tableView;
     
-    ListTableViewDataSource       * _tableViewDataSource;
-    ListTableViewDelegate         * _tableViewDelegate;
+    ShoppingCarTableViewDataSource       * _tableViewDataSource;
+    ShoppingCarTableViewDelegate         * _tableViewDelegate;
 }
 @end
 
@@ -46,8 +44,8 @@
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, kScreenHeight - 64) style:UITableViewStyleGrouped];
     [self.view addSubview:_tableView];
     
-    _tableViewDataSource = [[ListTableViewDataSource alloc] init];
-    _tableViewDelegate = [[ListTableViewDelegate alloc] init];
+    _tableViewDataSource = [[ShoppingCarTableViewDataSource alloc] init];
+    _tableViewDelegate = [[ShoppingCarTableViewDelegate alloc] init];
     _tableViewDelegate.navController = self.navigationController;
     _tableView.dataSource = _tableViewDataSource;
     _tableView.delegate = _tableViewDelegate;
@@ -80,9 +78,13 @@
 
 - (void)headerRefreshAction
 {
-    [_tableViewModel headerRefreshRequestWithCallback:^(NSArray *array){
-        _totalSource=(NSMutableArray *)array;
-        _tableViewDataSource.array = _totalSource;
+    [_tableViewModel headerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
+        _totalSource=[NSMutableArray arrayWithArray:dataSource];
+        _categories = [NSMutableArray arrayWithArray:categories];
+        
+        _tableViewDataSource.dataSource = _totalSource;
+        _tableViewDataSource.categories = _categories;
+        
         _tableViewDelegate.array = _totalSource;
         [_refreshHeader endRefreshing];
         [_tableView reloadData];
@@ -91,9 +93,12 @@
 
 - (void)footerRefreshAction
 {
-    [_tableViewModel footerRefreshRequestWithCallback:^(NSArray *array){
-        [_totalSource addObjectsFromArray:array] ;
-        _tableViewDataSource.array=_totalSource;
+    [_tableViewModel footerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
+        _totalSource=[NSMutableArray arrayWithArray:dataSource];
+        _categories = [NSMutableArray arrayWithArray:categories];
+        
+        _tableViewDataSource.dataSource = _totalSource;
+        _tableViewDataSource.categories = _categories;
         _tableViewDelegate.array=_totalSource;
         [_refreshFooter endRefreshing];
         [_tableView reloadData];

@@ -7,13 +7,13 @@
 //
 
 #import "CommodityCountView.h"
-const CGFloat width = 30.0f;
 
 @interface CommodityCountView()
 {
     UIButton * _addButton;
     UIButton * _subButton;
     UILabel  * _countField;
+    CGRect     _frame;
 }
 @end
 
@@ -23,7 +23,7 @@ const CGFloat width = 30.0f;
 {
     self = [super initWithFrame:frame];
     if (self) {
- 
+        _frame = frame;
         [self addCustomView];
     }
     return self;
@@ -31,7 +31,9 @@ const CGFloat width = 30.0f;
 
 - (void)addCustomView {
     
+    CGFloat width = _frame.size.width / 3;
     _subButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, width, width)];
+    [_subButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
     [_subButton setTitle:@"-" forState:UIControlStateNormal];
     [_subButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_subButton addTarget:self action:@selector(subCount:) forControlEvents:UIControlEventTouchUpInside];
@@ -45,6 +47,7 @@ const CGFloat width = 30.0f;
     
     _addButton = [[UIButton alloc] initWithFrame:CGRectMake(width * 2, 0, width, width)];
     [_addButton setTitle:@"+" forState:UIControlStateNormal];
+    [_addButton.titleLabel setTextAlignment:NSTextAlignmentCenter];
     [_addButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [_addButton addTarget:self action:@selector(addCount:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_addButton];

@@ -10,16 +10,17 @@
 
 @implementation CommodityModel
 
--(instancetype)initWithBarcode:(NSString *)barcode name:(NSString *)name unit:(NSString *)unit category:(NSString *)category subCategory:(NSString *)subCategory price:(CGFloat)price promotionType:(NSArray *)promotionType{
+-(instancetype)initWithBarcode:(NSString *)barcode name:(NSString *)name unit:(NSString *)unit category:(NSString *)category categoryId:(NSInteger)categoryId subCategory:(NSString *)subCategory price:(CGFloat)price promotionType:(NSArray *)promotionType count:(NSInteger)count{
     if (self = [super init]) {
         _barcode = [barcode copy];
         _name = [name copy];
         _unit = [unit copy];
         _category = [category copy];
+        _categoryId = categoryId;
         _subCategory = [subCategory copy];
         _price = price;
         _promotionType = [promotionType copy];
-        _count = 0;
+        _count = count;
     }
     return self;
 }

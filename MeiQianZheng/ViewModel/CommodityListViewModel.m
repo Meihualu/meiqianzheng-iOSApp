@@ -36,12 +36,21 @@
                                                                            name:[NSString stringWithFormat:@"myname%zd",i]
                                                                            unit:[NSString stringWithFormat:@"myunit%zd",i]
                                                                        category:[NSString stringWithFormat:@"mycategory%zd",i]
+                                                                     categoryId:i
                                                                     subCategory:[NSString stringWithFormat:@"mysubcategory%zd",i]
-                                                                          price:100.0f promotionType: [NSArray arrayWithObjects:@"man3mian1", @"ceshiceshi", nil]];
-                [_dataSource addObject:item];
+                                                                          price:100.0f promotionType: [NSArray arrayWithObjects:@"man3mian1", @"ceshiceshi", nil]
+                                                                          count:i];
+                
+                [CommodityManageTool addCommodityInList:item];
+            }
+            NSArray * categories = [CommodityManageTool categories];
+            
+            for (CommodityModel * item in categories) {
+                NSArray * array = [CommodityManageTool commoditiesWithCategory:item.categoryId];
+                [_dataSource addObject:array];
             }
             
-            callback(_dataSource);
+            callback(categories,_dataSource);
             
             /* */
             /*
@@ -63,17 +72,6 @@
                 NSLog(@"error.localizedDescription = %@\n",error.localizedDescription);
             }];
            */
-        });
-    });
-}
-
-- (void)headerRefreshRequestWithCallback_bak:(callback)callback
-{
-    //  后台执行：
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        sleep(2);
-        dispatch_async(dispatch_get_main_queue(), ^{
-//            callback(arr);
         });
     });
 }

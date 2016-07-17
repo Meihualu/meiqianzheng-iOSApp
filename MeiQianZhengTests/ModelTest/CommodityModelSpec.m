@@ -36,8 +36,10 @@ describe(@"CommodityItemTest", ^{
                                                                        name:@"myname"
                                                                        unit:@"myunit"
                                                                    category:@"mycategory"
+                                                                 categoryId:1
                                                                 subCategory:@"mysubcategory"
-                                                                      price:100.0f promotionType:[NSArray array]];
+                                                                      price:100.0f promotionType:[NSArray array]
+                                                                      count:1];
             [[item.barcode should] equal:@"mybarcode"];
             [[item.name should] equal:@"myname"];
             [[item.unit should] equal:@"myunit"];
