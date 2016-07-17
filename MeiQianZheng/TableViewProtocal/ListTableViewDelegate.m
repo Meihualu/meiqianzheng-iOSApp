@@ -7,12 +7,15 @@
 //
 
 #import "ListTableViewDelegate.h"
+#import "CommodityDetaiViewController.h"
 
 @implementation ListTableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    CommodityDetaiViewController * detailController = [[CommodityDetaiViewController alloc] initWithCommodityModel:_array[indexPath.row]];
+    [self.navController pushViewController:detailController animated:YES];
 }
 
 @end

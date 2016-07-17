@@ -34,6 +34,7 @@
 @property (nonatomic,copy) NSString * subCategory;  //子类别
 @property (nonatomic,assign) CGFloat price;         //价格
 @property (nonatomic,copy) NSArray * promotionType; //商品满足优惠信息
+@property (nonatomic,assign) NSInteger count;       //购买的数量
 
 -(instancetype)initWithBarcode:(NSString *)barcode
                           name:(NSString *)name

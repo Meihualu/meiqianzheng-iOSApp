@@ -87,7 +87,6 @@
     [_nameLabel setText:model.name];
     [_categoryLabel setText:model.category];
     [_priceLabel setText:[NSString stringWithFormat:@"%.02f/%@",model.price,model.unit]];
-    NSLog(@"model.promotionType.count = %zd\n",model.promotionType.count);
     if (model.promotionType.count > 0) {
         _promotionImageView.backgroundColor = [UIColor redColor];
     } else {

@@ -19,6 +19,7 @@
         _subCategory = [subCategory copy];
         _price = price;
         _promotionType = [promotionType copy];
+        _count = 0;
     }
     return self;
 }

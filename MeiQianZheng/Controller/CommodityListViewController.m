@@ -52,7 +52,6 @@
     _tableViewModel = [[CommodityListViewModel alloc] init];
     _totalSource = 0;
     
-    //    YiRefreshHeader  头部刷新按钮的使用
     _refreshHeader = [[YiRefreshHeader alloc] init];
     _refreshHeader.scrollView = _tableView;
     [_refreshHeader header];
@@ -65,7 +64,6 @@
     //    是否在进入该界面的时候就开始进入刷新状态
     [_refreshHeader beginRefreshing];
     
-    //    YiRefreshFooter  底部刷新按钮的使用
     _refreshFooter=[[YiRefreshFooter alloc] init];
     _refreshFooter.scrollView=_tableView;
     [_refreshFooter footer];
