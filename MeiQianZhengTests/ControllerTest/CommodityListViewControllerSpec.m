@@ -31,6 +31,9 @@ describe(@"CommodityListViewController", ^{
             [[controller shouldNot] beNil];
         });
     });
+    
+    
+    
 });
 
 SPEC_END

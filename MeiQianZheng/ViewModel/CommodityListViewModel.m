@@ -43,10 +43,6 @@
             
             callback(_dataSource);
             /*
-              http://f74b59f1.ngrok.io/products
-              http://c80db024.ngrok.io/products
-             https://06e79c47.ngrok.io/products/
-             http://37fd72bc.ngrok.io/products/food
              http://37fd72bc.ngrok.io/products/
              */
             /*

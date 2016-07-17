@@ -23,14 +23,6 @@
     return self;
 }
 
-/*
- barcode = ITEM000001;
- category = "\U4f53\U80b2";
- name = "\U7fbd\U6bdb\U7403";
- price = 1;
- subCategory = "\U5668\U6750";
- unit = "\U4e2a";
- */
 - (instancetype)initWithDict:(NSDictionary *)info
 {
     if (self = [super init]) {
