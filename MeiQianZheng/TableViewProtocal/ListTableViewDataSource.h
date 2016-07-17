@@ -11,6 +11,7 @@
 
 @interface ListTableViewDataSource : NSObject<UITableViewDataSource>
 
-@property (nonatomic,strong) NSArray * array;
+@property (nonatomic,strong) NSArray * dataSource;
+@property (nonatomic,strong) NSArray * categories;
 
 @end

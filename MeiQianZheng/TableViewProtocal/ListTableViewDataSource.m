@@ -11,10 +11,15 @@
 
 @implementation ListTableViewDataSource
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return _categories.count;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _array.count;
+    NSArray * rows = _dataSource[section];
+    return rows.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -23,8 +28,16 @@
     if (cell == nil) {
         cell = [[CommodityListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
-    cell.model = [_array objectAtIndex:indexPath.row];
+    NSArray * rows = _dataSource[indexPath.section];
+    cell.model = [rows objectAtIndex:indexPath.row];
     return cell;
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    CommodityModel * model = _categories[section];
+    return model.category;
+}
+
 
 @end

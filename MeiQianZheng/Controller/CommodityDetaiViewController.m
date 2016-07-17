@@ -10,6 +10,8 @@
 #import "DetailTableViewDelegate.h"
 #import "DetailTableViewDataSource.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "CommodityDetailViewModel.h"
+#import "ShoppingCarViewController.h"
 
 const CGFloat bottomHeight = 60.0f;
 
@@ -23,6 +25,7 @@ const CGFloat bottomHeight = 60.0f;
 @property (nonatomic,strong) UITextField * itemCount;
 @property (nonatomic,strong) DetailTableViewDelegate * detailDelegate;
 @property (nonatomic,strong) DetailTableViewDataSource * detailDataSource;
+@property (nonatomic,strong) CommodityDetailViewModel * viewModel;
 
 @end
 
@@ -41,6 +44,8 @@ const CGFloat bottomHeight = 60.0f;
     self.title = @"商品详情";
     self.view.backgroundColor = [UIColor whiteColor];
     
+    _viewModel = [[CommodityDetailViewModel alloc] init];
+    _viewModel.model = _model;
     _detailDelegate = [[DetailTableViewDelegate alloc] init];
     _detailDataSource = [[DetailTableViewDataSource alloc] init];
     _detailDataSource.model = _model;
@@ -53,32 +58,37 @@ const CGFloat bottomHeight = 60.0f;
     
     [self addTableFooterView];
     [self addBottomView];
+    [self addSignals];
 }
 
 - (void)addSignals
 {
     [self.itemCount.rac_textSignal subscribeNext:^(NSString * text) {
         //调用viewModel的相关方法
-        
+        [self.viewModel dealTextFieldTextChangeWithText:text];
     }];
     
     [[self.addItemBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         //调用viewModel的相关方法
-        
+        [self.viewModel addNumberOfItem];
     }];
     
     [[self.reduceItemBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         //调用viewModel的相关方法
-        
+        [self.viewModel reduceNumberOfItem];
     }];
     
     [[self.addToShoppingCar rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         //调用viewModel的相关方法
+        [self.viewModel addShoppingCar];
     }];
     
     [[self.purchase rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         //调用viewModel的相关方法
+        ShoppingCarViewController * shoppingCar = [[ShoppingCarViewController alloc] init];
+        [self.navigationController pushViewController:shoppingCar animated:YES];
     }];
+    
 }
 
 - (void)addTableFooterView
@@ -98,16 +108,16 @@ const CGFloat bottomHeight = 60.0f;
     [_addItemBtn setTitle:@"+" forState:UIControlStateNormal];
     [_addItemBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:15.0f]];
     [_addItemBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_addItemBtn.layer setBorderWidth:1.0f];
-    [_addItemBtn.layer setCornerRadius:3.0f];
+    [_addItemBtn.layer setBorderWidth:0.8f];
+    [_addItemBtn.layer setCornerRadius:5.0f];
     [_addItemBtn.layer setBorderColor:kDefaultColor.CGColor];
     
     _reduceItemBtn = [[UIButton alloc] initWithFrame:CGRectMake(itemX + itemWidth + kMargin / 2, itemY, itemWidth, itemHeight)];
     [_reduceItemBtn setTitle:@"-" forState:UIControlStateNormal];
     [_reduceItemBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:15.0f]];
     [_reduceItemBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_reduceItemBtn.layer setBorderWidth:1.0f];
-    [_reduceItemBtn.layer setCornerRadius:3.0f];
+    [_reduceItemBtn.layer setBorderWidth:0.8f];
+    [_reduceItemBtn.layer setCornerRadius:5.0f];
     [_reduceItemBtn.layer setBorderColor:kDefaultColor.CGColor];
     
     [footerView addSubview:_itemCount];
