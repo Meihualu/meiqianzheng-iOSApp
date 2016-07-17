@@ -16,6 +16,14 @@
 		7A271FE91D369D6A003DA7EF /* MeiQianZhengTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */; };
 		7A271FF41D369D6A003DA7EF /* MeiQianZhengUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FF31D369D6A003DA7EF /* MeiQianZhengUITests.m */; };
 		7A2720041D36A003003DA7EF /* SimpleStringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2720031D36A003003DA7EF /* SimpleStringSpec.m */; };
+		7AB4DD2A1D3B9CA20071FAFB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD1F1D3B9CA20071FAFB /* FMDatabase.m */; };
+		7AB4DD2B1D3B9CA20071FAFB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD211D3B9CA20071FAFB /* FMDatabaseAdditions.m */; };
+		7AB4DD2C1D3B9CA20071FAFB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD231D3B9CA20071FAFB /* FMDatabasePool.m */; };
+		7AB4DD2D1D3B9CA20071FAFB /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD251D3B9CA20071FAFB /* FMDatabaseQueue.m */; };
+		7AB4DD2E1D3B9CA20071FAFB /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD281D3B9CA20071FAFB /* FMResultSet.m */; };
+		7AB4DD2F1D3B9CA20071FAFB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AB4DD291D3B9CA20071FAFB /* Info.plist */; };
+		7AB4DD311D3B9CF30071FAFB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AB4DD301D3B9CF30071FAFB /* libsqlite3.0.tbd */; };
+		7AB4DD341D3B9E510071FAFB /* CommodityDetaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD331D3B9E510071FAFB /* CommodityDetaiViewController.m */; };
 		7AD62EFB1D3A7D02006FDBCC /* CommodityListViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */; };
 		7AD62EFC1D3A7D02006FDBCC /* CommodityModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF31D3A7D02006FDBCC /* CommodityModelSpec.m */; };
 		7AD62EFD1D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF51D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m */; };
@@ -31,6 +39,15 @@
 		7AD62F1E1D3A7D18006FDBCC /* CommodityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F141D3A7D18006FDBCC /* CommodityListCell.m */; };
 		7AD62F1F1D3A7D18006FDBCC /* CommodityListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F171D3A7D18006FDBCC /* CommodityListViewModel.m */; };
 		7AD62F221D3A8AD9006FDBCC /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F211D3A8AD9006FDBCC /* HttpTool.m */; };
+		7AD62F2B1D3B1771006FDBCC /* DetailTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F281D3B1771006FDBCC /* DetailTableViewDataSource.m */; };
+		7AD62F2C1D3B1771006FDBCC /* DetailTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F2A1D3B1771006FDBCC /* DetailTableViewDelegate.m */; };
+		7AD62F2F1D3B177E006FDBCC /* CommodityDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F2E1D3B177E006FDBCC /* CommodityDetailCell.m */; };
+		7AD62F7B1D3B8AAB006FDBCC /* CommodityDetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F7A1D3B8AAB006FDBCC /* CommodityDetailViewModel.m */; };
+		7AD62F991D3B9576006FDBCC /* CommodityDetaiViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F981D3B9576006FDBCC /* CommodityDetaiViewControllerSpec.m */; };
+		7AD62F9B1D3B958D006FDBCC /* DetailTableViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F9A1D3B958D006FDBCC /* DetailTableViewDataSourceSpec.m */; };
+		7AD62F9D1D3B95A0006FDBCC /* DetailTableViewDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F9C1D3B95A0006FDBCC /* DetailTableViewDelegateSpec.m */; };
+		7AD62F9F1D3B95B3006FDBCC /* CommodityDetailViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F9E1D3B95B3006FDBCC /* CommodityDetailViewModelSpec.m */; };
+		7AD62FA11D3B95C9006FDBCC /* CommodityDetailCellSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62FA01D3B95C9006FDBCC /* CommodityDetailCellSpec.m */; };
 		AB55904755423BF0A004BF85 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DB04C9CA42C5CAF17EF632 /* libPods.a */; };
 		FFB35EED8A81807A3CEA59AA /* libPods-MeiQianZhengTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09615327314E89A3021E8791 /* libPods-MeiQianZhengTests.a */; };
 /* End PBXBuildFile section */
@@ -614,6 +631,21 @@
 		7A2722171D36A249003DA7EF /* CJSONSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		7A2722181D36A249003DA7EF /* CJSONSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		7A2722191D36A249003DA7EF /* JSONRepresentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		7AB4DD1E1D3B9CA20071FAFB /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		7AB4DD1F1D3B9CA20071FAFB /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		7AB4DD201D3B9CA20071FAFB /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		7AB4DD211D3B9CA20071FAFB /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		7AB4DD221D3B9CA20071FAFB /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		7AB4DD231D3B9CA20071FAFB /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		7AB4DD241D3B9CA20071FAFB /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		7AB4DD251D3B9CA20071FAFB /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		7AB4DD261D3B9CA20071FAFB /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		7AB4DD271D3B9CA20071FAFB /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		7AB4DD281D3B9CA20071FAFB /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		7AB4DD291D3B9CA20071FAFB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AB4DD301D3B9CF30071FAFB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7AB4DD321D3B9E510071FAFB /* CommodityDetaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityDetaiViewController.h; sourceTree = "<group>"; };
+		7AB4DD331D3B9E510071FAFB /* CommodityDetaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityDetaiViewController.m; sourceTree = "<group>"; };
 		7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListViewControllerSpec.m; sourceTree = "<group>"; };
 		7AD62EF31D3A7D02006FDBCC /* CommodityModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityModelSpec.m; sourceTree = "<group>"; };
 		7AD62EF51D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDataSourceSpec.m; sourceTree = "<group>"; };
@@ -639,6 +671,19 @@
 		7AD62F171D3A7D18006FDBCC /* CommodityListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListViewModel.m; sourceTree = "<group>"; };
 		7AD62F201D3A8AD9006FDBCC /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
 		7AD62F211D3A8AD9006FDBCC /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
+		7AD62F271D3B1771006FDBCC /* DetailTableViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewDataSource.h; sourceTree = "<group>"; };
+		7AD62F281D3B1771006FDBCC /* DetailTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewDataSource.m; sourceTree = "<group>"; };
+		7AD62F291D3B1771006FDBCC /* DetailTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewDelegate.h; sourceTree = "<group>"; };
+		7AD62F2A1D3B1771006FDBCC /* DetailTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewDelegate.m; sourceTree = "<group>"; };
+		7AD62F2D1D3B177E006FDBCC /* CommodityDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityDetailCell.h; sourceTree = "<group>"; };
+		7AD62F2E1D3B177E006FDBCC /* CommodityDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityDetailCell.m; sourceTree = "<group>"; };
+		7AD62F791D3B8AAB006FDBCC /* CommodityDetailViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityDetailViewModel.h; sourceTree = "<group>"; };
+		7AD62F7A1D3B8AAB006FDBCC /* CommodityDetailViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityDetailViewModel.m; sourceTree = "<group>"; };
+		7AD62F981D3B9576006FDBCC /* CommodityDetaiViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityDetaiViewControllerSpec.m; sourceTree = "<group>"; };
+		7AD62F9A1D3B958D006FDBCC /* DetailTableViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewDataSourceSpec.m; sourceTree = "<group>"; };
+		7AD62F9C1D3B95A0006FDBCC /* DetailTableViewDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewDelegateSpec.m; sourceTree = "<group>"; };
+		7AD62F9E1D3B95B3006FDBCC /* CommodityDetailViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityDetailViewModelSpec.m; sourceTree = "<group>"; };
+		7AD62FA01D3B95C9006FDBCC /* CommodityDetailCellSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityDetailCellSpec.m; sourceTree = "<group>"; };
 		95DB04C9CA42C5CAF17EF632 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9A7BCE3E1BE71405EB05704 /* Pods-MeiQianZhengTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeiQianZhengTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeiQianZhengTests/Pods-MeiQianZhengTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -648,6 +693,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB4DD311D3B9CF30071FAFB /* libsqlite3.0.tbd in Frameworks */,
 				AB55904755423BF0A004BF85 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1555,10 +1601,30 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		7AB4DD1D1D3B9CA20071FAFB /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				7AB4DD1E1D3B9CA20071FAFB /* FMDatabase.h */,
+				7AB4DD1F1D3B9CA20071FAFB /* FMDatabase.m */,
+				7AB4DD201D3B9CA20071FAFB /* FMDatabaseAdditions.h */,
+				7AB4DD211D3B9CA20071FAFB /* FMDatabaseAdditions.m */,
+				7AB4DD221D3B9CA20071FAFB /* FMDatabasePool.h */,
+				7AB4DD231D3B9CA20071FAFB /* FMDatabasePool.m */,
+				7AB4DD241D3B9CA20071FAFB /* FMDatabaseQueue.h */,
+				7AB4DD251D3B9CA20071FAFB /* FMDatabaseQueue.m */,
+				7AB4DD261D3B9CA20071FAFB /* FMDB.h */,
+				7AB4DD271D3B9CA20071FAFB /* FMResultSet.h */,
+				7AB4DD281D3B9CA20071FAFB /* FMResultSet.m */,
+				7AB4DD291D3B9CA20071FAFB /* Info.plist */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
 		7AD62EF01D3A7D02006FDBCC /* ControllerTest */ = {
 			isa = PBXGroup;
 			children = (
 				7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */,
+				7AD62F981D3B9576006FDBCC /* CommodityDetaiViewControllerSpec.m */,
 			);
 			path = ControllerTest;
 			sourceTree = "<group>";
@@ -1576,6 +1642,8 @@
 			children = (
 				7AD62EF51D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m */,
 				7AD62EF61D3A7D02006FDBCC /* ListTableViewDelegateSpec.m */,
+				7AD62F9A1D3B958D006FDBCC /* DetailTableViewDataSourceSpec.m */,
+				7AD62F9C1D3B95A0006FDBCC /* DetailTableViewDelegateSpec.m */,
 			);
 			path = TableViewProtocalTest;
 			sourceTree = "<group>";
@@ -1584,6 +1652,7 @@
 			isa = PBXGroup;
 			children = (
 				7AD62EF81D3A7D02006FDBCC /* CommodityListViewModelSpec.m */,
+				7AD62F9E1D3B95B3006FDBCC /* CommodityDetailViewModelSpec.m */,
 			);
 			path = ViewModelTest;
 			sourceTree = "<group>";
@@ -1592,6 +1661,7 @@
 			isa = PBXGroup;
 			children = (
 				7AD62EFA1D3A7D02006FDBCC /* CommodityListCellSpec.m */,
+				7AD62FA01D3B95C9006FDBCC /* CommodityDetailCellSpec.m */,
 			);
 			path = ViewTest;
 			sourceTree = "<group>";
@@ -1601,6 +1671,8 @@
 			children = (
 				7AD62F021D3A7D18006FDBCC /* CommodityListViewController.h */,
 				7AD62F031D3A7D18006FDBCC /* CommodityListViewController.m */,
+				7AB4DD321D3B9E510071FAFB /* CommodityDetaiViewController.h */,
+				7AB4DD331D3B9E510071FAFB /* CommodityDetaiViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1621,6 +1693,10 @@
 				7AD62F0A1D3A7D18006FDBCC /* ListTableViewDataSource.m */,
 				7AD62F0B1D3A7D18006FDBCC /* ListTableViewDelegate.h */,
 				7AD62F0C1D3A7D18006FDBCC /* ListTableViewDelegate.m */,
+				7AD62F271D3B1771006FDBCC /* DetailTableViewDataSource.h */,
+				7AD62F281D3B1771006FDBCC /* DetailTableViewDataSource.m */,
+				7AD62F291D3B1771006FDBCC /* DetailTableViewDelegate.h */,
+				7AD62F2A1D3B1771006FDBCC /* DetailTableViewDelegate.m */,
 			);
 			path = TableViewProtocal;
 			sourceTree = "<group>";
@@ -1628,6 +1704,7 @@
 		7AD62F0D1D3A7D18006FDBCC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7AB4DD1D1D3B9CA20071FAFB /* FMDB */,
 				7AD62F201D3A8AD9006FDBCC /* HttpTool.h */,
 				7AD62F211D3A8AD9006FDBCC /* HttpTool.m */,
 				7AD62F0E1D3A7D18006FDBCC /* YiRefreshFooter.h */,
@@ -1643,6 +1720,8 @@
 			children = (
 				7AD62F131D3A7D18006FDBCC /* CommodityListCell.h */,
 				7AD62F141D3A7D18006FDBCC /* CommodityListCell.m */,
+				7AD62F2D1D3B177E006FDBCC /* CommodityDetailCell.h */,
+				7AD62F2E1D3B177E006FDBCC /* CommodityDetailCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1652,6 +1731,8 @@
 			children = (
 				7AD62F161D3A7D18006FDBCC /* CommodityListViewModel.h */,
 				7AD62F171D3A7D18006FDBCC /* CommodityListViewModel.m */,
+				7AD62F791D3B8AAB006FDBCC /* CommodityDetailViewModel.h */,
+				7AD62F7A1D3B8AAB006FDBCC /* CommodityDetailViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1670,6 +1751,7 @@
 		BA3FED6A424235D1333399B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7AB4DD301D3B9CF30071FAFB /* libsqlite3.0.tbd */,
 				7A2720071D36A248003DA7EF /* Pods */,
 				95DB04C9CA42C5CAF17EF632 /* libPods.a */,
 				09615327314E89A3021E8791 /* libPods-MeiQianZhengTests.a */,
@@ -1844,6 +1926,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AB4DD2F1D3B9CA20071FAFB /* Info.plist in Resources */,
 				7A271FDE1D369D6A003DA7EF /* LaunchScreen.storyboard in Resources */,
 				7A271FDB1D369D6A003DA7EF /* Assets.xcassets in Resources */,
 				7A271FD91D369D6A003DA7EF /* Main.storyboard in Resources */,
@@ -1967,14 +2050,24 @@
 				7AD62F1F1D3A7D18006FDBCC /* CommodityListViewModel.m in Sources */,
 				7AD62F1A1D3A7D18006FDBCC /* ListTableViewDataSource.m in Sources */,
 				7AD62F1E1D3A7D18006FDBCC /* CommodityListCell.m in Sources */,
+				7AB4DD2A1D3B9CA20071FAFB /* FMDatabase.m in Sources */,
 				7AD62F181D3A7D18006FDBCC /* CommodityListViewController.m in Sources */,
+				7AD62F2C1D3B1771006FDBCC /* DetailTableViewDelegate.m in Sources */,
+				7AB4DD341D3B9E510071FAFB /* CommodityDetaiViewController.m in Sources */,
 				7A271FD61D369D6A003DA7EF /* ViewController.m in Sources */,
+				7AB4DD2E1D3B9CA20071FAFB /* FMResultSet.m in Sources */,
 				7A271FD31D369D6A003DA7EF /* AppDelegate.m in Sources */,
+				7AD62F2F1D3B177E006FDBCC /* CommodityDetailCell.m in Sources */,
 				7AD62F1C1D3A7D18006FDBCC /* YiRefreshFooter.m in Sources */,
 				7A271FD01D369D6A003DA7EF /* main.m in Sources */,
 				7AD62F1B1D3A7D18006FDBCC /* ListTableViewDelegate.m in Sources */,
 				7AD62F1D1D3A7D18006FDBCC /* YiRefreshHeader.m in Sources */,
+				7AD62F2B1D3B1771006FDBCC /* DetailTableViewDataSource.m in Sources */,
+				7AB4DD2B1D3B9CA20071FAFB /* FMDatabaseAdditions.m in Sources */,
 				7AD62F191D3A7D18006FDBCC /* CommodityModel.m in Sources */,
+				7AB4DD2D1D3B9CA20071FAFB /* FMDatabaseQueue.m in Sources */,
+				7AB4DD2C1D3B9CA20071FAFB /* FMDatabasePool.m in Sources */,
+				7AD62F7B1D3B8AAB006FDBCC /* CommodityDetailViewModel.m in Sources */,
 				7AD62F221D3A8AD9006FDBCC /* HttpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1984,9 +2077,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AD62EFC1D3A7D02006FDBCC /* CommodityModelSpec.m in Sources */,
+				7AD62F9D1D3B95A0006FDBCC /* DetailTableViewDelegateSpec.m in Sources */,
 				7AD62EFE1D3A7D02006FDBCC /* ListTableViewDelegateSpec.m in Sources */,
+				7AD62F9B1D3B958D006FDBCC /* DetailTableViewDataSourceSpec.m in Sources */,
+				7AD62F9F1D3B95B3006FDBCC /* CommodityDetailViewModelSpec.m in Sources */,
 				7AD62EFF1D3A7D02006FDBCC /* CommodityListViewModelSpec.m in Sources */,
+				7AD62F991D3B9576006FDBCC /* CommodityDetaiViewControllerSpec.m in Sources */,
 				7AD62EFB1D3A7D02006FDBCC /* CommodityListViewControllerSpec.m in Sources */,
+				7AD62FA11D3B95C9006FDBCC /* CommodityDetailCellSpec.m in Sources */,
 				7A271FE91D369D6A003DA7EF /* MeiQianZhengTests.m in Sources */,
 				7A2720041D36A003003DA7EF /* SimpleStringSpec.m in Sources */,
 				7AD62F001D3A7D02006FDBCC /* CommodityListCellSpec.m in Sources */,

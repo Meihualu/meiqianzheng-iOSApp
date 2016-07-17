@@ -16,4 +16,11 @@ describe(@"CommodityDetailCell", ^{
 
 });
 
+describe(@"CommodityDetailCell", ^{
+    context(@"when create CommodityListCell ", ^{
+        it(@"should exist class CommodityDetailCell", ^{
+            [[[CommodityDetailCell class] shouldNot] beNil];
+        });
+    });
+});
 SPEC_END

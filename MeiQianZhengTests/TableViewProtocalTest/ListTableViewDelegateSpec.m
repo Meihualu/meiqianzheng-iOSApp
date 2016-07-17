@@ -8,7 +8,7 @@
 
 #import <Kiwi/Kiwi.h>
 #import "ListTableViewDelegate.h"
-
+#import "CommodityDetaiViewController.h"
 
 SPEC_BEGIN(ListTableViewDelegateSpec)
 
@@ -29,6 +29,25 @@ describe(@"ListTableViewDelegate", ^{
         
         it(@"should exist vDelegate", ^{
             [[vDelegate shouldNot] beNil];
+        });
+    });
+    
+    context(@"when clicked a cell", ^{
+        it(@"should push a CommodityListDetailController", ^{
+            
+            ListTableViewDelegate * vDelegate = [[ListTableViewDelegate alloc] init];
+            [[vDelegate shouldNot] beNil];
+            
+            UINavigationController * mocNav = [UINavigationController mock];
+            [vDelegate stub:@selector(navController) andReturn:mocNav];
+            
+            KWCaptureSpy * spy = [mocNav captureArgument:@selector(pushViewController:animated:) atIndex:0];
+            [vDelegate tableView:[[UITableView alloc] init] didSelectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            
+            CommodityDetaiViewController * vc = spy.argument;
+            NSLog(@"vc = %@\n",vc);
+            [[vc should] beKindOfClass:[CommodityDetaiViewController class]];
+            
         });
     });
 });

@@ -7,7 +7,6 @@
 //
 
 #import "ListTableViewDelegate.h"
-#import "CommodityDetaiViewController.h"
 
 @implementation ListTableViewDelegate
 

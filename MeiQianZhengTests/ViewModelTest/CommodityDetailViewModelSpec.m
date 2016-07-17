@@ -13,7 +13,26 @@
 SPEC_BEGIN(CommodityDetailViewModelSpec)
 
 describe(@"CommodityDetailViewModel", ^{
-
+    context(@"when create", ^{
+        __block CommodityDetailViewModel * viewModel = nil;
+        beforeEach(^{
+            viewModel = [[CommodityDetailViewModel alloc] init];
+        });
+        
+        afterEach(^{
+            viewModel = nil;
+        });
+        
+        it(@"should have the class CommodityListViewModel", ^{
+            [[[CommodityDetailViewModel class] shouldNot] beNil];
+        });
+        
+        it(@"should exist viewModel", ^{
+            [[viewModel shouldNot] beNil];
+        });
+        
+    });
+    
 });
 
 SPEC_END
