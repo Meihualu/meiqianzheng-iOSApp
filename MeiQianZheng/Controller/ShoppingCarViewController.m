@@ -9,10 +9,9 @@
 #import "ShoppingCarViewController.h"
 #import "YiRefreshHeader.h"
 #import "YiRefreshFooter.h"
-#import "CommodityListViewModel.h"
+#import "ShoppingCarViewModel.h"
 #import "ShoppingCarTableViewDelegate.h"
 #import "ShoppingCarTableViewDataSource.h"
-
 
 @interface ShoppingCarViewController ()
 {
@@ -22,7 +21,7 @@
     NSMutableArray           * _totalSource;
     NSMutableArray           * _categories;
     
-    CommodityListViewModel           * _tableViewModel;
+    ShoppingCarViewModel         * _shoppingCarViewModel;
     
     UITableView              * _tableView;
     
@@ -50,7 +49,7 @@
     _tableView.dataSource = _tableViewDataSource;
     _tableView.delegate = _tableViewDelegate;
     
-    _tableViewModel = [[CommodityListViewModel alloc] init];
+    _shoppingCarViewModel = [[ShoppingCarViewModel alloc] init];
     _totalSource = 0;
     
     _refreshHeader = [[YiRefreshHeader alloc] init];
@@ -78,7 +77,7 @@
 
 - (void)headerRefreshAction
 {
-    [_tableViewModel headerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
+    [_shoppingCarViewModel headerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
         _totalSource=[NSMutableArray arrayWithArray:dataSource];
         _categories = [NSMutableArray arrayWithArray:categories];
         
@@ -93,7 +92,7 @@
 
 - (void)footerRefreshAction
 {
-    [_tableViewModel footerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
+    [_shoppingCarViewModel footerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
         _totalSource=[NSMutableArray arrayWithArray:dataSource];
         _categories = [NSMutableArray arrayWithArray:categories];
         

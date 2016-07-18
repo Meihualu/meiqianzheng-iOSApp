@@ -23,7 +23,7 @@ static FMDatabase * _db;
     [_db open];
     
     // 2.创建商品信息表
-    [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_commodity_list (id integer PRIMARY KEY, barcode string NOT NULL, name string,unit string,categoryid string,category string,subcategory string,price real,discountype string);"];
+    [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_commodity_list (id integer PRIMARY KEY, barcode string NOT NULL , name string,unit string,categoryid string,category string,subcategory string,price real,discountype string);"];
     
     //3.创建商品种类表
     [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_category (categoryid integer PRIMARY KEY,category string unique,isExistInShoppingCar integer)"];
@@ -68,7 +68,14 @@ static FMDatabase * _db;
 }
 
 +(void)addCommodityInList:(CommodityModel *)item{
-    //1.首先到t_category中查询，看是否已存在该category，如果没有则插入
+    
+    FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_commodity_list WHERE barcode = %@",item.barcode];
+    
+    if (set.next) {
+        [_db executeUpdateWithFormat:@"DELETE FROM t_commodity_list WHERE barcode = %@",item.barcode];
+    }
+    
+    //到t_category中查询，看是否已存在该category，如果没有则插入
     NSInteger categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
     NSLog(@"categoryId = %zd\n",categoryId);
     if (categoryId == -1) {
@@ -79,11 +86,13 @@ static FMDatabase * _db;
     [_db executeUpdateWithFormat:@"INSERT INTO t_commodity_list (barcode,name,unit,categoryid,category,subcategory,price,discountype) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType[0]];
 }
 
+
 + (void)addCommodityInShoppingCar:(CommodityModel *)item {
     //1.首先到t_shoppingcar中查询，看是否已存在该item
     //得到结果集
     FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE barcode = %@",item.barcode];
-    if (set.columnCount > 0) {
+    NSLog(@"set.columnCount = %zd\n",set.columnCount);
+    if (set.next) {
         [_db executeQueryWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = %@",item.barcode];
     }
     NSInteger categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
@@ -152,7 +161,6 @@ static FMDatabase * _db;
     }
     return commodities;
 }
-
 
 + (NSArray *)categories {
     

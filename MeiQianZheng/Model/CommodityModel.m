@@ -36,6 +36,7 @@
         _price =  [info[@"price"] floatValue];
         NSArray * array = info[@"promotionType"];
         _promotionType = [array copy];
+        _count = 0;
     }
     return self;
 }
