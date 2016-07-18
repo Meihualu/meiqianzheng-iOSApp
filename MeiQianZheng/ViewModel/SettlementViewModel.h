@@ -11,7 +11,7 @@ typedef void(^settlementCallBack) (NSString * result);
 
 @interface SettlementViewModel : NSObject
 
-@property (nonatomic,strong) NSArray * shoppingcarCommodities;
+@property (nonatomic,strong) NSMutableArray * shoppingcarCommodities;
 
 //结算
 - (void)settlementWithSettlementCallBack:(settlementCallBack)callback;

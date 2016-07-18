@@ -9,19 +9,33 @@
 #import "SettlementViewModel.h"
 
 @implementation SettlementViewModel
-
 -(instancetype)init
 {
     self = [super init];
     if (self) {
-        _shoppingcarCommodities = [CommodityManageTool commoditiesInShoppingCar];
+        _shoppingcarCommodities = [NSMutableArray array];
     }
     return self;
 }
+
+-(void)setShoppingcarCommodities:(NSArray *)shoppingcarCommodities
+{
+    NSLog(@"shoppingcarCommodities = %@\n",shoppingcarCommodities);
+    [_shoppingcarCommodities removeAllObjects];
+    for (NSArray * arr in shoppingcarCommodities) {
+        for (CommodityModel * model in arr) {
+            [_shoppingcarCommodities addObject:model];
+            [CommodityManageTool addCommodityInShoppingCar:model];
+        }
+    }
+    NSLog(@"shoppingcarCommodities = %@\n",shoppingcarCommodities);
+    NSLog(@"_shoppingcarCommodities = %@\n",_shoppingcarCommodities);
+}
+
 - (void)settlementWithSettlementCallBack:(settlementCallBack)callback
 {
-    //https://meiqianzheng.herokuapp.com/order
     NSMutableArray * params = [NSMutableArray array];
+    NSString * orders = @"";
     for (CommodityModel * model in _shoppingcarCommodities) {
         NSString * barcode = model.barcode;
         
@@ -31,9 +45,16 @@
             barcode = [NSString stringWithFormat:@"%@-%zd",barcode,model.count];
         }
         [params addObject:barcode];
+        if (orders.length == 0) {
+            orders = [NSString stringWithFormat:@"[%@%@",orders,barcode];
+        } else {
+            orders = [NSString stringWithFormat:@"%@,%@",orders,barcode];
+        }
     }
+    orders = [NSString stringWithFormat:@"%@]",orders];
     
-    NSString * orders = [self toNSStringWithNSArray:params];
+//    NSString * orders = [self toNSStringWithNSArray:params];
+    
     NSDictionary * param = @{@"order":orders};
     NSLog(@"param = %@\n",param);
     
@@ -43,7 +64,7 @@
         NSLog(@"result = %@\n",result);
         callback(result);
     } failure:^(NSError *error) {
-        
+        NSLog(@"结算失败%@\n",error.localizedDescription);
     }];
     
 }

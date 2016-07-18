@@ -58,8 +58,10 @@
     [self.contentView addSubview:_countView];
     
     RAC(_priceLabel,text) = [RACObserve(_countView, count) map:^id(id count) {
+        [self setCount];
         return [NSString stringWithFormat:@"%.02f",[count integerValue] * _model.price];
     }];
+    
 }
 
 - (void)setModel:(CommodityModel *)model
@@ -79,7 +81,7 @@
     if ([_model.promotionType[0] isEqualToString:@""]) {
         
     } else if([_model.promotionType[0] isEqualToString:@""]) {
-    
+      
     } else {
       
     }

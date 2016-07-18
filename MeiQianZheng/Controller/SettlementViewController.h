@@ -10,4 +10,6 @@
 
 @interface SettlementViewController : UIViewController
 
+- (instancetype)initWithCommodities:(NSArray *)commodities;
+
 @end

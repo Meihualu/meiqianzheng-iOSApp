@@ -38,15 +38,11 @@
         _promotionType = [array copy];
         _count = 0;
     }
-    
-    NSLog(@"[info[promotionType] class] = %@\n",[info[@"promotionType"] class]);
-    NSLog(@"info[promotionType] = %@\n",info[@"promotionType"]);
-    NSLog(@"_promotionType = %@\n",_promotionType);
     return self;
 }
 
 -(NSString *)description {
-    NSString * desc = [NSString stringWithFormat:@"name = %@,unit = %@,price = %f,category = %@,subCategory = %@\n",self.name,self.unit,self.price,self.category,self.subCategory];
+    NSString * desc = [NSString stringWithFormat:@"name = %@,unit = %@,price = %f,category = %@,subCategory = %@，count = %zd\n",self.name,self.unit,self.price,self.category,self.subCategory,self.count];
     return desc;
 }
 

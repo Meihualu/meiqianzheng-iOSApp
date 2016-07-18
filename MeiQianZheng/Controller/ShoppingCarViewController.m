@@ -63,7 +63,7 @@
         [strongSelf headerRefreshAction];
     };
     
-    //    是否在进入该界面的时候就开始进入刷新状态
+    //是否在进入该界面的时候就开始进入刷新状态
     [_refreshHeader beginRefreshing];
     
     _refreshFooter=[[YiRefreshFooter alloc] init];
@@ -86,7 +86,9 @@
     [customView addSubview:button];
     [button setTitle:@"结算" forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont boldSystemFontOfSize:13.0f]];
+    
     _settlement = button;
+    
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithCustomView:customView];
     self.navigationItem.rightBarButtonItem = right;
 }
@@ -94,7 +96,7 @@
 - (void)addSignals
 {
     [[_settlement rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        SettlementViewController * settlement = [[SettlementViewController alloc] init];
+        SettlementViewController * settlement = [[SettlementViewController alloc] initWithCommodities:_tableViewDataSource.dataSource];
         [self.navigationController pushViewController:settlement animated:YES];
     }];
 }
@@ -132,4 +134,5 @@
 {
     [super didReceiveMemoryWarning];
 }
+
 @end

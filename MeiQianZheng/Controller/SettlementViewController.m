@@ -13,10 +13,19 @@
 
 @property (nonatomic,strong) SettlementViewModel * viewModel;
 @property (nonatomic,strong) UITextView          * infoView;
-
+@property (nonatomic,copy) NSArray             * commodities;
 @end
 
 @implementation SettlementViewController
+
+- (instancetype)initWithCommodities:(NSArray *)commodities
+{
+    self = [super init];
+    if (self) {
+        _commodities = [commodities copy];
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,6 +42,8 @@
     _infoView = infoView;
     
     _viewModel = [[SettlementViewModel alloc] init];
+    _viewModel.shoppingcarCommodities = [NSMutableArray arrayWithArray:_commodities];
+    
     [self scanCommoditiyBarcode];
     [self.viewModel settlementWithSettlementCallBack:^(NSString *result) {
         NSLog(@"result = %@\n",result);
