@@ -13,9 +13,7 @@
 
 @property (nonatomic,strong) CommodityModel * model;
 - (void)setCount;
-- (void)setChecked:(BOOL)checked;
 
 @property (nonatomic,assign) CGFloat cellHeight;
-+ (instancetype)cellWithTableView:(UITableView *)tableView;
 
 @end

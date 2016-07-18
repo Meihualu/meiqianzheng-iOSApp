@@ -82,21 +82,24 @@ static FMDatabase * _db;
        [_db executeUpdateWithFormat:@"INSERT INTO t_category (category) VALUES (%@);",item.category];
        categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
     }
-    
-    [_db executeUpdateWithFormat:@"INSERT INTO t_commodity_list (barcode,name,unit,categoryid,category,subcategory,price,discountype) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType[0]];
+    [_db executeUpdateWithFormat:@"INSERT INTO t_commodity_list (barcode,name,unit,categoryid,category,subcategory,price,discountype) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0]];
 }
 
 + (void)addCommodityInShoppingCar:(CommodityModel *)item {
     //1.首先到t_shoppingcar中查询，看是否已存在该item
     //得到结果集
     FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE barcode = %@",item.barcode];
-    NSLog(@"set.columnCount = %zd\n",set.columnCount);
+    NSInteger categoryId;
     if (set.next) {
         [_db executeQueryWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = %@",item.barcode];
+        NSLog(@"已经存在该商品：item.name = %@,item.barcode=%@\n",item.name,item.barcode);
+        categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
+        [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %ld WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0],item.count,item.barcode];
+    } else {
+        categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
+        [_db executeUpdateWithFormat:@"INSERT INTO t_shoppingcar (barcode,name,unit,categoryid,category,subcategory,price,discountype,count) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@,%ld);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0],item.count];
     }
-    NSInteger categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
     [_db executeUpdateWithFormat:@"update t_category set isExistInShoppingCar = %d WHERE category = %@",1,item.category];
-    [_db executeUpdateWithFormat:@"INSERT INTO t_shoppingcar (barcode,name,unit,categoryid,category,subcategory,price,discountype,count) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@,%ld);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType[0],item.count];
 }
 
 + (void)deleteCommodityFromShoppingCar:(CommodityModel *)item {

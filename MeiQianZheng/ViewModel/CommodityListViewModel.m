@@ -30,7 +30,7 @@
         sleep(2);
         dispatch_async(dispatch_get_main_queue(), ^{
             
-            /**/
+            /*
             for (int i = 0; i < 20; i ++) {
                 
                 CommodityModel * item = [[CommodityModel alloc] initWithBarcode:[NSString stringWithFormat:@"mybarcode%zd",i]
@@ -45,7 +45,7 @@
                 [CommodityManageTool addCommodityInList:item];
             }
              
-            /* */
+            
             NSArray * categories = [CommodityManageTool categories];
             
             for (CommodityModel * item in categories) {
@@ -54,14 +54,10 @@
             }
             
             callback(categories,_dataSource);
+            */
             
-            
-            /*
-             http://37fd72bc.ngrok.io/products/
-             https://meiqianzheng.herokuapp.com/products/food
-             */
-            /*
-            [HttpTool getWithBaseURL:baseUrl productsPattern params:nil success:^(id JSON) {
+            /**/
+            [HttpTool getWithBaseURL:baseUrl  path:productsPattern params:nil success:^(id JSON) {
                 NSMutableArray * result = [[NSMutableArray alloc] init];
                 [result addObjectsFromArray:JSON];
                 NSLog(@"result = %@\n",result);
@@ -82,7 +78,7 @@
             } failure:^(NSError *error) {
                 NSLog(@"error.localizedDescription = %@\n",error.localizedDescription);
             }];
-           */
+           
         });
     });
 }

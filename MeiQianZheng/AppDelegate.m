@@ -7,14 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "CommodityListViewController.h"
+#import "SelectRoleViewController.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     /**/
@@ -23,7 +22,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    CommodityListViewController * controller = [[CommodityListViewController alloc] init];
+    SelectRoleViewController * controller = [[SelectRoleViewController alloc] init];
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:controller];
     navController.navigationBar.translucent = NO;
     self.window.rootViewController = navController;

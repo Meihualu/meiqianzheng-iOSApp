@@ -42,14 +42,15 @@
  */
 - (void)addShoppingCar{
     
-    [CommodityManageTool addCommodityInShoppingCar:_model];
-    
     for (CommodityModel * item in _shoppingCar) {
         if ([item.barcode isEqualToString:_model.barcode]) {
             [_shoppingCar removeObject:item];
         }
     }
     [_shoppingCar addObject:_model];
+    
+    [CommodityManageTool addCommodityInShoppingCar:_model];
+    [_shoppingCar removeObject:_model];
 }
 
 @end

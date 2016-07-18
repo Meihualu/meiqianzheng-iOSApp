@@ -9,7 +9,6 @@
 #import <Kiwi/Kiwi.h>
 #import "SettlementViewModel.h"
 
-
 SPEC_BEGIN(SettlementViewModelSpec)
 
 describe(@"SettlementViewModel", ^{

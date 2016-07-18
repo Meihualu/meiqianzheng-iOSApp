@@ -8,6 +8,7 @@
 
 #import "ShoppingCarCell.h"
 #import "CommodityCountView.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface ShoppingCarCell()
 {
@@ -16,7 +17,7 @@
     
     UILabel             *  _nameLabel;
     UILabel             *  _priceLabel;
-    CommodityCountView * _countView;
+    CommodityCountView    * _countView;
 }
 
 @end
@@ -55,19 +56,33 @@
     _countView.layer.borderColor = kDefaultColor.CGColor;
     _countView.layer.borderWidth = 2.0f;
     [self.contentView addSubview:_countView];
+    
+    RAC(_priceLabel,text) = [RACObserve(_countView, count) map:^id(id count) {
+        return [NSString stringWithFormat:@"%.02f",[count integerValue] * _model.price];
+    }];
 }
 
 - (void)setModel:(CommodityModel *)model
 {
     _model = model;
     [_nameLabel setText:model.name];
-    [_priceLabel setText:[NSString stringWithFormat:@"%.02f/%@",model.price,model.unit]];
+    [_priceLabel setText:[NSString stringWithFormat:@"%.02f",model.price * model.count]];
     if (model.promotionType.count > 0) {
         _promotionImageView.backgroundColor = [UIColor redColor];
     } else {
         _promotionImageView.backgroundColor = [UIColor whiteColor];
     }
     _countView.count = _model.count;
+}
+
+- (void)calculatePerCommodityAmount{
+    if ([_model.promotionType[0] isEqualToString:@""]) {
+        
+    } else if([_model.promotionType[0] isEqualToString:@""]) {
+    
+    } else {
+      
+    }
 }
 
 -(void)setCount{

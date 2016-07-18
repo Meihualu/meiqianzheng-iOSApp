@@ -38,6 +38,10 @@
         _promotionType = [array copy];
         _count = 0;
     }
+    
+    NSLog(@"[info[promotionType] class] = %@\n",[info[@"promotionType"] class]);
+    NSLog(@"info[promotionType] = %@\n",info[@"promotionType"]);
+    NSLog(@"_promotionType = %@\n",_promotionType);
     return self;
 }
 

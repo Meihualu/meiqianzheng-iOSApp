@@ -42,6 +42,10 @@
 		7AB4DD5E1D3C7D7A0071FAFB /* SettlementViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD5D1D3C7D7A0071FAFB /* SettlementViewControllerSpec.m */; };
 		7AB4DD611D3C84850071FAFB /* SettlementViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD601D3C84850071FAFB /* SettlementViewModel.m */; };
 		7AB4DD671D3CB1610071FAFB /* SettlementViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD661D3CB1610071FAFB /* SettlementViewModelSpec.m */; };
+		7AB4DD6E1D3CC4430071FAFB /* SelectRoleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD6D1D3CC4430071FAFB /* SelectRoleViewController.m */; };
+		7AB4DD711D3CC4E90071FAFB /* SalesclerkManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD701D3CC4E90071FAFB /* SalesclerkManageViewController.m */; };
+		7AB4DD741D3CC5220071FAFB /* SelectRoleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD731D3CC5220071FAFB /* SelectRoleViewModel.m */; };
+		7AB4DD771D3CD8AC0071FAFB /* CommodityCountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD761D3CD8AC0071FAFB /* CommodityCountViewModel.m */; };
 		7AD62EFB1D3A7D02006FDBCC /* CommodityListViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */; };
 		7AD62EFC1D3A7D02006FDBCC /* CommodityModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF31D3A7D02006FDBCC /* CommodityModelSpec.m */; };
 		7AD62EFD1D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62EF51D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m */; };
@@ -692,6 +696,14 @@
 		7AB4DD5F1D3C84850071FAFB /* SettlementViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettlementViewModel.h; sourceTree = "<group>"; };
 		7AB4DD601D3C84850071FAFB /* SettlementViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettlementViewModel.m; sourceTree = "<group>"; };
 		7AB4DD661D3CB1610071FAFB /* SettlementViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettlementViewModelSpec.m; sourceTree = "<group>"; };
+		7AB4DD6C1D3CC4430071FAFB /* SelectRoleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRoleViewController.h; sourceTree = "<group>"; };
+		7AB4DD6D1D3CC4430071FAFB /* SelectRoleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRoleViewController.m; sourceTree = "<group>"; };
+		7AB4DD6F1D3CC4E90071FAFB /* SalesclerkManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesclerkManageViewController.h; sourceTree = "<group>"; };
+		7AB4DD701D3CC4E90071FAFB /* SalesclerkManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesclerkManageViewController.m; sourceTree = "<group>"; };
+		7AB4DD721D3CC5220071FAFB /* SelectRoleViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectRoleViewModel.h; sourceTree = "<group>"; };
+		7AB4DD731D3CC5220071FAFB /* SelectRoleViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectRoleViewModel.m; sourceTree = "<group>"; };
+		7AB4DD751D3CD8AC0071FAFB /* CommodityCountViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityCountViewModel.h; sourceTree = "<group>"; };
+		7AB4DD761D3CD8AC0071FAFB /* CommodityCountViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityCountViewModel.m; sourceTree = "<group>"; };
 		7AD62EF11D3A7D02006FDBCC /* CommodityListViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListViewControllerSpec.m; sourceTree = "<group>"; };
 		7AD62EF31D3A7D02006FDBCC /* CommodityModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityModelSpec.m; sourceTree = "<group>"; };
 		7AD62EF51D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDataSourceSpec.m; sourceTree = "<group>"; };
@@ -1739,6 +1751,10 @@
 				7AB4DD351D3BA40E0071FAFB /* ShoppingCarViewController.m */,
 				7AB4DD5A1D3C71F30071FAFB /* SettlementViewController.h */,
 				7AB4DD5B1D3C71F30071FAFB /* SettlementViewController.m */,
+				7AB4DD6C1D3CC4430071FAFB /* SelectRoleViewController.h */,
+				7AB4DD6D1D3CC4430071FAFB /* SelectRoleViewController.m */,
+				7AB4DD6F1D3CC4E90071FAFB /* SalesclerkManageViewController.h */,
+				7AB4DD701D3CC4E90071FAFB /* SalesclerkManageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1815,6 +1831,10 @@
 				7AB4DD381D3BA41E0071FAFB /* ShoppingCarViewModel.m */,
 				7AB4DD5F1D3C84850071FAFB /* SettlementViewModel.h */,
 				7AB4DD601D3C84850071FAFB /* SettlementViewModel.m */,
+				7AB4DD721D3CC5220071FAFB /* SelectRoleViewModel.h */,
+				7AB4DD731D3CC5220071FAFB /* SelectRoleViewModel.m */,
+				7AB4DD751D3CD8AC0071FAFB /* CommodityCountViewModel.h */,
+				7AB4DD761D3CD8AC0071FAFB /* CommodityCountViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -2142,13 +2162,17 @@
 				7AD62F2C1D3B1771006FDBCC /* DetailTableViewDelegate.m in Sources */,
 				7AB4DD341D3B9E510071FAFB /* CommodityDetaiViewController.m in Sources */,
 				7A271FD61D369D6A003DA7EF /* ViewController.m in Sources */,
+				7AB4DD6E1D3CC4430071FAFB /* SelectRoleViewController.m in Sources */,
 				7AB4DD451D3BC2ED0071FAFB /* Alert.m in Sources */,
 				7AB4DD2E1D3B9CA20071FAFB /* FMResultSet.m in Sources */,
 				7A271FD31D369D6A003DA7EF /* AppDelegate.m in Sources */,
+				7AB4DD711D3CC4E90071FAFB /* SalesclerkManageViewController.m in Sources */,
 				7AD62F2F1D3B177E006FDBCC /* CommodityDetailCell.m in Sources */,
 				7AB4DD3D1D3BA5F50071FAFB /* CommodityManageTool.m in Sources */,
+				7AB4DD741D3CC5220071FAFB /* SelectRoleViewModel.m in Sources */,
 				7AD62F1C1D3A7D18006FDBCC /* YiRefreshFooter.m in Sources */,
 				7A271FD01D369D6A003DA7EF /* main.m in Sources */,
+				7AB4DD771D3CD8AC0071FAFB /* CommodityCountViewModel.m in Sources */,
 				7AD62F1B1D3A7D18006FDBCC /* ListTableViewDelegate.m in Sources */,
 				7AD62F1D1D3A7D18006FDBCC /* YiRefreshHeader.m in Sources */,
 				7AB4DD5C1D3C71F30071FAFB /* SettlementViewController.m in Sources */,
