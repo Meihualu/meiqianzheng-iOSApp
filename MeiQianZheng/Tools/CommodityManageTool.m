@@ -94,7 +94,8 @@ static FMDatabase * _db;
         [_db executeQueryWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = %@",item.barcode];
         NSLog(@"已经存在该商品：item.name = %@,item.barcode=%@\n",item.name,item.barcode);
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
-        [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %ld WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0],item.count,item.barcode];
+        NSInteger count = [set intForColumn:@"count"];
+        [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %ld WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0],item.count + count, item.barcode];
     } else {
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
         [_db executeUpdateWithFormat:@"INSERT INTO t_shoppingcar (barcode,name,unit,categoryid,category,subcategory,price,discountype,count) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@,%ld);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0],item.count];

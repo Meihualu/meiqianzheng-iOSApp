@@ -57,6 +57,10 @@
         _priceLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_priceLabel];
         
+        UILabel * sepline = [[UILabel alloc] initWithFrame:CGRectMake(0, _cellHeight - 1, KScreenWidth, 0.8)];
+        [sepline setBackgroundColor:kDefaultColor];
+        [self.contentView addSubview:sepline];
+        
     }
     return self;
 }
@@ -86,7 +90,7 @@
     _model = model;
     [_nameLabel setText:model.name];
     [_categoryLabel setText:model.category];
-    [_priceLabel setText:[NSString stringWithFormat:@"%.02f/%@",model.price,model.unit]];
+    [_priceLabel setText:[NSString stringWithFormat:@"%.02f元/%@",model.price,model.unit]];
     if (model.promotionType.count > 0) {
         _promotionImageView.backgroundColor = [UIColor redColor];
     } else {

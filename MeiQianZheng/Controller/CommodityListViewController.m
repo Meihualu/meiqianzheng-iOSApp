@@ -43,6 +43,7 @@
     self.view.backgroundColor=[UIColor whiteColor];
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, kScreenHeight - 64) style:UITableViewStyleGrouped];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
     
     _tableViewDataSource = [[ListTableViewDataSource alloc] init];

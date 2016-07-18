@@ -46,15 +46,13 @@
         }
         [params addObject:barcode];
         if (orders.length == 0) {
-            orders = [NSString stringWithFormat:@"[%@%@",orders,barcode];
+            orders = [NSString stringWithFormat:@"[%@'%@'",orders,barcode];
         } else {
-            orders = [NSString stringWithFormat:@"%@,%@",orders,barcode];
+            orders = [NSString stringWithFormat:@"%@,'%@'",orders,barcode];
         }
     }
     orders = [NSString stringWithFormat:@"%@]",orders];
-    
 //    NSString * orders = [self toNSStringWithNSArray:params];
-    
     NSDictionary * param = @{@"order":orders};
     NSLog(@"param = %@\n",param);
     

@@ -29,5 +29,11 @@
  *  处理添加到购物车逻辑
  */
 - (void)addShoppingCar;
+/**
+ * 立即购买
+ */
+- (void)purchaseRightNow;
+
+- (NSString *)getPrompt;
 
 @end

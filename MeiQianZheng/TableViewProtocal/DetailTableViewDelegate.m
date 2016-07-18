@@ -19,10 +19,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    return nil;
-}
+//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+//{
+//    return nil;
+//}
 
 -(void)setModel:(CommodityModel *)model
 {
@@ -48,10 +48,14 @@
     CGSize queLabelSize = [content boundingRectWithSize:CGSizeMake(KScreenWidth - 20, 999.0f)
                                                 options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
                                              attributes:attributes context:nil].size;
-    
     CGRect frame = CGRectMake(10, 0, KScreenWidth - 20, queLabelSize.height + 20);
     return frame;
     
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+   return kDetailCellHeight * 2;
 }
 
 @end

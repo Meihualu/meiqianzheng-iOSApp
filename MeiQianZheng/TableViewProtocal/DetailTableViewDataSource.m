@@ -22,7 +22,7 @@
 {
     _model = model;
     _infoArray = [NSArray arrayWithObjects:@"名称",@"商品类别",@"商品子类别",@"单价/单位",@"优惠信息",nil];
-    NSString * str = [NSString stringWithFormat:@"%f/%@",model.price,model.unit];
+    NSString * str = [NSString stringWithFormat:@"%.02f元/%@",model.price,model.unit];
     NSString * promotionType = nil;
     if (model.promotionType.count == 0) {
         promotionType = @"暂无优惠";

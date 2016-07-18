@@ -85,15 +85,16 @@ const CGFloat bottomHeight = 60.0f;
         return [NSString stringWithFormat:@"%@",count];
     }];
     
-//    RAC(self.labelRoundNumber, text) = RACObserve(self.homePageVM, waitNum);
-    
     [[self.addToShoppingCar rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         //调用viewModel的相关方法
         [self.viewModel addShoppingCar];
+        
+        UIAlertView * alert=[[UIAlertView alloc] initWithTitle:@"提示" message:[_viewModel getPrompt] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
     }];
     
     [[self.purchase rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [self.viewModel addShoppingCar];
+        [self.viewModel purchaseRightNow];
         //调用viewModel的相关方法
         ShoppingCarViewController * shoppingCar = [[ShoppingCarViewController alloc] init];
         [self.navigationController pushViewController:shoppingCar animated:YES];
@@ -132,15 +133,7 @@ const CGFloat bottomHeight = 60.0f;
     _itemCount.borderStyle = UITextBorderStyleRoundedRect;
     _itemCount.text = @"0";
     
-    _addItemBtn = [[UIButton alloc] initWithFrame:CGRectMake(itemX - itemWidth - kMargin / 2, itemY, itemWidth, itemHeight)];
-    [_addItemBtn setTitle:@"+" forState:UIControlStateNormal];
-    [_addItemBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:15.0f]];
-    [_addItemBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [_addItemBtn.layer setBorderWidth:0.8f];
-    [_addItemBtn.layer setCornerRadius:5.0f];
-    [_addItemBtn.layer setBorderColor:kDefaultColor.CGColor];
-    
-    _reduceItemBtn = [[UIButton alloc] initWithFrame:CGRectMake(itemX + itemWidth + kMargin / 2, itemY, itemWidth, itemHeight)];
+    _reduceItemBtn = [[UIButton alloc] initWithFrame:CGRectMake(itemX - itemWidth - kMargin / 2, itemY, itemWidth, itemHeight)];
     [_reduceItemBtn setTitle:@"-" forState:UIControlStateNormal];
     [_reduceItemBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:15.0f]];
     [_reduceItemBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -148,11 +141,20 @@ const CGFloat bottomHeight = 60.0f;
     [_reduceItemBtn.layer setCornerRadius:5.0f];
     [_reduceItemBtn.layer setBorderColor:kDefaultColor.CGColor];
     
+    _addItemBtn = [[UIButton alloc] initWithFrame:CGRectMake(itemX + itemWidth + kMargin / 2, itemY, itemWidth, itemHeight)];
+    [_addItemBtn setTitle:@"+" forState:UIControlStateNormal];
+    [_addItemBtn.titleLabel setFont:[UIFont boldSystemFontOfSize:15.0f]];
+    [_addItemBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_addItemBtn.layer setBorderWidth:0.8f];
+    [_addItemBtn.layer setCornerRadius:5.0f];
+    [_addItemBtn.layer setBorderColor:kDefaultColor.CGColor];
+    
     [footerView addSubview:_itemCount];
     [footerView addSubview:_addItemBtn];
     [footerView addSubview:_reduceItemBtn];
     self.tableView.tableFooterView = footerView;
-    
+    self.tableView.tableFooterView.backgroundColor = [UIColor whiteColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [footerView setBackgroundColor:[UIColor whiteColor]];
 }
 
