@@ -80,12 +80,20 @@ const CGFloat bottomHeight = 60.0f;
         [self.viewModel reduceNumberOfItem];
     }];
     
+    //监听ViewModel数值 赋值UILabel
+    RAC(self.itemCount,text) = [RACObserve(self.viewModel.model, count) map:^id(id count) {
+        return [NSString stringWithFormat:@"%@",count];
+    }];
+    
+//    RAC(self.labelRoundNumber, text) = RACObserve(self.homePageVM, waitNum);
+    
     [[self.addToShoppingCar rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         //调用viewModel的相关方法
         [self.viewModel addShoppingCar];
     }];
     
     [[self.purchase rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [self.viewModel addShoppingCar];
         //调用viewModel的相关方法
         ShoppingCarViewController * shoppingCar = [[ShoppingCarViewController alloc] init];
         [self.navigationController pushViewController:shoppingCar animated:YES];

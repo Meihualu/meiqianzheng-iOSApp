@@ -71,4 +71,9 @@
     self.count = count;
 }
 
+-(void)setCount:(NSInteger)count
+{
+    _count = count;
+    [_countField setText:[NSString stringWithFormat:@"%zd",count]];
+}
 @end

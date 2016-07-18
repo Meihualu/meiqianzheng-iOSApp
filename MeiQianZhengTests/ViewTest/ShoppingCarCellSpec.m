@@ -18,6 +18,9 @@ describe(@"ShoppingCarCell", ^{
             [[[ShoppingCarCell class] shouldNot] beNil];
         });
     });
+    context(@"", ^{
+        
+    });
 });
 
 SPEC_END

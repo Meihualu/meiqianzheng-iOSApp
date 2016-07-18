@@ -26,7 +26,6 @@
  */
 - (void)addNumberOfItem{
     self.model.count = self.model.count + 1;
-    NSLog(@"self.model.count = %zd\n",self.model.count);
 }
 
 /**
@@ -36,7 +35,6 @@
     if (self.model.count > 0) {
         self.model.count --;
     }
-    NSLog(@"self.model.count = %zd\n",self.model.count);
 }
 
 /**

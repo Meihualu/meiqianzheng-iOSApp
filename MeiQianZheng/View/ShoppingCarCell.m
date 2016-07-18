@@ -55,7 +55,6 @@
     _countView.layer.borderColor = kDefaultColor.CGColor;
     _countView.layer.borderWidth = 2.0f;
     [self.contentView addSubview:_countView];
-    
 }
 
 - (void)setModel:(CommodityModel *)model
