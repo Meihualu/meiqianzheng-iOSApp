@@ -18,7 +18,8 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kApplicationFrameHeight 64.0f
 #define baseUrl  @"https://meiqianzheng.herokuapp.com"
-#define pathPattern     @"products/"
+#define productsPattern     @"products/"
+#define orderPattern    @"order/"
 
 #define kDefaultBackgroundColor [UIColor colorWithRed:96.73 /255.0f green: 128.94/255.0f blue:128.96/255.0f alpha:1.0f]
 #define kDefaultColor [UIColor colorWithRed:93.73 /255.0f green: 111.94/255.0f blue:116.96/255.0f alpha:0.3f]

@@ -61,7 +61,7 @@
              https://meiqianzheng.herokuapp.com/products/food
              */
             /*
-            [HttpTool getWithBaseURL:baseUrl path:pathPattern params:nil success:^(id JSON) {
+            [HttpTool getWithBaseURL:baseUrl productsPattern params:nil success:^(id JSON) {
                 NSMutableArray * result = [[NSMutableArray alloc] init];
                 [result addObjectsFromArray:JSON];
                 NSLog(@"result = %@\n",result);

@@ -7,8 +7,11 @@
 //
 
 #import "SettlementViewController.h"
+#import "SettlementViewModel.h"
 
 @interface SettlementViewController ()
+
+@property (nonatomic,strong) SettlementViewModel * viewModel;
 
 @end
 
@@ -18,6 +21,12 @@
     [super viewDidLoad];
     self.title = @"结算清单";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    _viewModel = [[SettlementViewModel alloc] init];
+    
+    [self.viewModel settlementWithSettlementCallBack:^(NSString *result) {
+        NSLog(@"result = %@\n",result);
+    }];
 }
 
 @end

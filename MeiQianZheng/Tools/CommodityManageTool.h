@@ -16,6 +16,7 @@
 
 + (NSArray *)commoditiesWithCategory:(NSInteger )categoryId;
 + (NSArray *)commoditiesInShoppingCarWithCategory:(NSInteger)categoryId;
++ (NSArray *)commoditiesInShoppingCar;
 
 + (void)addCommodityInList:(CommodityModel *)item;
 + (void)addCommodityInShoppingCar:(CommodityModel *)item;

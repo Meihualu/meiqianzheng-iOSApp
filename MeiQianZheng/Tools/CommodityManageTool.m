@@ -193,6 +193,30 @@ static FMDatabase * _db;
     }
     return categories;
 }
+
++ (NSArray *)commoditiesInShoppingCar
+{
+    // 得到结果集
+    FMResultSet * set = [_db executeQuery:@"SELECT * FROM t_shoppingcar "];
+    // 不断往下取数据
+    NSMutableArray * commodities = [NSMutableArray array];
+    while (set.next) {
+        // 获得当前所指向的数据
+        CommodityModel * commodity = [[CommodityModel alloc] init];
+        commodity.barcode = [set stringForColumn:@"barcode"];
+        commodity.name = [set stringForColumn:@"name"];
+        commodity.unit = [set stringForColumn:@"unit"];
+        commodity.categoryId = [set intForColumn:@"categoryid"];
+        commodity.category = [set stringForColumn:@"category"];
+        commodity.price = [set doubleForColumn:@"price"];
+        commodity.promotionType = [NSArray arrayWithObject:[set stringForColumn:@"discountype"]];
+        commodity.subCategory = [set stringForColumn:@"subcategory"];
+        commodity.count = [set intForColumn:@"count"];
+        [commodities addObject:commodity];
+    }
+    return commodities;
+}
+
 /*
  *
  */
