@@ -26,7 +26,7 @@ const CGFloat bottomHeight = 60.0f;
 @property (nonatomic,strong) DetailTableViewDelegate * detailDelegate;
 @property (nonatomic,strong) DetailTableViewDataSource * detailDataSource;
 @property (nonatomic,strong) CommodityDetailViewModel * viewModel;
-
+@property (nonatomic,strong) UIButton * shoppingCarBtn;
 @end
 
 @implementation CommodityDetaiViewController
@@ -56,8 +56,10 @@ const CGFloat bottomHeight = 60.0f;
     [self.view addSubview:_tableView];
     [_tableView reloadData];
     
+    [self addShoppingCarBtn];
     [self addTableFooterView];
     [self addBottomView];
+    
     [self addSignals];
 }
 
@@ -89,6 +91,24 @@ const CGFloat bottomHeight = 60.0f;
         [self.navigationController pushViewController:shoppingCar animated:YES];
     }];
     
+    [[_shoppingCarBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        ShoppingCarViewController * shoppcingCar = [[ShoppingCarViewController alloc] init];
+        [self.navigationController pushViewController:shoppcingCar animated:YES];
+    }];
+    
+}
+
+- (void)addShoppingCarBtn
+{
+    UIImageView *customView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:customView.bounds];
+    [customView addSubview:button];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(8, 8, 8, 8)];
+    [button setImage:[UIImage imageNamed:@"shoppingcar"] forState:UIControlStateNormal];
+    _shoppingCarBtn = button;
+    UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithCustomView:customView];
+    self.navigationItem.rightBarButtonItem = right;
 }
 
 - (void)addTableFooterView
@@ -124,7 +144,6 @@ const CGFloat bottomHeight = 60.0f;
     [footerView addSubview:_addItemBtn];
     [footerView addSubview:_reduceItemBtn];
     self.tableView.tableFooterView = footerView;
-    
     
     [footerView setBackgroundColor:[UIColor whiteColor]];
 }

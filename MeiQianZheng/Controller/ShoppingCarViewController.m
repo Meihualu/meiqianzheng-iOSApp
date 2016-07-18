@@ -7,11 +7,13 @@
 //
 
 #import "ShoppingCarViewController.h"
+#import "SettlementViewController.h"
 #import "YiRefreshHeader.h"
 #import "YiRefreshFooter.h"
 #import "ShoppingCarViewModel.h"
 #import "ShoppingCarTableViewDelegate.h"
 #import "ShoppingCarTableViewDataSource.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface ShoppingCarViewController ()
 {
@@ -24,7 +26,7 @@
     ShoppingCarViewModel         * _shoppingCarViewModel;
     
     UITableView              * _tableView;
-    
+    UIButton                  * _settlement;
     ShoppingCarTableViewDataSource       * _tableViewDataSource;
     ShoppingCarTableViewDelegate         * _tableViewDelegate;
 }
@@ -72,7 +74,29 @@
         __strong typeof(self) strongSelf = weakSelf;
         [strongSelf footerRefreshAction];
     };
-    
+    [self addSettlementCarBtn];
+    [self addSignals];
+}
+
+- (void)addSettlementCarBtn
+{
+    UIImageView *customView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:customView.bounds];
+    [customView addSubview:button];
+    [button setTitle:@"结算" forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:13.0f]];
+    _settlement = button;
+    UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithCustomView:customView];
+    self.navigationItem.rightBarButtonItem = right;
+}
+
+- (void)addSignals
+{
+    [[_settlement rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        SettlementViewController * settlement = [[SettlementViewController alloc] init];
+        [self.navigationController pushViewController:settlement animated:YES];
+    }];
 }
 
 - (void)headerRefreshAction

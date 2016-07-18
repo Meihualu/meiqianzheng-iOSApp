@@ -32,7 +32,9 @@ describe(@"CommodityListViewController", ^{
         });
     });
     
-    
+    context(@"", ^{
+        
+    });
     
 });
 

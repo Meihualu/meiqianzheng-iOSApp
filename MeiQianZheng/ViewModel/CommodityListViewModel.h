@@ -17,5 +17,4 @@ typedef void (^callback) (NSArray *category , NSArray*dataSource);
 //tableView底部刷新的网络请求
 - (void)footerRefreshRequestWithCallback:(callback)callback;
 
-
 @end

@@ -31,6 +31,12 @@ describe(@"CommodityDetaiViewController", ^{
             [[controller shouldNot] beNil];
         });
     });
+    
+    
+    context(@"", ^{
+        
+    });
+    
 });
 
 SPEC_END

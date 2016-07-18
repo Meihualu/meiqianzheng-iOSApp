@@ -86,7 +86,6 @@ static FMDatabase * _db;
     [_db executeUpdateWithFormat:@"INSERT INTO t_commodity_list (barcode,name,unit,categoryid,category,subcategory,price,discountype) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType[0]];
 }
 
-
 + (void)addCommodityInShoppingCar:(CommodityModel *)item {
     //1.首先到t_shoppingcar中查询，看是否已存在该item
     //得到结果集

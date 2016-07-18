@@ -7,10 +7,11 @@
 //
 
 #import "CommodityListViewController.h"
+#import "ShoppingCarViewController.h"
 #import "YiRefreshHeader.h"
 #import "YiRefreshFooter.h"
 #import "CommodityListViewModel.h"
-
+#import <ReactiveCocoa/ReactiveCocoa.h>
 #import "ListTableViewDataSource.h"
 #import "ListTableViewDelegate.h"
 
@@ -25,7 +26,7 @@
     CommodityListViewModel           * _tableViewModel;
     
     UITableView              * _tableView;
-    
+    UIButton                  * _shoppingCarBtn;
     ListTableViewDataSource       * _tableViewDataSource;
     ListTableViewDelegate         * _tableViewDelegate;
 }
@@ -73,7 +74,34 @@
         __strong typeof(self) strongSelf = weakSelf;
         [strongSelf footerRefreshAction];
     };
-    
+    [self addShoppingCarBtn];
+    [self addSignals];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+- (void)addShoppingCarBtn
+{
+    UIImageView *customView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setFrame:customView.bounds];
+    [customView addSubview:button];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(8, 8, 8, 8)];
+    [button setImage:[UIImage imageNamed:@"shoppingcar"] forState:UIControlStateNormal];
+    _shoppingCarBtn = button;
+    UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithCustomView:customView];
+    self.navigationItem.rightBarButtonItem = right;
+}
+
+- (void)addSignals
+{
+    [[_shoppingCarBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        ShoppingCarViewController * shoppcingCar = [[ShoppingCarViewController alloc] init];
+        [self.navigationController pushViewController:shoppcingCar animated:YES];
+    }];
 }
 
 - (void)headerRefreshAction
