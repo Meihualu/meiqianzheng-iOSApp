@@ -13,7 +13,7 @@
 SPEC_BEGIN(ShoppingCarViewModelSpec)
 
 describe(@"ShoppingCarViewModel", ^{
-    context(@"when create", ^{
+    context(@"when create ", ^{
         __block ShoppingCarViewModel * viewModel = nil;
         beforeEach(^{
             viewModel = [[ShoppingCarViewModel alloc] init];
@@ -27,7 +27,7 @@ describe(@"ShoppingCarViewModel", ^{
             [[[ShoppingCarViewModel class] shouldNot] beNil];
         });
         
-        it(@"should exist viewModel", ^{
+        it(@"should exist viewModel ", ^{
             [[viewModel shouldNot] beNil];
         });
         

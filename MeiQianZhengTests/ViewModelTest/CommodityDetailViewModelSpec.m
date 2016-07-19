@@ -83,10 +83,7 @@ describe(@"CommodityDetailViewModel", ^{
             NSString * info = [NSString stringWithFormat:@"已成功将商品添加进购物车：商品名：%@ 数量：%zd",viewModel.model.name,viewModel.model.count];
             [[prompt should] equal:info];
         });
-        
     });
-    
-    
     
 });
 

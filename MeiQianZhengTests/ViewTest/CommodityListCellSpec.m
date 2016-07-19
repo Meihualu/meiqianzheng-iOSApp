@@ -13,7 +13,7 @@
 SPEC_BEGIN(CommodityListCellSpec)
 
 describe(@"CommodityListCell", ^{
-    context(@"when create CommodityListCell ", ^{
+    context(@"when create CommodityListCell", ^{
         __block CommodityListCell * cell = nil;
         __block UITableView * table = nil;
         beforeEach(^{

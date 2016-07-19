@@ -39,7 +39,7 @@
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeBottom | UIRectEdgeLeft | UIRectEdgeRight;
     
-    self.title=@"商品列表";
+    self.title=@"购物车";
     self.view.backgroundColor=[UIColor whiteColor];
     
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, kScreenHeight - 64) style:UITableViewStyleGrouped];
@@ -50,6 +50,7 @@
     _tableViewDelegate.navController = self.navigationController;
     _tableView.dataSource = _tableViewDataSource;
     _tableView.delegate = _tableViewDelegate;
+    _tableViewDataSource.refreshHeader = _refreshHeader;
     
     _shoppingCarViewModel = [[ShoppingCarViewModel alloc] init];
     _totalSource = 0;
@@ -99,6 +100,7 @@
         SettlementViewController * settlement = [[SettlementViewController alloc] initWithCommodities:_tableViewDataSource.dataSource];
         [self.navigationController pushViewController:settlement animated:YES];
     }];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(headerRefreshAction) name:kNotificationDeleteFromShoppingCar object:nil];
 }
 
 - (void)headerRefreshAction

@@ -20,6 +20,7 @@
 
 + (void)addCommodityInList:(CommodityModel *)item;
 + (void)addCommodityInShoppingCar:(CommodityModel *)item;
++ (void)addCommodityInShoppingCarAddOneOrReduceOne:(CommodityModel *)item ;
 
 + (BOOL)isDiscountCommodity:(CommodityModel *)item;
 + (void) addDiscount_3:(NSArray *)barcodeArray;

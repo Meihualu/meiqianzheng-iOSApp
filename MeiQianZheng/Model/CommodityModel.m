@@ -42,7 +42,7 @@
 }
 
 -(NSString *)description {
-    NSString * desc = [NSString stringWithFormat:@"name = %@,unit = %@,price = %f,category = %@,subCategory = %@，count = %zd\n",self.name,self.unit,self.price,self.category,self.subCategory,self.count];
+    NSString * desc = [NSString stringWithFormat:@"barcode = %@,name = %@,unit = %@,price = %f,category = %@,subCategory = %@，count = %zd\n",self.barcode,self.name,self.unit,self.price,self.category,self.subCategory,self.count];
     return desc;
 }
 

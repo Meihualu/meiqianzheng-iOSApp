@@ -13,7 +13,7 @@
 SPEC_BEGIN(CommodityDetailCellSpec)
 
 describe(@"CommodityDetailCell", ^{
-    context(@"when create CommodityListCell ", ^{
+    context(@"when create CommodityListCell", ^{
         it(@"should exist class CommodityDetailCell", ^{
             [[[CommodityDetailCell class] shouldNot] beNil];
         });

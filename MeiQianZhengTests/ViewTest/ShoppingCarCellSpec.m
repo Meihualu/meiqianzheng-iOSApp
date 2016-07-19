@@ -18,7 +18,8 @@ describe(@"ShoppingCarCell", ^{
             [[[ShoppingCarCell class] shouldNot] beNil];
         });
     });
-    context(@"", ^{
+    
+    context(@" ", ^{
         
     });
 });

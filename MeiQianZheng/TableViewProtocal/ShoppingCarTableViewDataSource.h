@@ -7,11 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YiRefreshHeader.h"
 
 @interface ShoppingCarTableViewDataSource : NSObject<UITableViewDataSource>
 
 @property (nonatomic,strong) NSArray * dataSource;
 @property (nonatomic,strong) NSArray * categories;
-
+@property (nonatomic,strong) YiRefreshHeader * refreshHeader;
 @end
 

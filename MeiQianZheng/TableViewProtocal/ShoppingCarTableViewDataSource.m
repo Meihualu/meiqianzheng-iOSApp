@@ -39,5 +39,14 @@
     return model.category;
 }
 
+#pragma mark 删除按钮的显示
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSMutableArray * rows = _dataSource[indexPath.section];
+    CommodityModel * model = [rows objectAtIndex:indexPath.row];
+    if(editingStyle == UITableViewCellEditingStyleDelete){
+        [CommodityManageTool deleteCommodityFromShoppingCar:model];
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationDeleteFromShoppingCar object:nil];
+    }
+}
 @end
 

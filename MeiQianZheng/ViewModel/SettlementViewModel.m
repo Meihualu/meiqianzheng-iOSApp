@@ -20,7 +20,6 @@
 
 -(void)setShoppingcarCommodities:(NSArray *)shoppingcarCommodities
 {
-    NSLog(@"shoppingcarCommodities = %@\n",shoppingcarCommodities);
     [_shoppingcarCommodities removeAllObjects];
     for (NSArray * arr in shoppingcarCommodities) {
         for (CommodityModel * model in arr) {
@@ -28,8 +27,6 @@
             [CommodityManageTool addCommodityInShoppingCar:model];
         }
     }
-    NSLog(@"shoppingcarCommodities = %@\n",shoppingcarCommodities);
-    NSLog(@"_shoppingcarCommodities = %@\n",_shoppingcarCommodities);
 }
 
 - (void)settlementWithSettlementCallBack:(settlementCallBack)callback
@@ -52,7 +49,6 @@
         }
     }
     orders = [NSString stringWithFormat:@"%@]",orders];
-//    NSString * orders = [self toNSStringWithNSArray:params];
     NSDictionary * param = @{@"order":orders};
     NSLog(@"param = %@\n",param);
     

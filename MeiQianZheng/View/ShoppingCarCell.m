@@ -59,6 +59,7 @@
     
     RAC(_priceLabel,text) = [RACObserve(_countView, count) map:^id(id count) {
         [self setCount];
+        [CommodityManageTool addCommodityInShoppingCarAddOneOrReduceOne:_model];
         return [NSString stringWithFormat:@"%.02f",[count integerValue] * _model.price];
     }];
     
@@ -69,10 +70,16 @@
     _model = model;
     [_nameLabel setText:model.name];
     [_priceLabel setText:[NSString stringWithFormat:@"%.02f",model.price * model.count]];
-    if (model.promotionType.count > 0) {
-        _promotionImageView.backgroundColor = [UIColor redColor];
+    if (model.promotionType.count == 1) {
+        if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
+            [_promotionImageView setImage:[UIImage imageNamed:@"21"]];
+        } else {
+            [_promotionImageView setImage:[UIImage imageNamed:@"95"]];
+        }
+    } else if(model.promotionType.count == 2){
+        [_promotionImageView setImage:[UIImage imageNamed:@""]];
     } else {
-        _promotionImageView.backgroundColor = [UIColor whiteColor];
+        [_promotionImageView setImage:[UIImage imageNamed:@""]];
     }
     _countView.count = _model.count;
 }
