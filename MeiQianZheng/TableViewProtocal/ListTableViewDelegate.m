@@ -7,7 +7,7 @@
 //
 
 #import "ListTableViewDelegate.h"
-
+#import "CommodityModel.h"
 @implementation ListTableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -27,4 +27,5 @@
 {
     return 5.0f;
 }
+
 @end

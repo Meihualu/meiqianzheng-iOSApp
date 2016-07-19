@@ -39,5 +39,4 @@
     return model.category;
 }
 
-
 @end

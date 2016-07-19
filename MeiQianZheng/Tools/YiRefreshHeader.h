@@ -11,15 +11,11 @@
 
 typedef void (^BeginRefreshingBlock)(void);
 
-
-
 @interface YiRefreshHeader : NSObject
 @property UIScrollView *scrollView;
 @property (nonatomic, copy) BeginRefreshingBlock beginRefreshingBlock;
 
 -(void)header;
-
-
 -(void)endRefreshing;
 -(void)beginRefreshing;
 

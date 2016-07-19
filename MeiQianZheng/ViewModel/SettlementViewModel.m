@@ -7,7 +7,6 @@
 //
 
 #import "SettlementViewModel.h"
-#import "SBJson.h"
 
 @implementation SettlementViewModel
 -(instancetype)init

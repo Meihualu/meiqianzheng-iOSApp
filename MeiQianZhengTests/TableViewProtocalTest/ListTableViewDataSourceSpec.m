@@ -8,7 +8,7 @@
 
 #import <Kiwi/Kiwi.h>
 #import "ListTableViewDataSource.h"
-
+#import "CommodityModel.h"
 
 SPEC_BEGIN(ListTableViewDataSourceSpec)
 
@@ -30,6 +30,34 @@ describe(@"ListTableViewDataSource", ^{
         it(@"should exist dataSource", ^{
             [[dataSource shouldNot] beNil];
         });
+        
+        /*
+         -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+         {
+         return _categories.count;
+         }
+         */
+        it(@"should return the number of items in dataSource", ^{
+            NSMutableArray * array = [NSMutableArray array];
+            for (int i = 0; i < 20; i ++) {
+                
+                CommodityModel * item = [[CommodityModel alloc] initWithBarcode:[NSString stringWithFormat:@"mybarcode%zd",i]
+                                                                           name:[NSString stringWithFormat:@"myname%zd",i]
+                                                                           unit:[NSString stringWithFormat:@"myunit%zd",i]
+                                                                       category:[NSString stringWithFormat:@"mycategory%zd",i]
+                                                                     categoryId:i
+                                                                    subCategory:[NSString stringWithFormat:@"mysubcategory%zd",i]
+                                                                          price:100.0f promotionType: [NSArray arrayWithObjects:@"man3mian1", @"ceshiceshi", nil]
+                                                                          count:i];
+                [array addObject:item];
+                
+            }
+            
+            dataSource.categories = array;
+            NSInteger count = [dataSource numberOfSectionsInTableView:[UITableView mock]];
+            [[theValue(count) should] equal:theValue(array.count)];
+        });
+        
     });
 });
 

@@ -92,7 +92,7 @@
     [_categoryLabel setText:model.category];
     [_priceLabel setText:[NSString stringWithFormat:@"%.02f元/%@",model.price,model.unit]];
     if (model.promotionType.count == 1) {
-        if ([model.promotionType[0] isEqualToString:@""]) {
+        if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
             [_promotionImageView setImage:[UIImage imageNamed:@"21"]];
         } else {
             [_promotionImageView setImage:[UIImage imageNamed:@"95"]];

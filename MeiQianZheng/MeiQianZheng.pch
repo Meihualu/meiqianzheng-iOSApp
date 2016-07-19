@@ -31,7 +31,7 @@
 #define AFNETWORKING_ALLOW_INVALID_SSL_CERTIFICATES
 #import "HttpTool.h"
 #import "CommodityModel.h"
-
+#import "Alert.h"
 const static CGFloat kMargin = 10.0f;
 const static CGFloat kDetailCellHeight = 40.0f;
 const static CGFloat kDetailCellWidth = 100.0f;

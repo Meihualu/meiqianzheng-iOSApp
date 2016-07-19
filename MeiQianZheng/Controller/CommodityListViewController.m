@@ -130,7 +130,11 @@
         _tableViewDataSource.categories = _categories;
         _tableViewDelegate.array=_totalSource;
         [_refreshFooter endRefreshing];
-        [_tableView reloadData];
+        if (categories.count == 0) {
+            [Alert showAlert:@"暂无更新"];
+        }else{
+            [_tableView reloadData];
+        }
     }];
 }
 
