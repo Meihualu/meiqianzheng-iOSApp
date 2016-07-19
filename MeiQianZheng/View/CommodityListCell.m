@@ -91,10 +91,16 @@
     [_nameLabel setText:model.name];
     [_categoryLabel setText:model.category];
     [_priceLabel setText:[NSString stringWithFormat:@"%.02f元/%@",model.price,model.unit]];
-    if (model.promotionType.count > 0) {
-        _promotionImageView.backgroundColor = [UIColor redColor];
+    if (model.promotionType.count == 1) {
+        if ([model.promotionType[0] isEqualToString:@""]) {
+            [_promotionImageView setImage:[UIImage imageNamed:@"21"]];
+        } else {
+            [_promotionImageView setImage:[UIImage imageNamed:@"95"]];
+        }
+    } else if(model.promotionType.count == 2){
+        [_promotionImageView setImage:[UIImage imageNamed:@""]];
     } else {
-        _promotionImageView.backgroundColor = [UIColor whiteColor];
+        [_promotionImageView setImage:[UIImage imageNamed:@""]];
     }
 }
 

@@ -45,7 +45,6 @@
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"+++++++error.localizedDescription = %@",error.localizedDescription);
         NSLog(@"statusCode = %zd\n",response.statusCode);
-        NSLog(@"JSON = %@\n",JSON);
         failure(JSON);
     }];
     

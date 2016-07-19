@@ -13,7 +13,7 @@
 #import "CommodityDetailViewModel.h"
 #import "ShoppingCarViewController.h"
 
-const CGFloat bottomHeight = 60.0f;
+const CGFloat bottomHeight = 50.0f;
 
 @interface CommodityDetaiViewController ()
 
@@ -104,7 +104,6 @@ const CGFloat bottomHeight = 60.0f;
         ShoppingCarViewController * shoppcingCar = [[ShoppingCarViewController alloc] init];
         [self.navigationController pushViewController:shoppcingCar animated:YES];
     }];
-    
 }
 
 - (void)addShoppingCarBtn
@@ -161,12 +160,12 @@ const CGFloat bottomHeight = 60.0f;
 - (void) addBottomView
 {
     UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_tableView.frame) + kMargin, kViewWidth, bottomHeight)];
-    view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
     _addToShoppingCar = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kViewWidth / 2, bottomHeight)];
-    [_addToShoppingCar setTitle:@"加入购物车" forState:UIControlStateNormal];
+    [_addToShoppingCar setBackgroundImage:[UIImage imageNamed:@"addshoppingcar"] forState:UIControlStateNormal];
+    
     _purchase = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_addToShoppingCar.frame), 0, kViewWidth / 2, bottomHeight)];
-    [_purchase setTitle:@"立即购买" forState:UIControlStateNormal];
+    [_purchase setBackgroundImage:[UIImage imageNamed:@"purchase"] forState:UIControlStateNormal];
     [view addSubview:_addToShoppingCar];
     [view addSubview:_purchase];
 }

@@ -16,6 +16,22 @@
 		7A271FE91D369D6A003DA7EF /* MeiQianZhengTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */; };
 		7A271FF41D369D6A003DA7EF /* MeiQianZhengUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FF31D369D6A003DA7EF /* MeiQianZhengUITests.m */; };
 		7A2720041D36A003003DA7EF /* SimpleStringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2720031D36A003003DA7EF /* SimpleStringSpec.m */; };
+		7A6BE6331D3DBC1B0034C59B /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE61B1D3DBC1B0034C59B /* NSObject+SBJson.m */; };
+		7A6BE6341D3DBC1B0034C59B /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE61E1D3DBC1B0034C59B /* SBJsonParser.m */; };
+		7A6BE6351D3DBC1B0034C59B /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE6201D3DBC1B0034C59B /* SBJsonStreamParser.m */; };
+		7A6BE6361D3DBC1B0034C59B /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE6221D3DBC1B0034C59B /* SBJsonStreamParserAccumulator.m */; };
+		7A6BE6371D3DBC1B0034C59B /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE6241D3DBC1B0034C59B /* SBJsonStreamParserAdapter.m */; };
+		7A6BE6381D3DBC1B0034C59B /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE6261D3DBC1B0034C59B /* SBJsonStreamParserState.m */; };
+		7A6BE6391D3DBC1B0034C59B /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE6281D3DBC1B0034C59B /* SBJsonStreamWriter.m */; };
+		7A6BE63A1D3DBC1B0034C59B /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE62A1D3DBC1B0034C59B /* SBJsonStreamWriterAccumulator.m */; };
+		7A6BE63B1D3DBC1B0034C59B /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE62C1D3DBC1B0034C59B /* SBJsonStreamWriterState.m */; };
+		7A6BE63C1D3DBC1B0034C59B /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE62E1D3DBC1B0034C59B /* SBJsonTokeniser.m */; };
+		7A6BE63D1D3DBC1B0034C59B /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE6301D3DBC1B0034C59B /* SBJsonUTF8Stream.m */; };
+		7A6BE63E1D3DBC1B0034C59B /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6BE6321D3DBC1B0034C59B /* SBJsonWriter.m */; };
+		7A6BE6451D3DC1060034C59B /* 95.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BE6431D3DC1060034C59B /* 95.png */; };
+		7A6BE6461D3DC1060034C59B /* 21.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BE6441D3DC1060034C59B /* 21.png */; };
+		7A6BE6491D3DC4E70034C59B /* addshoppingcar.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BE6471D3DC4E70034C59B /* addshoppingcar.png */; };
+		7A6BE64A1D3DC4E70034C59B /* purchase.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BE6481D3DC4E70034C59B /* purchase.png */; };
 		7AB4DD2A1D3B9CA20071FAFB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD1F1D3B9CA20071FAFB /* FMDatabase.m */; };
 		7AB4DD2B1D3B9CA20071FAFB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD211D3B9CA20071FAFB /* FMDatabaseAdditions.m */; };
 		7AB4DD2C1D3B9CA20071FAFB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD231D3B9CA20071FAFB /* FMDatabasePool.m */; };
@@ -653,6 +669,35 @@
 		7A2722171D36A249003DA7EF /* CJSONSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJSONSerializer.h; sourceTree = "<group>"; };
 		7A2722181D36A249003DA7EF /* CJSONSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJSONSerializer.m; sourceTree = "<group>"; };
 		7A2722191D36A249003DA7EF /* JSONRepresentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
+		7A6BE61A1D3DBC1B0034C59B /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		7A6BE61B1D3DBC1B0034C59B /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		7A6BE61C1D3DBC1B0034C59B /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		7A6BE61D1D3DBC1B0034C59B /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		7A6BE61E1D3DBC1B0034C59B /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		7A6BE61F1D3DBC1B0034C59B /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		7A6BE6201D3DBC1B0034C59B /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		7A6BE6211D3DBC1B0034C59B /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		7A6BE6221D3DBC1B0034C59B /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		7A6BE6231D3DBC1B0034C59B /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		7A6BE6241D3DBC1B0034C59B /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		7A6BE6251D3DBC1B0034C59B /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		7A6BE6261D3DBC1B0034C59B /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		7A6BE6271D3DBC1B0034C59B /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		7A6BE6281D3DBC1B0034C59B /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		7A6BE6291D3DBC1B0034C59B /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		7A6BE62A1D3DBC1B0034C59B /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		7A6BE62B1D3DBC1B0034C59B /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		7A6BE62C1D3DBC1B0034C59B /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		7A6BE62D1D3DBC1B0034C59B /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		7A6BE62E1D3DBC1B0034C59B /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		7A6BE62F1D3DBC1B0034C59B /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		7A6BE6301D3DBC1B0034C59B /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		7A6BE6311D3DBC1B0034C59B /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		7A6BE6321D3DBC1B0034C59B /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		7A6BE6431D3DC1060034C59B /* 95.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 95.png; sourceTree = "<group>"; };
+		7A6BE6441D3DC1060034C59B /* 21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 21.png; sourceTree = "<group>"; };
+		7A6BE6471D3DC4E70034C59B /* addshoppingcar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addshoppingcar.png; sourceTree = "<group>"; };
+		7A6BE6481D3DC4E70034C59B /* purchase.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = purchase.png; sourceTree = "<group>"; };
 		7AB4DD1E1D3B9CA20071FAFB /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		7AB4DD1F1D3B9CA20071FAFB /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		7AB4DD201D3B9CA20071FAFB /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -1660,6 +1705,38 @@
 			path = JSON;
 			sourceTree = "<group>";
 		};
+		7A6BE6191D3DBC1B0034C59B /* SBJson */ = {
+			isa = PBXGroup;
+			children = (
+				7A6BE61A1D3DBC1B0034C59B /* NSObject+SBJson.h */,
+				7A6BE61B1D3DBC1B0034C59B /* NSObject+SBJson.m */,
+				7A6BE61C1D3DBC1B0034C59B /* SBJson.h */,
+				7A6BE61D1D3DBC1B0034C59B /* SBJsonParser.h */,
+				7A6BE61E1D3DBC1B0034C59B /* SBJsonParser.m */,
+				7A6BE61F1D3DBC1B0034C59B /* SBJsonStreamParser.h */,
+				7A6BE6201D3DBC1B0034C59B /* SBJsonStreamParser.m */,
+				7A6BE6211D3DBC1B0034C59B /* SBJsonStreamParserAccumulator.h */,
+				7A6BE6221D3DBC1B0034C59B /* SBJsonStreamParserAccumulator.m */,
+				7A6BE6231D3DBC1B0034C59B /* SBJsonStreamParserAdapter.h */,
+				7A6BE6241D3DBC1B0034C59B /* SBJsonStreamParserAdapter.m */,
+				7A6BE6251D3DBC1B0034C59B /* SBJsonStreamParserState.h */,
+				7A6BE6261D3DBC1B0034C59B /* SBJsonStreamParserState.m */,
+				7A6BE6271D3DBC1B0034C59B /* SBJsonStreamWriter.h */,
+				7A6BE6281D3DBC1B0034C59B /* SBJsonStreamWriter.m */,
+				7A6BE6291D3DBC1B0034C59B /* SBJsonStreamWriterAccumulator.h */,
+				7A6BE62A1D3DBC1B0034C59B /* SBJsonStreamWriterAccumulator.m */,
+				7A6BE62B1D3DBC1B0034C59B /* SBJsonStreamWriterState.h */,
+				7A6BE62C1D3DBC1B0034C59B /* SBJsonStreamWriterState.m */,
+				7A6BE62D1D3DBC1B0034C59B /* SBJsonTokeniser.h */,
+				7A6BE62E1D3DBC1B0034C59B /* SBJsonTokeniser.m */,
+				7A6BE62F1D3DBC1B0034C59B /* SBJsonUTF8Stream.h */,
+				7A6BE6301D3DBC1B0034C59B /* SBJsonUTF8Stream.m */,
+				7A6BE6311D3DBC1B0034C59B /* SBJsonWriter.h */,
+				7A6BE6321D3DBC1B0034C59B /* SBJsonWriter.m */,
+			);
+			path = SBJson;
+			sourceTree = "<group>";
+		};
 		7AB4DD1D1D3B9CA20071FAFB /* FMDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -1682,7 +1759,11 @@
 		7AB4DD571D3C6ED20071FAFB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7A6BE6431D3DC1060034C59B /* 95.png */,
+				7A6BE6441D3DC1060034C59B /* 21.png */,
 				7AB4DD581D3C6EF50071FAFB /* shoppingcar.png */,
+				7A6BE6471D3DC4E70034C59B /* addshoppingcar.png */,
+				7A6BE6481D3DC4E70034C59B /* purchase.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1790,6 +1871,7 @@
 		7AD62F0D1D3A7D18006FDBCC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				7A6BE6191D3DBC1B0034C59B /* SBJson */,
 				7AB4DD1D1D3B9CA20071FAFB /* FMDB */,
 				7AD62F201D3A8AD9006FDBCC /* HttpTool.h */,
 				7AD62F211D3A8AD9006FDBCC /* HttpTool.m */,
@@ -2031,7 +2113,11 @@
 				7AB4DD2F1D3B9CA20071FAFB /* Info.plist in Resources */,
 				7A271FDE1D369D6A003DA7EF /* LaunchScreen.storyboard in Resources */,
 				7A271FDB1D369D6A003DA7EF /* Assets.xcassets in Resources */,
+				7A6BE6451D3DC1060034C59B /* 95.png in Resources */,
+				7A6BE64A1D3DC4E70034C59B /* purchase.png in Resources */,
+				7A6BE6491D3DC4E70034C59B /* addshoppingcar.png in Resources */,
 				7A271FD91D369D6A003DA7EF /* Main.storyboard in Resources */,
+				7A6BE6461D3DC1060034C59B /* 21.png in Resources */,
 				7AB4DD591D3C6EF50071FAFB /* shoppingcar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2150,6 +2236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A6BE6351D3DBC1B0034C59B /* SBJsonStreamParser.m in Sources */,
 				7AD62F1F1D3A7D18006FDBCC /* CommodityListViewModel.m in Sources */,
 				7AB4DD611D3C84850071FAFB /* SettlementViewModel.m in Sources */,
 				7AD62F1A1D3A7D18006FDBCC /* ListTableViewDataSource.m in Sources */,
@@ -2157,7 +2244,12 @@
 				7AD62F1E1D3A7D18006FDBCC /* CommodityListCell.m in Sources */,
 				7AB4DD371D3BA40E0071FAFB /* ShoppingCarViewController.m in Sources */,
 				7AB4DD461D3BC2ED0071FAFB /* CommodityCountView.m in Sources */,
+				7A6BE6341D3DBC1B0034C59B /* SBJsonParser.m in Sources */,
+				7A6BE63B1D3DBC1B0034C59B /* SBJsonStreamWriterState.m in Sources */,
+				7A6BE6381D3DBC1B0034C59B /* SBJsonStreamParserState.m in Sources */,
 				7AB4DD2A1D3B9CA20071FAFB /* FMDatabase.m in Sources */,
+				7A6BE6361D3DBC1B0034C59B /* SBJsonStreamParserAccumulator.m in Sources */,
+				7A6BE6331D3DBC1B0034C59B /* NSObject+SBJson.m in Sources */,
 				7AD62F181D3A7D18006FDBCC /* CommodityListViewController.m in Sources */,
 				7AD62F2C1D3B1771006FDBCC /* DetailTableViewDelegate.m in Sources */,
 				7AB4DD341D3B9E510071FAFB /* CommodityDetaiViewController.m in Sources */,
@@ -2165,18 +2257,23 @@
 				7AB4DD6E1D3CC4430071FAFB /* SelectRoleViewController.m in Sources */,
 				7AB4DD451D3BC2ED0071FAFB /* Alert.m in Sources */,
 				7AB4DD2E1D3B9CA20071FAFB /* FMResultSet.m in Sources */,
+				7A6BE63D1D3DBC1B0034C59B /* SBJsonUTF8Stream.m in Sources */,
 				7A271FD31D369D6A003DA7EF /* AppDelegate.m in Sources */,
 				7AB4DD711D3CC4E90071FAFB /* SalesclerkManageViewController.m in Sources */,
 				7AD62F2F1D3B177E006FDBCC /* CommodityDetailCell.m in Sources */,
+				7A6BE6371D3DBC1B0034C59B /* SBJsonStreamParserAdapter.m in Sources */,
 				7AB4DD3D1D3BA5F50071FAFB /* CommodityManageTool.m in Sources */,
 				7AB4DD741D3CC5220071FAFB /* SelectRoleViewModel.m in Sources */,
 				7AD62F1C1D3A7D18006FDBCC /* YiRefreshFooter.m in Sources */,
 				7A271FD01D369D6A003DA7EF /* main.m in Sources */,
 				7AB4DD771D3CD8AC0071FAFB /* CommodityCountViewModel.m in Sources */,
 				7AD62F1B1D3A7D18006FDBCC /* ListTableViewDelegate.m in Sources */,
+				7A6BE63C1D3DBC1B0034C59B /* SBJsonTokeniser.m in Sources */,
+				7A6BE63A1D3DBC1B0034C59B /* SBJsonStreamWriterAccumulator.m in Sources */,
 				7AD62F1D1D3A7D18006FDBCC /* YiRefreshHeader.m in Sources */,
 				7AB4DD5C1D3C71F30071FAFB /* SettlementViewController.m in Sources */,
 				7AB4DD521D3BD8A30071FAFB /* ShoppingCarTableViewDataSource.m in Sources */,
+				7A6BE63E1D3DBC1B0034C59B /* SBJsonWriter.m in Sources */,
 				7AD62F2B1D3B1771006FDBCC /* DetailTableViewDataSource.m in Sources */,
 				7AB4DD2B1D3B9CA20071FAFB /* FMDatabaseAdditions.m in Sources */,
 				7AD62F191D3A7D18006FDBCC /* CommodityModel.m in Sources */,
@@ -2184,6 +2281,7 @@
 				7AB4DD2D1D3B9CA20071FAFB /* FMDatabaseQueue.m in Sources */,
 				7AB4DD2C1D3B9CA20071FAFB /* FMDatabasePool.m in Sources */,
 				7AD62F7B1D3B8AAB006FDBCC /* CommodityDetailViewModel.m in Sources */,
+				7A6BE6391D3DBC1B0034C59B /* SBJsonStreamWriter.m in Sources */,
 				7AB4DD401D3BC28C0071FAFB /* ShoppingCarCell.m in Sources */,
 				7AD62F221D3A8AD9006FDBCC /* HttpTool.m in Sources */,
 			);

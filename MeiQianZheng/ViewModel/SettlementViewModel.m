@@ -7,6 +7,7 @@
 //
 
 #import "SettlementViewModel.h"
+#import "SBJson.h"
 
 @implementation SettlementViewModel
 -(instancetype)init
@@ -57,36 +58,13 @@
     NSLog(@"param = %@\n",param);
     
     [HttpTool postWithBaseURL:baseUrl path:orderPattern params:param success:^(id JSON) {
-        NSString * result =[NSJSONSerialization JSONObjectWithStream:JSON options:NSJSONReadingMutableLeaves error:nil];
         NSLog(@"json = %@\n",JSON);
-        NSLog(@"result = %@\n",result);
-        callback(result);
+//        NSDictionary * result =[NSJSONSerialization JSONObjectWithStream:JSON options:NSJSONReadingAllowFragments error:nil];
+//        NSLog(@"result = %@\n",result);
+//        callback(result);
     } failure:^(NSError *error) {
         NSLog(@"结算失败%@\n",error.localizedDescription);
     }];
-    
-}
-
-// 将字典或者数组转化为JSON串
--(NSData *)toJSONData:(id)theData{
-    
-    NSError *error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:theData
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:&error];
-    
-    if ([jsonData length] || error == nil){
-        return jsonData;
-    }else{
-        return nil;
-    }
-}
-
--(NSString *)toNSStringWithNSArray:(NSArray *)dict {
-    NSData * jsonData = [self toJSONData:dict];
-    NSString *jsonString = [[NSString alloc] initWithData:jsonData
-                                                 encoding:NSUTF8StringEncoding];
-    return jsonString;
 }
 
 @end
