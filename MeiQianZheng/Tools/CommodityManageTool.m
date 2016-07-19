@@ -82,12 +82,21 @@ static FMDatabase * _db;
     
     //到t_category中查询，看是否已存在该category，如果没有则插入
     NSInteger categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
-    NSLog(@"categoryId = %zd\n",categoryId);
     if (categoryId == -1) {
        [_db executeUpdateWithFormat:@"INSERT INTO t_category (category) VALUES (%@);",item.category];
        categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
     }
-    [_db executeUpdateWithFormat:@"INSERT INTO t_commodity_list (barcode,name,unit,categoryid,category,subcategory,price,discountype) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0]];
+    
+    NSString * promotionType = @"";
+    if (item.promotionType.count > 0) {
+        promotionType = item.promotionType[0];
+        if (item.promotionType.count > 1) {
+            promotionType = @"salesAll";
+        }
+    }
+    
+    
+    [_db executeUpdateWithFormat:@"INSERT INTO t_commodity_list (barcode,name,unit,categoryid,category,subcategory,price,discountype) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType];
 }
 
 + (void)addCommodityInShoppingCarAddOneOrReduceOne:(CommodityModel *)item {
@@ -95,14 +104,21 @@ static FMDatabase * _db;
     //得到结果集
     FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE barcode = %@",item.barcode];
     NSInteger categoryId;
+    NSString * promotionType = @"";
+    if (item.promotionType.count > 0) {
+        promotionType = item.promotionType[0];
+        if (item.promotionType.count > 1) {
+            promotionType = @"salesAll";
+        }
+    }
     if (set.next) {
         [_db executeQueryWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = %@",item.barcode];
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
         
-        [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %ld WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0],item.count , item.barcode];
+        [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %ld WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,item.count , item.barcode];
     } else {
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
-        [_db executeUpdateWithFormat:@"INSERT INTO t_shoppingcar (barcode,name,unit,categoryid,category,subcategory,price,discountype,count) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@,%ld);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0],item.count];
+        [_db executeUpdateWithFormat:@"INSERT INTO t_shoppingcar (barcode,name,unit,categoryid,category,subcategory,price,discountype,count) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@,%ld);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,item.count];
     }
     [_db executeUpdateWithFormat:@"update t_category set isExistInShoppingCar = %d WHERE category = %@",1,item.category];
 }
@@ -112,15 +128,22 @@ static FMDatabase * _db;
     //得到结果集
     FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE barcode = %@",item.barcode];
     NSInteger categoryId;
+    NSString * promotionType = @"";
+    if (item.promotionType.count > 0) {
+        promotionType = item.promotionType[0];
+        if (item.promotionType.count > 1) {
+            promotionType = @"salesAll";
+        }
+    }
     if (set.next) {
         [_db executeQueryWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = %@",item.barcode];
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
         NSInteger count = [set intForColumn:@"count"];
         
-        [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %ld WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0],item.count + count , item.barcode];
+        [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %ld WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,item.count + count , item.barcode];
     } else {
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
-        [_db executeUpdateWithFormat:@"INSERT INTO t_shoppingcar (barcode,name,unit,categoryid,category,subcategory,price,discountype,count) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@,%ld);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,item.promotionType.count == 0?@"":item.promotionType[0],item.count];
+        [_db executeUpdateWithFormat:@"INSERT INTO t_shoppingcar (barcode,name,unit,categoryid,category,subcategory,price,discountype,count) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@,%ld);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,item.count];
     }
     [_db executeUpdateWithFormat:@"update t_category set isExistInShoppingCar = %d WHERE category = %@",1,item.category];
 }
@@ -168,10 +191,55 @@ static FMDatabase * _db;
     return commodities;
 }
 
++ (NSArray *)commoditiesWithCategory:(NSInteger)categoryId  promotionType:(NSString *)promotionType
+{
+    //得到结果集
+    FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_commodity_list WHERE categoryid = %ld and discountype = %@",categoryId,promotionType];
+    //不断往下取数据
+    NSMutableArray * commodities = [NSMutableArray array];
+    while (set.next) {
+        //获得当前所指向的数据
+        CommodityModel * commodity = [[CommodityModel alloc] init];
+        commodity.barcode = [set stringForColumn:@"barcode"];
+        commodity.name = [set stringForColumn:@"name"];
+        commodity.unit = [set stringForColumn:@"unit"];
+        commodity.categoryId = [set intForColumn:@"categoryid"];
+        commodity.category = [set stringForColumn:@"category"];
+        commodity.price = [set doubleForColumn:@"price"];
+        commodity.promotionType = [NSArray arrayWithObject:[set stringForColumn:@"discountype"]];
+        commodity.subCategory = [set stringForColumn:@"subcategory"];
+        [commodities addObject:commodity];
+    }
+    return commodities;
+}
+
++ (NSArray *)allSalesCommoditiesWithCategory:(NSInteger)categoryId
+{
+    //得到结果集
+    FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_commodity_list WHERE categoryid = %ld and  discountype != %@ ",categoryId,@""];
+    //不断往下取数据
+    NSMutableArray * commodities = [NSMutableArray array];
+    while (set.next) {
+        //获得当前所指向的数据
+        CommodityModel * commodity = [[CommodityModel alloc] init];
+        commodity.barcode = [set stringForColumn:@"barcode"];
+        commodity.name = [set stringForColumn:@"name"];
+        commodity.unit = [set stringForColumn:@"unit"];
+        commodity.categoryId = [set intForColumn:@"categoryid"];
+        commodity.category = [set stringForColumn:@"category"];
+        commodity.price = [set doubleForColumn:@"price"];
+        commodity.promotionType = [NSArray arrayWithObject:[set stringForColumn:@"discountype"]];
+        commodity.subCategory = [set stringForColumn:@"subcategory"];
+        [commodities addObject:commodity];
+    }
+    return commodities;
+}
+
+
 + (NSArray *)commoditiesInShoppingCarWithCategory:(NSInteger)categoryId
 {
     // 得到结果集
-    FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE categoryid = %ld",categoryId];
+    FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE categoryid = %ld ",categoryId];
     // 不断往下取数据
     NSMutableArray * commodities = [NSMutableArray array];
     while (set.next) {

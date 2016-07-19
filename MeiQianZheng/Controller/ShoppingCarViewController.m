@@ -121,14 +121,19 @@
 - (void)footerRefreshAction
 {
     [_shoppingCarViewModel footerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
-        _totalSource=[NSMutableArray arrayWithArray:dataSource];
-        _categories = [NSMutableArray arrayWithArray:categories];
-        
-        _tableViewDataSource.dataSource = _totalSource;
-        _tableViewDataSource.categories = _categories;
-        _tableViewDelegate.array=_totalSource;
+        if (categories.count == 0) {
+            [Alert showAlert:@"暂无更新"];
+        }else{
+            _totalSource=[NSMutableArray arrayWithArray:dataSource];
+            _categories = [NSMutableArray arrayWithArray:categories];
+            
+            _tableViewDataSource.dataSource = _totalSource;
+            _tableViewDataSource.categories = _categories;
+            _tableViewDelegate.array=_totalSource;
+            [_tableView reloadData];
+            
+        }
         [_refreshFooter endRefreshing];
-        [_tableView reloadData];
     }];
 }
 

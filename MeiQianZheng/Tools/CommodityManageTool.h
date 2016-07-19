@@ -15,6 +15,9 @@
 + (NSArray *)categoriesInShoppingCar;
 
 + (NSArray *)commoditiesWithCategory:(NSInteger )categoryId;
++ (NSArray *)commoditiesWithCategory:(NSInteger)categoryId  promotionType:(NSString *)promotionType;
++ (NSArray *)allSalesCommoditiesWithCategory:(NSInteger)categoryId;
+
 + (NSArray *)commoditiesInShoppingCarWithCategory:(NSInteger)categoryId;
 + (NSArray *)commoditiesInShoppingCar;
 

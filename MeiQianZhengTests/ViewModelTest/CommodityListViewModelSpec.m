@@ -50,18 +50,18 @@ describe(@"CommodityListViewModel", ^{
             refreshFooter = nil;
         });
         
-        it(@"the dataSource should not be nil after execute headerRefreshRequestWithCallback", ^{
+        it(@"should can be get nonil catef=gories and dataSource  after execute headerRefreshRequestWithCallback", ^{
             [viewModel headerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource) {
-//                [[array shouldNot] beNil];
-//                [[theValue(array.count) shouldNot] equal:theValue(0)];
+                [[categories shouldNot] beNil];
+                [[dataSource shouldNot] beNil];
                 [refreshHeader endRefreshing];
             }];
         });
         
-        it(@"the dataSource should not be nil after execute footerRefreshRequestWithCallback", ^{
+        it(@"should can be get nonil catef=gories and dataSource after execute footerRefreshRequestWithCallback", ^{
             [viewModel footerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource) {
-//                [[array shouldNot] beNil];
-//                [[theValue(array.count) shouldNot] equal:theValue(0)];
+                [[categories shouldNot] beNil];
+                [[dataSource shouldNot] beNil];
                 [refreshFooter endRefreshing];
             }];
         });

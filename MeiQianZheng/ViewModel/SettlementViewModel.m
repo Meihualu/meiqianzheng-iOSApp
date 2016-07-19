@@ -48,6 +48,7 @@
             orders = [NSString stringWithFormat:@"%@,'%@'",orders,barcode];
         }
     }
+    
     orders = [NSString stringWithFormat:@"%@]",orders];
     NSDictionary * param = @{@"order":orders};
     NSLog(@"param = %@\n",param);

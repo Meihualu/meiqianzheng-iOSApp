@@ -66,6 +66,7 @@
                     CommodityModel * item = [[CommodityModel alloc] initWithDict:dict];
                      [CommodityManageTool addCommodityInList:item];
                 }
+                
                 NSArray * categories = [CommodityManageTool categories];
                 
                 for (CommodityModel * item in categories) {
@@ -96,4 +97,29 @@
     });
 }
 
+-(void)filterCommoditiesWithPromotionType:(NSString *)promotionType callback:(callback)callback;
+{
+    [_dataSource removeAllObjects];
+    NSArray * categories = nil;
+    if ([promotionType isEqualToString:@"salesAll"]) {
+        categories = [CommodityManageTool categories];
+        for (CommodityModel * item in categories) {
+            NSArray * array = [CommodityManageTool allSalesCommoditiesWithCategory:item.categoryId];
+            [_dataSource addObject:array];
+        }
+    } else if ([promotionType isEqualToString:@"commodityAll"]) {
+        categories = [CommodityManageTool categories];
+        for (CommodityModel * item in categories) {
+            NSArray * array = [CommodityManageTool commoditiesWithCategory:item.categoryId];
+            [_dataSource addObject:array];
+        }
+    } else {
+        categories = [CommodityManageTool categories];
+        for (CommodityModel * item in categories) {
+            NSArray * array = [CommodityManageTool commoditiesWithCategory:item.categoryId promotionType:promotionType];
+            [_dataSource addObject:array];
+        }
+    }
+    callback(categories,_dataSource);
+}
 @end

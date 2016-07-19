@@ -9,7 +9,6 @@
 #import <Kiwi/Kiwi.h>
 #import "CommodityListCell.h"
 
-
 SPEC_BEGIN(CommodityListCellSpec)
 
 describe(@"CommodityListCell", ^{
