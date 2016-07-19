@@ -31,24 +31,7 @@ describe(@"ShoppingCarTableViewDataSource", ^{
             [[dataSource shouldNot] beNil];
         });
     });
-    /*
-     -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-     {
-        return _categories.count;
-     }
-     
-     - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-     {
-        NSArray * rows = _dataSource[section];
-        return rows.count;
-     }
-     
-     - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-     {
-        CommodityModel * model = _categories[section];
-        return model.category;
-     }
-     */
+    
     context(@"when the table show", ^{
         __block ShoppingCarTableViewDataSource * dataSource = nil;
         __block NSMutableArray * categories = nil;
@@ -84,6 +67,7 @@ describe(@"ShoppingCarTableViewDataSource", ^{
             dataArray = nil;
             categories = nil;
         });
+        
         it(@"should return the categorys.count from numberOfSectionsInTableView", ^{
             
             NSInteger sections = [dataSource numberOfSectionsInTableView:[UITableView mock]];
@@ -95,6 +79,7 @@ describe(@"ShoppingCarTableViewDataSource", ^{
             NSArray * rows = dataArray[0];
             [[theValue(count) should] equal:theValue(rows.count)];
         });
+        
         it(@"should return the category from titleForHeaderInSection", ^{
             NSString * category = [dataSource tableView:[UITableView mock] titleForHeaderInSection:0];
             CommodityModel * model = categories[0];
