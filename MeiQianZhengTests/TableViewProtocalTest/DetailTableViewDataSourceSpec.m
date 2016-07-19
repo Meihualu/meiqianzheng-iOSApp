@@ -60,8 +60,7 @@ describe(@"DetailTableViewDataSource", ^{
         });
         
         it(@"the numberOfRowsInSection should equal the info array initilized by commodity", ^{
-            CommodityModel * model = [[CommodityModel alloc] initWithBarcode:@"mybarcode"
-name:@"myname"
+            CommodityModel * model = [[CommodityModel alloc] initWithBarcode:@"mybarcode" name:@"myname"
                                                                        unit:@"myunit"
                                                                    category:@"mycategory"
                                                                  categoryId:1

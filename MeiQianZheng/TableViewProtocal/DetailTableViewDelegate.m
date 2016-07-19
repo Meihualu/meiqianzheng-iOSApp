@@ -10,11 +10,6 @@
 
 @implementation DetailTableViewDelegate
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return kDetailCellHeight;
-}
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
@@ -51,6 +46,11 @@
     CGRect frame = CGRectMake(10, 0, KScreenWidth - 20, queLabelSize.height + 20);
     return frame;
     
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return kDetailCellHeight;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
