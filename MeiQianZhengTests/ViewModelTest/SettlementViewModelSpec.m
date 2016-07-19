@@ -13,22 +13,15 @@
 SPEC_BEGIN(SettlementViewModelSpec)
 
 describe(@"SettlementViewModel", ^{
-    context(@"when create", ^{
-        __block SettlementViewModel * viewModel = nil;
-        beforeEach(^{
-            viewModel = [[SettlementViewModel alloc] init];
-        });
-        
-        afterEach(^{
-            viewModel = nil;
-        });
-        
+    
+    context(@"when creating", ^{
         it(@"should have the class SettlementViewModel", ^{
             [[[SettlementViewModel class] shouldNot] beNil];
         });
         
         it(@"should exist viewModel", ^{
-            [[viewModel shouldNot] beNil];
+           SettlementViewModel * viewModel = [[SettlementViewModel alloc] init];
+        [[viewModel shouldNot] beNil];
         });
     });
     

@@ -13,26 +13,19 @@
 SPEC_BEGIN(ListTableViewDelegateSpec)
 
 describe(@"ListTableViewDelegate", ^{
-    context(@"when create", ^{
-        __block ListTableViewDelegate * vDelegate = nil;
-        beforeEach(^{
-            vDelegate = [[ListTableViewDelegate alloc] init];
-        });
-        
-        afterEach(^{
-            vDelegate = nil;
-        });
-        
+    
+    context(@"when creating", ^{
         it(@"should have the class ListTableViewDelegate", ^{
             [[[ListTableViewDelegate class] shouldNot] beNil];
         });
         
-        it(@"should exist vDelegate", ^{
-            [[vDelegate shouldNot] beNil];
+        it(@"should exist delegate", ^{
+            ListTableViewDelegate * delegate = [[ListTableViewDelegate alloc] init];
+            [[delegate shouldNot] beNil];
         });
     });
     
-    context(@"when clicked a cell", ^{
+    context(@"when created", ^{
         it(@"should push a CommodityListDetailController", ^{
             
             ListTableViewDelegate * vDelegate = [[ListTableViewDelegate alloc] init];

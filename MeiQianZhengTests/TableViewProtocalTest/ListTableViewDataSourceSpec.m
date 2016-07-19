@@ -13,7 +13,19 @@
 SPEC_BEGIN(ListTableViewDataSourceSpec)
 
 describe(@"ListTableViewDataSource", ^{
-    context(@"when create", ^{
+    
+    context(@"when creating", ^{
+        it(@"should have the class ListTableViewDataSource", ^{
+            [[[ListTableViewDataSource class] shouldNot] beNil];
+        });
+        
+        it(@"should exist dataSource", ^{
+            ListTableViewDataSource * dataSource = [[ListTableViewDataSource alloc] init];
+            [[dataSource shouldNot] beNil];
+        });
+    });
+    
+    context(@"when created", ^{
         __block ListTableViewDataSource * dataSource = nil;
         beforeEach(^{
             dataSource = [[ListTableViewDataSource alloc] init];
@@ -22,21 +34,7 @@ describe(@"ListTableViewDataSource", ^{
         afterEach(^{
             dataSource = nil;
         });
-        
-        it(@"should have the class ListTableViewDataSource", ^{
-            [[[ListTableViewDataSource class] shouldNot] beNil];
-        });
-        
-        it(@"should exist dataSource", ^{
-            [[dataSource shouldNot] beNil];
-        });
-        
-        /*
-         -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-         {
-         return _categories.count;
-         }
-         */
+
         it(@"should return the number of items in dataSource", ^{
             NSMutableArray * array = [NSMutableArray array];
             for (int i = 0; i < 20; i ++) {

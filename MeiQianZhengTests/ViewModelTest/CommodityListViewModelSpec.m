@@ -14,27 +14,19 @@
 SPEC_BEGIN(CommodityListViewModelSpec)
 
 describe(@"CommodityListViewModel", ^{
-    context(@"when create", ^{
-        __block CommodityListViewModel * viewModel = nil;
-        beforeEach(^{
-            viewModel = [[CommodityListViewModel alloc] init];
-        });
-        
-        afterEach(^{
-            viewModel = nil;
-        });
-        
+    
+    context(@"when creating", ^{
         it(@"should have the class CommodityListViewModel", ^{
             [[[CommodityListViewModel class] shouldNot] beNil];
         });
         
         it(@"should exist viewModel", ^{
+            CommodityListViewModel * viewModel = [[CommodityListViewModel alloc] init];
             [[viewModel shouldNot] beNil];
         });
-        
     });
     
-    context(@"when after execute the refresh function", ^{
+    context(@"when created", ^{
         __block CommodityListViewModel * viewModel = nil;
         __block YiRefreshFooter * refreshFooter = nil;
         __block YiRefreshHeader * refreshHeader = nil;

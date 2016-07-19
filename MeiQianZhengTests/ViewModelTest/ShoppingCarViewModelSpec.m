@@ -14,26 +14,19 @@
 SPEC_BEGIN(ShoppingCarViewModelSpec)
 
 describe(@"ShoppingCarViewModel", ^{
-    context(@"when create ", ^{
-        __block ShoppingCarViewModel * viewModel = nil;
-        beforeEach(^{
-            viewModel = [[ShoppingCarViewModel alloc] init];
-        });
-        
-        afterEach(^{
-            viewModel = nil;
-        });
-        
-        it(@"should have the class CommodityListViewModel", ^{
+    
+    context(@"when creating", ^{
+        it(@"should have the class ShoppingCarViewModel", ^{
             [[[ShoppingCarViewModel class] shouldNot] beNil];
         });
         
-        it(@"should exist viewModel ", ^{
+        it(@"should exist viewModel", ^{
+            ShoppingCarViewModel * viewModel = [[ShoppingCarViewModel alloc] init];
             [[viewModel shouldNot] beNil];
         });
     });
     
-    context(@"when after execute the refresh function", ^{
+    context(@"when created", ^{
         __block ShoppingCarViewModel * viewModel = nil;
         __block YiRefreshFooter * refreshFooter = nil;
         __block YiRefreshHeader * refreshHeader = nil;

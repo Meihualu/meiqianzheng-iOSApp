@@ -13,7 +13,18 @@
 SPEC_BEGIN(SettlementViewControllerSpec)
 
 describe(@"SettlementViewController", ^{
-
+    context(@"when creating", ^{
+        
+        it(@"should have the class CommodityDetaiViewController", ^{
+            [[[SettlementViewController class] shouldNot] beNil];
+        });
+        
+        it(@"should exist controller", ^{
+            SettlementViewController * controller = [[SettlementViewController alloc] init];
+            [[controller shouldNot] beNil];
+        });
+        
+    });
 });
 
 SPEC_END

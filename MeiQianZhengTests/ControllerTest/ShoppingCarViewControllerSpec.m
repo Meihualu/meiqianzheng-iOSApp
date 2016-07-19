@@ -14,23 +14,17 @@ SPEC_BEGIN(ShoppingCarViewControllerSpec)
 
 describe(@"ShoppingCarViewController", ^{
     
-    context(@"when create", ^{
-        __block ShoppingCarViewController * controller = nil;
-        beforeEach(^{
-            controller = [[ShoppingCarViewController alloc] init];
-        });
-        
-        afterEach(^{
-            controller = nil;
-        });
+    context(@"when creating", ^{
         
         it(@"should have the class CommodityDetaiViewController", ^{
             [[[ShoppingCarViewController class] shouldNot] beNil];
         });
         
         it(@"should exist controller", ^{
+            ShoppingCarViewController * controller = [[ShoppingCarViewController alloc] init];
             [[controller shouldNot] beNil];
         });
+        
     });
 });
 

@@ -15,6 +15,4 @@
 @property (nonatomic,strong) CommodityModel * model;
 @property (nonatomic,assign) CGFloat cellHeight;
 
-+ (instancetype)cellWithTableView:(UITableView *)tableView;
-
 @end

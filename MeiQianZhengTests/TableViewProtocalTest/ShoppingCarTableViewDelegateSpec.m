@@ -12,26 +12,19 @@
 SPEC_BEGIN(ShoppingCarTableViewDelegateSpec)
 
 describe(@"ShoppingCarTableViewDelegate", ^{
-    context(@"when create", ^{
-        __block ShoppingCarTableViewDelegate * vDelegate = nil;
-        beforeEach(^{
-            vDelegate = [[ShoppingCarTableViewDelegate alloc] init];
-        });
-        
-        afterEach(^{
-            vDelegate = nil;
-        });
-        
+    
+    context(@"when creating", ^{
         it(@"should have the class ShoppingCarTableViewDelegate", ^{
             [[[ShoppingCarTableViewDelegate class] shouldNot] beNil];
         });
         
-        it(@"should exist vDelegate", ^{
-            [[vDelegate shouldNot] beNil];
+        it(@"should exist delegate", ^{
+            ShoppingCarTableViewDelegate * delegate = [[ShoppingCarTableViewDelegate alloc] init];
+            [[delegate shouldNot] beNil];
         });
     });
     
-    context(@"when show", ^{
+    context(@"when created", ^{
         __block ShoppingCarTableViewDelegate * vDelegate = nil;
         beforeEach(^{
             vDelegate = [[ShoppingCarTableViewDelegate alloc] init];

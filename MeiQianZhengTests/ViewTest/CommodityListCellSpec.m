@@ -12,21 +12,29 @@
 SPEC_BEGIN(CommodityListCellSpec)
 
 describe(@"CommodityListCell", ^{
-    context(@"when create CommodityListCell", ^{
+    context(@"when creating", ^{
+        it(@"should have the class CommodityListCell", ^{
+            [[[CommodityListCell class] shouldNot] beNil];
+        });
+        
+        it(@"should can be init with tableView", ^{
+            CommodityListCell * cell = [[CommodityListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifier"];
+            [[cell shouldNot] beNil];
+        });
+        
+    });
+    
+    context(@"when created", ^{
         __block CommodityListCell * cell = nil;
         __block UITableView * table = nil;
         beforeEach(^{
             table = [[UITableView alloc] init];
-            cell = [CommodityListCell cellWithTableView:table];
+            cell = [[CommodityListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseIdentifier"];
         });
         
         afterEach(^{
             table = nil;
             cell = nil;
-        });
-        
-        it(@"should can be init with tableView", ^{
-            [[cell shouldNot] beNil];
         });
         
         it(@"the cellHeight should be init ", ^{
@@ -38,6 +46,32 @@ describe(@"CommodityListCell", ^{
             model.name = @"测试";
             [cell setModel:model];
             [[cell.model.name should] equal:@"测试"];
+        });
+        
+        it(@"should have a default cellHeight,temporary set 45.0f", ^{
+            [[theValue(cell.cellHeight) should] equal:theValue(45.0f)];
+        });
+        
+        it(@"should can be set model", ^{
+            cell.model = [[CommodityModel alloc] init];
+            [[cell.model shouldNot] beNil];
+        });
+        
+    });
+    
+    context(@"when have setted model", ^{
+        it(@"should can be corrent set the promotion symbol image", ^{
+           CommodityModel * model = [[CommodityModel alloc] initWithBarcode:@"mybarcode" name:@"myname"
+                                                       unit:@"myunit"
+                                                   category:@"mycategory"
+                                                 categoryId:1
+                                                subCategory:@"mysubcategory"
+                                                      price:100.0f
+                                              promotionType: [NSArray arrayWithObjects:@"BuyTwoGetOneFree", nil]
+                                                      count:3];
+            
+        CommodityListCell *  cell = [[CommodityListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseIdentifier"];
+            [cell setModel:model];
         });
     });
 });

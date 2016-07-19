@@ -13,26 +13,19 @@
 SPEC_BEGIN(ShoppingCarTableViewDataSourceSpec)
 
 describe(@"ShoppingCarTableViewDataSource", ^{
-    context(@"when create", ^{
-        __block ShoppingCarTableViewDataSource * dataSource = nil;
-        beforeEach(^{
-            dataSource = [[ShoppingCarTableViewDataSource alloc] init];
-        });
-        
-        afterEach(^{
-            dataSource = nil;
-        });
-        
+    
+    context(@"when creating", ^{
         it(@"should have the class ShoppingCarTableViewDataSource", ^{
             [[[ShoppingCarTableViewDataSource class] shouldNot] beNil];
         });
         
         it(@"should exist dataSource", ^{
+            ShoppingCarTableViewDataSource * dataSource = [[ShoppingCarTableViewDataSource alloc] init];
             [[dataSource shouldNot] beNil];
         });
     });
     
-    context(@"when the table show", ^{
+    context(@"when created", ^{
         __block ShoppingCarTableViewDataSource * dataSource = nil;
         __block NSMutableArray * categories = nil;
         __block NSArray * dataArray = nil;

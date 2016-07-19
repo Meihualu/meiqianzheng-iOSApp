@@ -13,21 +13,13 @@
 SPEC_BEGIN(CommodityDetaiViewControllerSpec)
 
 describe(@"CommodityDetaiViewController", ^{
-    context(@"when create", ^{
-        __block CommodityDetaiViewController * controller = nil;
-        beforeEach(^{
-            controller = [[CommodityDetaiViewController alloc] init];
-        });
-        
-        afterEach(^{
-            controller = nil;
-        });
-        
+    context(@"when creating", ^{
         it(@"should have the class CommodityDetaiViewController", ^{
             [[[CommodityDetaiViewController class] shouldNot] beNil];
         });
         
         it(@"should exist controller", ^{
+            CommodityDetaiViewController * controller = [[CommodityDetaiViewController alloc] init];
             [[controller shouldNot] beNil];
         });
     });

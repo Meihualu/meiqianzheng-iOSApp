@@ -14,36 +14,19 @@ const static CGFloat kDetailCellWidth = 100.0f;
 SPEC_BEGIN(DetailTableViewDelegateSpec)
 
 describe(@"DetailTableViewDelegate", ^{
-    context(@"when create", ^{
-        __block DetailTableViewDelegate * vDelegate = nil;
-        beforeEach(^{
-            vDelegate = [[DetailTableViewDelegate alloc] init];
-        });
-        
-        afterEach(^{
-            vDelegate = nil;
-        });
-        
+    
+    context(@"when creating", ^{
         it(@"should have the class DetailTableViewDelegate", ^{
             [[[DetailTableViewDelegate class] shouldNot] beNil];
         });
         
-        it(@"should exist vDelegate", ^{
-            [[vDelegate shouldNot] beNil];
+        it(@"should exist delegate", ^{
+            DetailTableViewDelegate * delegate = [[DetailTableViewDelegate alloc] init];
+            [[delegate shouldNot] beNil];
         });
     });
-    /*
-     -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-     {
-     return kDetailCellHeight;
-     }
-     
-     - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
-     {
-     return kDetailCellHeight * 2;
-     }
-     */
-    context(@"when table show", ^{
+    
+    context(@"when created", ^{
         __block DetailTableViewDelegate * vDelegate = nil;
         beforeEach(^{
             vDelegate = [[DetailTableViewDelegate alloc] init];
