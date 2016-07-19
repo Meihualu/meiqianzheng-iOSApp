@@ -78,6 +78,7 @@
                 
             } failure:^(NSError *error) {
                 NSLog(@"error.localizedDescription = %@\n",error.localizedDescription);
+                callback([NSArray array],[NSArray array]);
             }];
            
         });

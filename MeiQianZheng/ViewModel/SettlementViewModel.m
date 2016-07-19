@@ -14,6 +14,7 @@
     self = [super init];
     if (self) {
         _shoppingcarCommodities = [NSMutableArray array];
+        _scanInfoArray = [NSMutableArray array];
     }
     return self;
 }
@@ -54,13 +55,40 @@
     NSLog(@"param = %@\n",param);
     
     [HttpTool postWithBaseURL:baseUrl path:orderPattern params:param success:^(id JSON) {
-        NSLog(@"json = %@\n",JSON);
-//        NSDictionary * result =[NSJSONSerialization JSONObjectWithStream:JSON options:NSJSONReadingAllowFragments error:nil];
-//        NSLog(@"result = %@\n",result);
-//        callback(result);
+        NSDictionary * result = (NSDictionary *)JSON;
+        NSString * str = result[@"output"];
+        callback(str);
     } failure:^(NSError *error) {
         NSLog(@"结算失败%@\n",error.localizedDescription);
     }];
+}
+
+#pragma  mark --模拟收银员扫描商品二维码
+- (void)scanCommoditiyBarcode{
+    [_scanInfoArray addObject:@"正在扫描..."];
+    for (CommodityModel * item in _shoppingcarCommodities) {
+        NSString * scanInfo = @"";
+        NSString * info = nil;
+        if (item.count > 1) {
+            info = [NSString stringWithFormat:@"%@-%zd",item.barcode,item.count];
+            scanInfo = [NSString stringWithFormat:@"%@\n%@",scanInfo,info];
+        } else {
+            info = [NSString stringWithFormat:@"%@",item.barcode];
+            scanInfo = [NSString stringWithFormat:@"%@\n%@",scanInfo,info];
+        }
+        [_scanInfoArray addObject:scanInfo];
+    }
+    [_scanInfoArray addObject:@"\n正在结算，请稍后..."];
+}
+
+#pragma mark -- 追加多行文本框内容
+- (void)appendContent:(NSString *)text textView:(UITextView *)infoView
+{
+    NSMutableString *str = [NSMutableString stringWithString:infoView.text];
+    [str appendFormat:@"%@\n", text];
+    [infoView setText:str];
+    NSRange range = NSMakeRange(str.length - 1, 1);
+    [infoView scrollRangeToVisible:range];
 }
 
 @end

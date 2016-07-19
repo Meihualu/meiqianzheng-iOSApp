@@ -60,9 +60,8 @@
     RAC(_priceLabel,text) = [RACObserve(_countView, count) map:^id(id count) {
         [self setCount];
         [CommodityManageTool addCommodityInShoppingCarAddOneOrReduceOne:_model];
-        return [NSString stringWithFormat:@"%.02f",[count integerValue] * _model.price];
+        return [NSString stringWithFormat:@"%.02f",[self calculatePerCommodityAmount]];
     }];
-    
 }
 
 - (void)setModel:(CommodityModel *)model
@@ -84,18 +83,49 @@
     _countView.count = _model.count;
 }
 
-- (void)calculatePerCommodityAmount{
-    if ([_model.promotionType[0] isEqualToString:@""]) {
-        
-    } else if([_model.promotionType[0] isEqualToString:@""]) {
-      
+- (CGFloat)calculatePerCommodityAmount{
+    if ([_model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
+        return [self calculateRealAmountToPay] * _model.price;
+    } else if ([_model.promotionType[0] isEqualToString:@"ZHE_95"]){
+        return _model.count * 0.95;
     } else {
-      
+        return _model.count * _model.price;
     }
+}
+
+-(NSInteger)calculateRealAmountToPay
+{
+    NSInteger remainder = _model.count % 3;
+    NSInteger divider = _model.count / 3;
+    NSInteger  amount  = 0;
+    if (divider == 0) {
+        amount =  _model.count;
+    } else {
+        amount = 2 * divider + remainder;
+    }
+    NSLog(@"_model.count = %zd,remainder = %zd,divider = %zd\n",_model.count,remainder,divider);
+    return amount;
 }
 
 -(void)setCount{
     self.model.count = _countView.count;
+}
+
+/**
+ *  当买二送一时，计算实际应该付款的商品的数量
+ *
+ *  @param n 购买的商品数量
+ *
+ *  @return 需要付款的商品的数量
+ */
+int calculateAmountWhenBuyTwoGetOneFree(int n)
+{
+    int remainder = n % 3;
+    int divider = n / 3;
+    if (divider == 0)
+        return n;
+    else
+        return 2 * divider + remainder;
 }
 
 @end

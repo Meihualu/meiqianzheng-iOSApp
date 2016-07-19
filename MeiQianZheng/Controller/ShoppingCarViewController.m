@@ -87,8 +87,8 @@
     [customView addSubview:button];
     [button setTitle:@"结算" forState:UIControlStateNormal];
     [button.titleLabel setFont:[UIFont boldSystemFontOfSize:13.0f]];
-    
     _settlement = button;
+    
     
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithCustomView:customView];
     self.navigationItem.rightBarButtonItem = right;
@@ -97,8 +97,14 @@
 - (void)addSignals
 {
     [[_settlement rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        SettlementViewController * settlement = [[SettlementViewController alloc] initWithCommodities:_tableViewDataSource.dataSource];
-        [self.navigationController pushViewController:settlement animated:YES];
+        
+        if (_tableViewDataSource.dataSource.count > 0) {
+            SettlementViewController * settlement = [[SettlementViewController alloc] initWithCommodities:_tableViewDataSource.dataSource];
+            [self.navigationController pushViewController:settlement animated:YES];
+        } else {
+            [Alert showAlert:@"亲，请添加要购买商品~"];
+        }
+        
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(headerRefreshAction) name:kNotificationDeleteFromShoppingCar object:nil];
 }
@@ -113,6 +119,9 @@
         _tableViewDataSource.categories = _categories;
         
         _tableViewDelegate.array = _totalSource;
+        if (dataSource.count > 0) {
+            _settlement.enabled = YES;
+        }
         [_refreshHeader endRefreshing];
         [_tableView reloadData];
     }];

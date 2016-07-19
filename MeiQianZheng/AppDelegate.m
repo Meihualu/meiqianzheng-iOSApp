@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SelectRoleViewController.h"
+#import "CommodityListViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,7 +24,7 @@
                                                          forBarMetrics:UIBarMetricsDefault];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    SelectRoleViewController * controller = [[SelectRoleViewController alloc] init];
+    CommodityListViewController * controller = [[CommodityListViewController alloc] init];
     UINavigationController * navController = [[UINavigationController alloc] initWithRootViewController:controller];
     navController.navigationBar.translucent = NO;
     self.window.rootViewController = navController;

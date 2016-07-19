@@ -146,15 +146,21 @@
 
 - (void) refreshWithCategories:(NSArray *)categories dataSource:(NSArray *)dataSource
 {
-    _totalSource=[NSMutableArray arrayWithArray:dataSource];
-    _categories = [NSMutableArray arrayWithArray:categories];
+    if (dataSource.count > 0) {
+        _totalSource=[NSMutableArray arrayWithArray:dataSource];
+        _categories = [NSMutableArray arrayWithArray:categories];
+        
+        _tableViewDataSource.dataSource = _totalSource;
+        _tableViewDataSource.categories = _categories;
+        
+        _tableViewDelegate.array = _totalSource;
+        [_tableView reloadData];
+    } else {
+        [Alert showAlert:@"暂无商品"];
     
-    _tableViewDataSource.dataSource = _totalSource;
-    _tableViewDataSource.categories = _categories;
-    
-    _tableViewDelegate.array = _totalSource;
+    }
     [_refreshHeader endRefreshing];
-    [_tableView reloadData];
+    
 }
 
 - (void)footerRefreshAction
@@ -182,25 +188,26 @@
     _tableView.tableHeaderView = header;
     
     CGFloat width = kViewWidth / 4;
-    _salesTwoPlusOne = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, width, kDetailCellHeight)];
-    [_salesTwoPlusOne setTitle:@"" forState:UIControlStateNormal];
-    [_salesTwoPlusOne.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0f]];
+    _salesTwoPlusOne = [self buttonWithFrame:CGRectMake(0, 0, width, kDetailCellHeight) title:@"买二送一"];
     [header addSubview:_salesTwoPlusOne];
     
-    _sales95 = [[UIButton alloc] initWithFrame:CGRectMake(width, 0, width, kDetailCellHeight)];
-    [_sales95 setTitle:@"" forState:UIControlStateNormal];
-    [_sales95.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0f]];
+    _sales95 = [self buttonWithFrame:CGRectMake(width, 0, width, kDetailCellHeight) title:@"95折优惠"];
     [header addSubview:_sales95];
     
-    _salesAll = [[UIButton alloc] initWithFrame:CGRectMake(width * 2, 0, width, kDetailCellHeight)];
-    [_salesAll setTitle:@"全部优惠" forState:UIControlStateNormal];
-    [_salesAll.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0f]];
+    _salesAll = [self buttonWithFrame:CGRectMake(width * 2, 0, width, kDetailCellHeight) title:@"全部优惠"];
     [header addSubview:_salesAll];
-    
-    _commodityAll = [[UIButton alloc] initWithFrame:CGRectMake(width * 3, 0, width, kDetailCellHeight)];
-    [_commodityAll setTitle:@"全部商品" forState:UIControlStateNormal];
-    [_commodityAll.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0f]];
+
+    _commodityAll = [self buttonWithFrame:CGRectMake(width * 3, 0, width, kDetailCellHeight) title:@"全部商品"];
     [header addSubview:_commodityAll];
+}
+
+- (UIButton *)buttonWithFrame:(CGRect)frame title:(NSString *)title
+{
+    UIButton * button = [[UIButton alloc] initWithFrame:frame];
+    [button setTitle:title forState:UIControlStateNormal];
+    [button.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0f]];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    return button;
 }
 
 - (void)didReceiveMemoryWarning
