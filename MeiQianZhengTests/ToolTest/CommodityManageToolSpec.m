@@ -48,12 +48,6 @@ describe(@"CommodityManageTool", ^{
             [[theValue([fileMgr fileExistsAtPath:path]) should] beTrue];
         });
         
-        /**
-         *  向商品列表中添加一个商品
-         *
-         *  @param item 商品
-         */
-        //        + (void)addCommodityInList:(CommodityModel *)item;
         it(@"should have a method that can correct add a CommodityModel in commodity list", ^{
             BOOL result = [CommodityManageTool addCommodityInList:model];
             FMResultSet * set = [_fmdb executeQueryWithFormat:@"select * from t_commodity_list where barcode = %@\n",model.barcode];
@@ -79,15 +73,6 @@ describe(@"CommodityManageTool", ^{
             [[theValue(result) should] beFalse];
         });
         
-        
-        
-        
-        /**
-         *  获得所有的商品种类
-         *
-         *  @return 商品种类
-         */
-//        + (NSArray *)categories;
         it(@"should have a method that can get all models in shoppingcar", ^{
             
             NSMutableArray * array = [NSMutableArray array];
@@ -114,12 +99,6 @@ describe(@"CommodityManageTool", ^{
             
         });
         
-        /**
-         *  获取购物车中的商品的种类
-         *
-         *  @return 商品种类
-         */
-//        + (NSArray *)categoriesInShoppingCar;
         it(@"should have a function to return all categories in shopping car", ^{
             NSMutableArray * array = [NSMutableArray array];
             BOOL result = false;
@@ -142,14 +121,7 @@ describe(@"CommodityManageTool", ^{
             [[theValue(categories.count) should] equal:theValue(array.count + 1)];
 
         });
-        /**
-         *  根据商品种类Id获取商品
-         *
-         *  @param categoryId 目标商品的种类Id
-         *
-         *  @return 商品列表
-         */
-//        + (NSArray *)commoditiesWithCategory:(NSInteger )categoryId;
+
         it(@"should have a meothed that can return commodities that have same categoryId through the categoryId ", ^{
             BOOL result = false;
             CommodityModel * item = [[CommodityModel alloc] initWithBarcode:@"mybarcodeitem" name:@"myname"
@@ -170,16 +142,7 @@ describe(@"CommodityManageTool", ^{
             NSLog(@"commodities = %@\n",commodities);
             [[theValue(commodities.count) should] equal:theValue(3)];
         });
-        
-        /**
-         *  根据商品种类Id和优惠类型获取商品列表
-         *
-         *  @param categoryId    商品种类Id
-         *  @param promotionType 优惠类型
-         *
-         *  @return 商品列表
-         */
-//        + (NSArray *)commoditiesWithCategory:(NSInteger)categoryId  promotionType:(NSString *)promotionType;
+
         it(@"should have a function that can return commodities through categoryId and promotionType", ^{
             BOOL result = false;
             CommodityModel * item = [[CommodityModel alloc] initWithBarcode:@"mybarcodeitem" name:@"myname"
@@ -200,14 +163,7 @@ describe(@"CommodityManageTool", ^{
             NSLog(@"commodities = %@\n",commodities);
             [[theValue(commodities.count) should] equal:theValue(2)];
         });
-        /**
-         *  根据种类Id获取购物车中的商品列表
-         *
-         *  @param categoryId 商品种类Id
-         *
-         *  @return 商品列表
-         */
-//        + (NSArray *)commoditiesInShoppingCarWithCategory:(NSInteger)categoryId;
+
         it(@"should have a method that can return all commodities through categoryId", ^{
             BOOL result = false;
             CommodityModel * item = [[CommodityModel alloc] initWithBarcode:@"mybarcodeitem" name:@"myname"
@@ -228,12 +184,7 @@ describe(@"CommodityManageTool", ^{
             NSArray * commodities = [CommodityManageTool commoditiesInShoppingCarWithCategory:1];
             [[theValue(commodities.count) should] equal:theValue(2)];
         });
-        /**
-         *  获取购物车中的所有商品
-         *
-         *  @return 商品列表
-         */
-//        + (NSArray *)commoditiesInShoppingCar;
+
         it(@"should have a method that can get all models in shoppingcar", ^{
             NSMutableArray * array = [NSMutableArray array];
             BOOL result = false;

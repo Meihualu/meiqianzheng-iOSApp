@@ -128,17 +128,19 @@
     _tableView.tableHeaderView = header;
     
     CGFloat width = kViewWidth / 4;
-    _salesTwoPlusOne = [self buttonWithFrame:CGRectMake(0, 0, width, kDetailCellHeight) title:@"买二送一"];
-    [header addSubview:_salesTwoPlusOne];
+    _commodityAll = [self buttonWithFrame:CGRectMake(0, 0, width, kDetailCellHeight) title:@"全部商品"];
+    [_commodityAll setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [header addSubview:_commodityAll];
     
-    _sales95 = [self buttonWithFrame:CGRectMake(width, 0, width, kDetailCellHeight) title:@"95折优惠"];
-    [header addSubview:_sales95];
-    
-    _salesAll = [self buttonWithFrame:CGRectMake(width * 2, 0, width, kDetailCellHeight) title:@"全部优惠"];
+    _salesAll = [self buttonWithFrame:CGRectMake(width, 0, width, kDetailCellHeight) title:@"全部优惠"];
     [header addSubview:_salesAll];
     
-    _commodityAll = [self buttonWithFrame:CGRectMake(width * 3, 0, width, kDetailCellHeight) title:@"全部商品"];
-    [header addSubview:_commodityAll];
+    _salesTwoPlusOne = [self buttonWithFrame:CGRectMake(width * 2, 0, width, kDetailCellHeight) title:@"买二送一"];
+    [header addSubview:_salesTwoPlusOne];
+    
+    _sales95 = [self buttonWithFrame:CGRectMake(width * 3, 0, width, kDetailCellHeight) title:@"95折优惠"];
+    [header addSubview:_sales95];
+
 }
 
 /**
@@ -153,25 +155,28 @@
     
     [[_salesTwoPlusOne rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [_tableViewModel filterCommoditiesWithPromotionType:@"BuyTwoGetOneFree" callback:^(NSArray *categories, NSArray *dataSource) {
-           [self refreshWithCategories:categories dataSource:dataSource];
+            [self setButtonTitleColorRedColorWithButton:_salesTwoPlusOne];
+            [self refreshWithCategories:categories dataSource:dataSource];
         }];
     }];
     
     [[_sales95 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [_tableViewModel filterCommoditiesWithPromotionType:@"ZHE_95" callback:^(NSArray *categories, NSArray *dataSource) {
+            [self setButtonTitleColorRedColorWithButton:_sales95];
             [self refreshWithCategories:categories dataSource:dataSource];
         }];
     }];
     
     [[_salesAll rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [_tableViewModel filterCommoditiesWithPromotionType:@"salesAll" callback:^(NSArray *categories, NSArray *dataSource) {
-         [self refreshWithCategories:categories dataSource:dataSource];
+            [self setButtonTitleColorRedColorWithButton:_salesAll];
+            [self refreshWithCategories:categories dataSource:dataSource];
         }];
     }];
     
     [[_commodityAll rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [_tableViewModel filterCommoditiesWithPromotionType:@"commodityAll" callback:^(NSArray *categories, NSArray *dataSource) {
-//            NSLog(@"全部商品");
+            [self setButtonTitleColorRedColorWithButton:_commodityAll];
             [self refreshWithCategories:categories dataSource:dataSource];
         }];
     }];
@@ -237,6 +242,15 @@
     [button.titleLabel setFont:[UIFont boldSystemFontOfSize:14.0f]];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     return button;
+}
+
+- (void)setButtonTitleColorRedColorWithButton:(UIButton *)button
+{
+    [_salesTwoPlusOne setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_sales95 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_salesAll setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [_commodityAll setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning
