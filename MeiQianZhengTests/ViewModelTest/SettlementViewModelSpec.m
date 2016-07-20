@@ -36,7 +36,7 @@ describe(@"SettlementViewModel", ^{
             viewModel = nil;
         });
         
-        it(@"should can scan commodity and put them into scanInfoArray", ^{
+        it(@"should have a method that can scan commodity and put them into scanInfoArray", ^{
             NSMutableArray * array = [NSMutableArray array];
             for (int i = 0; i < 20; i ++) {
                 
@@ -60,7 +60,7 @@ describe(@"SettlementViewModel", ^{
             
         });
         
-        it(@"should can append text to the given textview", ^{
+        it(@"should have a method that  can append text to the given textview", ^{
             UITextView * textView = [[UITextView alloc] init];
             textView.text = @"hello";
             [viewModel appendContent:@"world" textView:textView];

@@ -42,7 +42,7 @@ describe(@"ShoppingCarViewModel", ^{
             refreshFooter = nil;
         });
         
-        it(@"should can be get nonil catef=gories and dataSource  after execute headerRefreshRequestWithCallback", ^{
+        it(@"should have a method that  can be get nonil categories and dataSource  after execute headerRefreshRequestWithCallback", ^{
             [viewModel headerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource) {
                 [[categories shouldNot] beNil];
                 [[dataSource shouldNot] beNil];
@@ -50,7 +50,7 @@ describe(@"ShoppingCarViewModel", ^{
             }];
         });
         
-        it(@"should can be get nonil catef=gories and dataSource after execute footerRefreshRequestWithCallback", ^{
+        it(@"should have a method that can be get nonil catef=gories and dataSource after execute footerRefreshRequestWithCallback", ^{
             [viewModel footerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource) {
                 [[categories shouldNot] beNil];
                 [[dataSource shouldNot] beNil];

@@ -34,12 +34,12 @@ describe(@"ShoppingCarTableViewDelegate", ^{
             vDelegate = nil;
         });
         
-        it(@"should return 40.0f", ^{
+        it(@"should have a method that can return the heightForHeaderInSection default 40.0f", ^{
             CGFloat headerHeight =  [vDelegate tableView:[UITableView mock] heightForHeaderInSection:0];
             [[theValue(headerHeight) should] equal:theValue(40.0f)];
         });
         
-        it(@"should return 5.0f", ^{
+        it(@"should have a method that can return the heightForFooterInSection default 5.0f", ^{
             CGFloat footerHeight = [vDelegate tableView:[UITableView mock] heightForFooterInSection:0];
             [[theValue(footerHeight) should] equal:theValue(5.0f)];
         });

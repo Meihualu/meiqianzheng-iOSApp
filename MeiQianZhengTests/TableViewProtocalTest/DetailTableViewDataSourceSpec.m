@@ -35,12 +35,12 @@ describe(@"DetailTableViewDataSource", ^{
             dataSource = nil;
         });
         
-        it(@"should have one section", ^{
+        it(@"should have a method that can return the number of section default 1", ^{
             NSInteger sections = [dataSource numberOfSectionsInTableView:[UITableView mock]];
             [[theValue(sections) should] equal:theValue(1)];
         });
         
-        it(@"the numberOfRowsInSection should equal the info array initilized by commodity", ^{
+        it(@"should have a method that can initilized by commodity", ^{
             CommodityModel * model = [[CommodityModel alloc] initWithBarcode:@"mybarcode" name:@"myname"
                                                                        unit:@"myunit"
                                                                    category:@"mycategory"

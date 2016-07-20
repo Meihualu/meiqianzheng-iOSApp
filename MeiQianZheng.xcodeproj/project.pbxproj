@@ -824,14 +824,14 @@
 		7A271FE71D369D6A003DA7EF /* MeiQianZhengTests */ = {
 			isa = PBXGroup;
 			children = (
+				7A122DA51D3F5745002E5196 /* ToolTest */,
+				7AD62EF71D3A7D02006FDBCC /* ViewModelTest */,
+				7AD62EF41D3A7D02006FDBCC /* TableViewProtocalTest */,
 				7AD62EF01D3A7D02006FDBCC /* ControllerTest */,
 				7AD62EF21D3A7D02006FDBCC /* ModelTest */,
-				7AD62EF41D3A7D02006FDBCC /* TableViewProtocalTest */,
-				7AD62EF71D3A7D02006FDBCC /* ViewModelTest */,
 				7AD62EF91D3A7D02006FDBCC /* ViewTest */,
-				7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */,
-				7A122DA51D3F5745002E5196 /* ToolTest */,
 				7A271FEA1D369D6A003DA7EF /* Info.plist */,
+				7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */,
 			);
 			path = MeiQianZhengTests;
 			sourceTree = "<group>";

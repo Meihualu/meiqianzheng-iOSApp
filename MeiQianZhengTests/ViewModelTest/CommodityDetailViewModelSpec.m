@@ -47,17 +47,23 @@ describe(@"CommodityDetailViewModel", ^{
             model = nil;
         });
         
-        it(@"should correct deal the text change", ^{
+        it(@"should have a method that can correct deal the text change", ^{
             NSString * text = @"10";
             [viewModel dealTextFieldTextChangeWithText:text];
             NSLog(@"viewModel.model.count = %zd\n",viewModel.model.count);
             [[theValue(viewModel.model.count) should] equal:theValue([text integerValue])];
         });
         
-        it(@"should correct deal the add count operation", ^{
+        it(@"should have a method that can correct deal the add count operation", ^{
             NSInteger count = viewModel.model.count;
             [viewModel addNumberOfItem];
             [[theValue(viewModel.model.count) should] equal:theValue(count + 1)];
+        });
+        
+        it(@"should have a method that  correct deal the reduce count operation", ^{
+            NSInteger count = viewModel.model.count;
+            [viewModel reduceNumberOfItem];
+            [[theValue(viewModel.model.count) should] equal:theValue(count - 1)];
         });
         
         it(@"should not execute the reduce count operation ,when the count of model == 0", ^{
@@ -68,25 +74,19 @@ describe(@"CommodityDetailViewModel", ^{
             viewModel.model.count = count;
         });
         
-        it(@"should correct deal the reduce count operation", ^{
-            NSInteger count = viewModel.model.count;
-            [viewModel reduceNumberOfItem];
-            [[theValue(viewModel.model.count) should] equal:theValue(count - 1)];
+        it(@"should have a method that can return the name and number that will be added to shoppingcar", ^{
+            NSString * prompt = [viewModel getPrompt];
+            NSString * info = [NSString stringWithFormat:@"已成功将商品添加进购物车：商品名：%@ 数量：%zd",viewModel.model.name,viewModel.model.count];
+            [[prompt should] equal:info];
         });
         
-        it(@"should return '请选择商品的数量' when the count of model == 0", ^{
+        it(@"should return '请选择商品的数量' when the count of model == 0 through the getPrompt method", ^{
             NSInteger count = viewModel.model.count;
             viewModel.model.count = 0;
             NSString * prompt = [viewModel getPrompt];
             NSLog(@"prompt = %@\n",prompt);
             [[prompt should] equal:@"请选择商品的数量"];
             viewModel.model.count = count;
-        });
-        
-        it(@"should return the name and number that will be added to shoppingcar", ^{
-            NSString * prompt = [viewModel getPrompt];
-            NSString * info = [NSString stringWithFormat:@"已成功将商品添加进购物车：商品名：%@ 数量：%zd",viewModel.model.name,viewModel.model.count];
-            [[prompt should] equal:info];
         });
     });
     

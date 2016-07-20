@@ -35,7 +35,7 @@ describe(@"ListTableViewDataSource", ^{
             dataSource = nil;
         });
 
-        it(@"should return the number of items in dataSource", ^{
+        it(@"should have a method that can return the number of items in dataSource", ^{
             NSMutableArray * array = [NSMutableArray array];
             for (int i = 0; i < 20; i ++) {
                 

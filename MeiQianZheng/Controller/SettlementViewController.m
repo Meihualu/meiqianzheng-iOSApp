@@ -34,10 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"结算清单";
-    self.view.backgroundColor = [UIColor whiteColor];
-    
     self.view.backgroundColor = kDefaultBackgroundColor;
-    self.title = @"结算";
     
     UITextView * infoView = [[UITextView alloc] initWithFrame:CGRectMake(10, 10, kViewWidth - 20, kViewHeight - kApplicationFrameHeight - 20)];
     infoView.editable = NO;

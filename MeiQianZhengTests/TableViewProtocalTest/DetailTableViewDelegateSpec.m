@@ -36,12 +36,12 @@ describe(@"DetailTableViewDelegate", ^{
             vDelegate = nil;
         });
         
-        it(@"should return kDetailCellHeight from heightForRowAtIndexPath", ^{
+        it(@"should have a method that can return the heightForRowAtIndexPath default kDetailCellHeight", ^{
             CGFloat cellHeight = [vDelegate tableView:[UITableView mock] heightForRowAtIndexPath:[NSIndexPath mock]];
             [[theValue(cellHeight) should] equal:theValue(kDetailCellHeight)];
         });
         
-        it(@"should return the 2 * kDetailCellHeight from heightForFooterInSection", ^{
+        it(@"should have a method that can return the heightForFooterInSection default the 2 * kDetailCellHeight", ^{
             CGFloat footerHeight = [vDelegate tableView:[UITableView mock] heightForFooterInSection:0];
             [[theValue(footerHeight) should] equal:theValue(kDetailCellHeight * 2)];
         });

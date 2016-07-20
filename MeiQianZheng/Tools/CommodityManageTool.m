@@ -29,11 +29,10 @@ static FMDatabase * _db;
     [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_commodity_list (id integer PRIMARY KEY, barcode string NOT NULL , name string,unit string,categoryid string,category string,subcategory string,price real,discountype string);"];
     //3.创建商品种类表
     [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_category (categoryid integer PRIMARY KEY,category string unique,isExistInShoppingCar integer)"];
-    //4.创建优惠商品表(单品满100减10块)
-    [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_discount_3 (id integer PRIMARY KEY, barcode string NOT NULL)"];
-    //5.创建购物车商品列表
+    
+    //4.创建购物车商品列表
     [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_shoppingcar (id integer PRIMARY KEY, barcode string , name string,unit string,categoryid string,category string,subcategory string,price real,discountype string,count integer);"];
-    //6.创建购物车商品种类表
+    //5.创建购物车商品种类表
     [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_shoppingcar_category (categoryid integer PRIMARY KEY,category string unique)"];
 }
 
@@ -86,7 +85,7 @@ static FMDatabase * _db;
 
 + (BOOL)addCommodityInShoppingCar:(CommodityModel *)item
 {
-    if (item == nil) {
+    if (item == nil || item.barcode == nil) {
         return false;
     }
     FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE barcode = %@",item.barcode];

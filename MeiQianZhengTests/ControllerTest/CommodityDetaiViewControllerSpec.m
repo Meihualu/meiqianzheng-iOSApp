@@ -24,11 +24,6 @@ describe(@"CommodityDetaiViewController", ^{
         });
     });
     
-    
-    context(@"", ^{
-        
-    });
-    
 });
 
 SPEC_END

@@ -61,22 +61,20 @@ describe(@"ShoppingCarTableViewDataSource", ^{
             categories = nil;
         });
         
-        it(@"should return the categorys.count from numberOfSectionsInTableView", ^{
-            
+        it(@"should have a method that can return the number of sections in tableView ", ^{
             NSInteger sections = [dataSource numberOfSectionsInTableView:[UITableView mock]];
             [[theValue(sections) should] equal:theValue(categories.count)];
         });
         
-        it(@"should return the dataArray.count from numberOfRowsInSection", ^{
+        it(@"should have a method that can return the number of rows in section", ^{
             NSInteger count = [dataSource tableView:[UITableView mock] numberOfRowsInSection:0];
             NSArray * rows = dataArray[0];
             [[theValue(count) should] equal:theValue(rows.count)];
         });
         
-        it(@"should return the category from titleForHeaderInSection", ^{
+        it(@"should have a method that can return the title for header in section", ^{
             NSString * category = [dataSource tableView:[UITableView mock] titleForHeaderInSection:0];
             CommodityModel * model = categories[0];
-            NSLog(@"category = %@,model.category = %@",category,model.category);
             [[category should] equal:model.category];
         });
     });
