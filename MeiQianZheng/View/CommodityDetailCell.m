@@ -28,13 +28,14 @@
 
 - (void)addElements
 {
-    self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kDetailCellWidth, kDetailCellHeight)];
+    CGFloat width = KScreenWidth / 2;
+    self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, kDetailCellHeight)];
     self.infoLabel.font = [UIFont boldSystemFontOfSize:13.0f];
     self.infoLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.infoLabel];
     
     CGFloat infoLabelX = CGRectGetMaxX(_infoLabel.frame);
-    self.contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(infoLabelX, 0, KScreenWidth - infoLabelX - kMargin , kDetailCellHeight)];
+    self.contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(infoLabelX, 0, width, kDetailCellHeight)];
     self.contentLabel.font = [UIFont boldSystemFontOfSize:13.0f];
     self.contentLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.contentLabel];

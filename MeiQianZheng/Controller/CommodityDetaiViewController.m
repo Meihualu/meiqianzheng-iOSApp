@@ -72,22 +72,18 @@ const CGFloat bottomHeight = 50.0f;
     }];
     
     [[self.addItemBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        //调用viewModel的相关方法
         [self.viewModel addNumberOfItem];
     }];
     
     [[self.reduceItemBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        //调用viewModel的相关方法
         [self.viewModel reduceNumberOfItem];
     }];
     
-    //监听ViewModel数值 赋值UILabel
     RAC(self.itemCount,text) = [RACObserve(self.viewModel.model, count) map:^id(id count) {
         return [NSString stringWithFormat:@"%@",count];
     }];
     
     [[self.addToShoppingCar rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        //调用viewModel的相关方法
         [self.viewModel addShoppingCar];
         
         UIAlertView * alert=[[UIAlertView alloc] initWithTitle:@"提示" message:[_viewModel getPrompt] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -96,9 +92,13 @@ const CGFloat bottomHeight = 50.0f;
     
     [[self.purchase rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [self.viewModel purchaseRightNow];
-        //调用viewModel的相关方法
-        ShoppingCarViewController * shoppingCar = [[ShoppingCarViewController alloc] init];
-        [self.navigationController pushViewController:shoppingCar animated:YES];
+        if (self.viewModel.model.count == 0) {
+            UIAlertView * alert=[[UIAlertView alloc] initWithTitle:@"提示" message:@"请添加商品数量" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+        } else {
+            ShoppingCarViewController * shoppingCar = [[ShoppingCarViewController alloc] init];
+            [self.navigationController pushViewController:shoppingCar animated:YES];
+        }
     }];
     
     [[_shoppingCarBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {

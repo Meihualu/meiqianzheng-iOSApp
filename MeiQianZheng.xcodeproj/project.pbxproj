@@ -15,7 +15,6 @@
 		7A271FDB1D369D6A003DA7EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A271FDA1D369D6A003DA7EF /* Assets.xcassets */; };
 		7A271FDE1D369D6A003DA7EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A271FDC1D369D6A003DA7EF /* LaunchScreen.storyboard */; };
 		7A271FE91D369D6A003DA7EF /* MeiQianZhengTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */; };
-		7A271FF41D369D6A003DA7EF /* MeiQianZhengUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FF31D369D6A003DA7EF /* MeiQianZhengUITests.m */; };
 		7AB4DD2A1D3B9CA20071FAFB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD1F1D3B9CA20071FAFB /* FMDatabase.m */; };
 		7AB4DD2B1D3B9CA20071FAFB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD211D3B9CA20071FAFB /* FMDatabaseAdditions.m */; };
 		7AB4DD2C1D3B9CA20071FAFB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD231D3B9CA20071FAFB /* FMDatabasePool.m */; };
@@ -155,8 +154,6 @@
 		7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeiQianZhengTests.m; sourceTree = "<group>"; };
 		7A271FEA1D369D6A003DA7EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A271FEF1D369D6A003DA7EF /* MeiQianZhengUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeiQianZhengUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A271FF31D369D6A003DA7EF /* MeiQianZhengUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeiQianZhengUITests.m; sourceTree = "<group>"; };
-		7A271FF51D369D6A003DA7EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A27200A1D36A248003DA7EF /* AFHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		7A27200B1D36A248003DA7EF /* AFHTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		7A27200C1D36A248003DA7EF /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -773,7 +770,6 @@
 			children = (
 				7A271FCD1D369D6A003DA7EF /* MeiQianZheng */,
 				7A271FE71D369D6A003DA7EF /* MeiQianZhengTests */,
-				7A271FF21D369D6A003DA7EF /* MeiQianZhengUITests */,
 				7A271FCC1D369D6A003DA7EF /* Products */,
 				A06F1A829E312EEFC2A0FCFB /* Pods */,
 				BA3FED6A424235D1333399B3 /* Frameworks */,
@@ -834,15 +830,6 @@
 				7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */,
 			);
 			path = MeiQianZhengTests;
-			sourceTree = "<group>";
-		};
-		7A271FF21D369D6A003DA7EF /* MeiQianZhengUITests */ = {
-			isa = PBXGroup;
-			children = (
-				7A271FF31D369D6A003DA7EF /* MeiQianZhengUITests.m */,
-				7A271FF51D369D6A003DA7EF /* Info.plist */,
-			);
-			path = MeiQianZhengUITests;
 			sourceTree = "<group>";
 		};
 		7A2720071D36A248003DA7EF /* Pods */ = {
@@ -2192,7 +2179,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A271FF41D369D6A003DA7EF /* MeiQianZhengUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2338,6 +2324,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = UESTC.MeiQianZheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7910f70e-4d9e-4d70-9ea6-23f934b30197";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
@@ -2367,6 +2354,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = UESTC.MeiQianZheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7910f70e-4d9e-4d70-9ea6-23f934b30197";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;

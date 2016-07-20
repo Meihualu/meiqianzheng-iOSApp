@@ -44,10 +44,7 @@
     
     _viewModel = [[SettlementViewModel alloc] init];
     _viewModel.shoppingcarCommodities = [NSMutableArray arrayWithArray:_commodities];
-    
     [self scanCommoditiyBarcode];
-    
-    
 }
 
 #pragma  mark --模拟收银员扫描商品二维码
