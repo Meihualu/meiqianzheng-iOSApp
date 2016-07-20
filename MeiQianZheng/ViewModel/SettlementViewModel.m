@@ -52,14 +52,12 @@
     
     orders = [NSString stringWithFormat:@"%@]",orders];
     NSDictionary * param = @{@"order":orders};
-    NSLog(@"param = %@\n",param);
     
     [HttpTool postWithBaseURL:baseUrl path:orderPattern params:param success:^(id JSON) {
         NSDictionary * result = (NSDictionary *)JSON;
         NSString * str = result[@"output"];
         callback(str);
     } failure:^(NSError *error) {
-        NSLog(@"结算失败%@\n",error.localizedDescription);
         callback(@"系统结算故障，请稍后重试~");
     }];
 }

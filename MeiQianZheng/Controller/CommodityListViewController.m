@@ -35,6 +35,7 @@
     ListTableViewDataSource       * _tableViewDataSource;
     ListTableViewDelegate         * _tableViewDelegate;
 }
+
 @end
 
 @implementation CommodityListViewController
@@ -47,6 +48,18 @@
     self.title=@"商品列表";
     self.view.backgroundColor=[UIColor whiteColor];
     
+    [self addTableView];
+    [self addRefresh];
+    [self addShoppingCarBtn];
+    [self addHeaderView];
+    [self addSignals];
+}
+
+/**
+ *  添加UITableView
+ */
+- (void)addTableView
+{
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, kScreenHeight - 64) style:UITableViewStyleGrouped];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.view addSubview:_tableView];
@@ -59,7 +72,14 @@
     
     _tableViewModel = [[CommodityListViewModel alloc] init];
     _totalSource = 0;
-    
+
+}
+
+/**
+ *  刷新相关设置
+ */
+- (void)addRefresh
+{
     _refreshHeader = [[YiRefreshHeader alloc] init];
     _refreshHeader.scrollView = _tableView;
     [_refreshHeader header];
@@ -80,16 +100,11 @@
         __strong typeof(self) strongSelf = weakSelf;
         [strongSelf footerRefreshAction];
     };
-    [self addShoppingCarBtn];
-    [self addHeaderView];
-    [self addSignals];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
-
+/**
+ *  添加导航栏购物车按钮
+ */
 - (void)addShoppingCarBtn
 {
     UIImageView *customView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
@@ -103,6 +118,32 @@
     self.navigationItem.rightBarButtonItem = right;
 }
 
+/**
+ *  添加头部View
+ */
+- (void)addHeaderView
+{
+    UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kViewWidth, kDetailCellHeight)];
+    [header setBackgroundColor:[UIColor whiteColor]];
+    _tableView.tableHeaderView = header;
+    
+    CGFloat width = kViewWidth / 4;
+    _salesTwoPlusOne = [self buttonWithFrame:CGRectMake(0, 0, width, kDetailCellHeight) title:@"买二送一"];
+    [header addSubview:_salesTwoPlusOne];
+    
+    _sales95 = [self buttonWithFrame:CGRectMake(width, 0, width, kDetailCellHeight) title:@"95折优惠"];
+    [header addSubview:_sales95];
+    
+    _salesAll = [self buttonWithFrame:CGRectMake(width * 2, 0, width, kDetailCellHeight) title:@"全部优惠"];
+    [header addSubview:_salesAll];
+    
+    _commodityAll = [self buttonWithFrame:CGRectMake(width * 3, 0, width, kDetailCellHeight) title:@"全部商品"];
+    [header addSubview:_commodityAll];
+}
+
+/**
+ *  添加信号关联
+ */
 - (void)addSignals
 {
     [[_shoppingCarBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
@@ -137,6 +178,9 @@
     
 }
 
+/**
+ *  下拉刷新处理函数
+ */
 - (void)headerRefreshAction
 {
     [_tableViewModel headerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
@@ -144,25 +188,10 @@
     }];
 }
 
-- (void) refreshWithCategories:(NSArray *)categories dataSource:(NSArray *)dataSource
-{
-    if (dataSource.count > 0) {
-        _totalSource=[NSMutableArray arrayWithArray:dataSource];
-        _categories = [NSMutableArray arrayWithArray:categories];
-        
-        _tableViewDataSource.dataSource = _totalSource;
-        _tableViewDataSource.categories = _categories;
-        
-        _tableViewDelegate.array = _totalSource;
-        [_tableView reloadData];
-    } else {
-        [Alert showAlert:@"暂无商品"];
-    
-    }
-    [_refreshHeader endRefreshing];
-    
-}
 
+/**
+ *  上拉刷新处理函数
+ */
 - (void)footerRefreshAction
 {
     [_tableViewModel footerRefreshRequestWithCallback:^(NSArray *categories,NSArray * dataSource){
@@ -181,24 +210,24 @@
     }];
 }
 
-- (void)addHeaderView
+#pragma mark --private方法
+- (void) refreshWithCategories:(NSArray *)categories dataSource:(NSArray *)dataSource
 {
-    UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kViewWidth, kDetailCellHeight)];
-    [header setBackgroundColor:[UIColor whiteColor]];
-    _tableView.tableHeaderView = header;
+    if (dataSource.count > 0) {
+        _totalSource=[NSMutableArray arrayWithArray:dataSource];
+        _categories = [NSMutableArray arrayWithArray:categories];
+        
+        _tableViewDataSource.dataSource = _totalSource;
+        _tableViewDataSource.categories = _categories;
+        
+        _tableViewDelegate.array = _totalSource;
+        [_tableView reloadData];
+    } else {
+        [Alert showAlert:@"暂无商品"];
     
-    CGFloat width = kViewWidth / 4;
-    _salesTwoPlusOne = [self buttonWithFrame:CGRectMake(0, 0, width, kDetailCellHeight) title:@"买二送一"];
-    [header addSubview:_salesTwoPlusOne];
+    }
+    [_refreshHeader endRefreshing];
     
-    _sales95 = [self buttonWithFrame:CGRectMake(width, 0, width, kDetailCellHeight) title:@"95折优惠"];
-    [header addSubview:_sales95];
-    
-    _salesAll = [self buttonWithFrame:CGRectMake(width * 2, 0, width, kDetailCellHeight) title:@"全部优惠"];
-    [header addSubview:_salesAll];
-
-    _commodityAll = [self buttonWithFrame:CGRectMake(width * 3, 0, width, kDetailCellHeight) title:@"全部商品"];
-    [header addSubview:_commodityAll];
 }
 
 - (UIButton *)buttonWithFrame:(CGRect)frame title:(NSString *)title

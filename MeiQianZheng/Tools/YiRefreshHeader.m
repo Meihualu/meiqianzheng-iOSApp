@@ -7,52 +7,51 @@
 //
 
 #import "YiRefreshHeader.h"
-@interface YiRefreshHeader (){
+@interface YiRefreshHeader ()
+{
+    float                   _lastPosition;
+    float                   _contentHeight;
+    float                   _headerHeight;
+    BOOL                    _isRefresh;
     
-    float lastPosition;
-    
-    float contentHeight;
-    float headerHeight;
-    BOOL isRefresh;
-    
-    UILabel *headerLabel;
-    UIView *headerView;
-    UIImageView *headerIV;
-    UIActivityIndicatorView *activityView;
+    UILabel               * _headerLabel;
+    UIView                * _headerView;
+    UIImageView            * _headerIV;
+    UIActivityIndicatorView  * _activityView;
 }
 @end
 
 @implementation YiRefreshHeader
 -(void)header{
-    isRefresh=NO;
-    lastPosition=0;
-    headerHeight=35;
+    _isRefresh=NO;
+    _lastPosition=0;
+    _headerHeight=35;
     float scrollWidth=_scrollView.frame.size.width;
     float imageWidth=13;
-    float imageHeight=headerHeight;
+    float imageHeight=_headerHeight;
     float labelWidth=130;
-    float labelHeight=headerHeight;
+    float labelHeight=_headerHeight;
 
-    headerView=[[UIView alloc] initWithFrame:CGRectMake(0, -headerHeight-10, _scrollView.frame.size.width, headerHeight)];
-      [_scrollView addSubview:headerView];
+    _headerView=[[UIView alloc] initWithFrame:CGRectMake(0, -_headerHeight-10, _scrollView.frame.size.width, _headerHeight)];
+      [_scrollView addSubview:_headerView];
     
-    headerLabel=[[UILabel alloc] initWithFrame:CGRectMake((scrollWidth-labelWidth)/2, 0, labelWidth, labelHeight)];
-    [headerView addSubview:headerLabel];
-    headerLabel.textAlignment=NSTextAlignmentCenter;
-    headerLabel.text=@"下拉可刷新";
-    headerLabel.font=[UIFont systemFontOfSize:14];
+    _headerLabel=[[UILabel alloc] initWithFrame:CGRectMake((scrollWidth-labelWidth)/2, 0, labelWidth, labelHeight)];
+    [_headerView addSubview:_headerLabel];
+    _headerLabel.textAlignment=NSTextAlignmentCenter;
+    _headerLabel.text=@"下拉可刷新";
+    _headerLabel.font=[UIFont systemFontOfSize:14];
     
     
-    headerIV=[[UIImageView alloc] initWithFrame:CGRectMake((scrollWidth-labelWidth)/2-imageWidth, 0, imageWidth, imageHeight)];
-    [headerView addSubview:headerIV];
-    headerIV.image=[UIImage imageNamed:@"down"];
+    _headerIV=[[UIImageView alloc] initWithFrame:CGRectMake((scrollWidth-labelWidth)/2-imageWidth, 0, imageWidth, imageHeight)];
+    [_headerView addSubview:_headerIV];
+    _headerIV.image=[UIImage imageNamed:@"down"];
 
-    activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    activityView.frame=CGRectMake((scrollWidth-labelWidth)/2-imageWidth, 0, imageWidth, imageHeight);
-    [headerView addSubview:activityView];
+    _activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _activityView.frame=CGRectMake((scrollWidth-labelWidth)/2-imageWidth, 0, imageWidth, imageHeight);
+    [_headerView addSubview:_activityView];
     
-    activityView.hidden=YES;
-    headerIV.hidden=NO;
+    _activityView.hidden=YES;
+    _headerIV.hidden=NO;
     
     //为_scrollView设置KVO的观察者对象，keyPath为contentOffset属性
     [_scrollView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
@@ -65,34 +64,34 @@
 {
     if (![@"contentOffset" isEqualToString:keyPath]) return;
     //获取_scrollView的contentSize
-    contentHeight=_scrollView.contentSize.height;
+    _contentHeight=_scrollView.contentSize.height;
 
     //判断是否在拖动_scrollView
     if (_scrollView.dragging) {
         int currentPostion = _scrollView.contentOffset.y;
         //判断是否正在刷新  否则不做任何操作
-        if (!isRefresh) {
+        if (!_isRefresh) {
             [UIView animateWithDuration:0.3 animations:^{
                 //当currentPostion 小于某个值时 变换状态
-                if (currentPostion<-headerHeight*1.5) {
-                    headerLabel.text=@"松开以刷新";
-                    headerIV.transform = CGAffineTransformMakeRotation(M_PI);
+                if (currentPostion<-_headerHeight*1.5) {
+                    _headerLabel.text=@"松开以刷新";
+                    _headerIV.transform = CGAffineTransformMakeRotation(M_PI);
                 } else {
                     int currentPostion = _scrollView.contentOffset.y;
                     //判断滑动方向 以让“松开以刷新”变回“下拉可刷新”状态
-                    if (currentPostion - lastPosition > 5) {
-                        lastPosition = currentPostion;
-                        headerIV.transform = CGAffineTransformMakeRotation(M_PI*2);
-                        headerLabel.text=@"下拉可刷新";
-                    } else if (lastPosition - currentPostion > 5) {
-                        lastPosition = currentPostion;
+                    if (currentPostion - _lastPosition > 5) {
+                        _lastPosition = currentPostion;
+                        _headerIV.transform = CGAffineTransformMakeRotation(M_PI*2);
+                        _headerLabel.text=@"下拉可刷新";
+                    } else if (_lastPosition - currentPostion > 5) {
+                        _lastPosition = currentPostion;
                     }
                 }
             }];
         }
     } else {
         //进入刷新状态
-        if ([headerLabel.text isEqualToString:@"松开以刷新"]) {
+        if ([_headerLabel.text isEqualToString:@"松开以刷新"]) {
             [self beginRefreshing];
         }
     }
@@ -102,34 +101,32 @@
  *  开始刷新操作  如果正在刷新则不做操作
  */
 -(void)beginRefreshing{
-    if (!isRefresh) {
-        isRefresh=YES;
-        headerLabel.text=@"正在载入…";
-        headerIV.hidden=YES;
-        activityView.hidden=NO;
-        [activityView startAnimating];
-        
+    if (!_isRefresh) {
+        _isRefresh=YES;
+        _headerLabel.text=@"正在载入…";
+        _headerIV.hidden=YES;
+        _activityView.hidden=NO;
+        [_activityView startAnimating];
         //设置刷新状态_scrollView的位置
         [UIView animateWithDuration:0.3 animations:^{
-            _scrollView.contentInset=UIEdgeInsetsMake(headerHeight*1.5, 0, 0, 0);
+            _scrollView.contentInset=UIEdgeInsetsMake(_headerHeight*1.5, 0, 0, 0);
         }];
         _beginRefreshingBlock();
     }
-
 }
 
 /**
  * 关闭刷新操作
  */
 -(void)endRefreshing{
-    isRefresh=NO;
+    _isRefresh=NO;
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:0.3 animations:^{
             _scrollView.contentInset=UIEdgeInsetsMake(0, 0, 0, 0);
-            headerIV.hidden=NO;
-            headerIV.transform = CGAffineTransformMakeRotation(M_PI*2);
-            [activityView stopAnimating];
-            activityView.hidden=YES;
+            _headerIV.hidden=NO;
+            _headerIV.transform = CGAffineTransformMakeRotation(M_PI*2);
+            [_activityView stopAnimating];
+            _activityView.hidden=YES;
         }];
     });
 }

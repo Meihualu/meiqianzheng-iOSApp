@@ -17,18 +17,18 @@
 
 @interface ShoppingCarViewController ()
 {
-    YiRefreshHeader          * _refreshHeader;
-    YiRefreshFooter          * _refreshFooter;
+    YiRefreshHeader                     * _refreshHeader;
+    YiRefreshFooter                     * _refreshFooter;
     
-    NSMutableArray           * _totalSource;
-    NSMutableArray           * _categories;
+    NSMutableArray                      * _totalSource;
+    NSMutableArray                      * _categories;
     
-    ShoppingCarViewModel         * _shoppingCarViewModel;
+    ShoppingCarViewModel                 * _shoppingCarViewModel;
     
-    UITableView              * _tableView;
-    UIButton                  * _settlement;
-    ShoppingCarTableViewDataSource       * _tableViewDataSource;
-    ShoppingCarTableViewDelegate         * _tableViewDelegate;
+    UITableView                         * _tableView;
+    UIButton                            * _settlement;
+    ShoppingCarTableViewDataSource         * _tableViewDataSource;
+    ShoppingCarTableViewDelegate           * _tableViewDelegate;
 }
 @end
 
@@ -97,17 +97,15 @@
 - (void)addSignals
 {
     [[_settlement rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        
         if (_tableViewDataSource.dataSource.count > 0) {
-            
            SettlementViewController * settlement = [[SettlementViewController alloc] initWithCommodities:_tableViewDataSource.dataSource settleBack:^{
+               NSLog(@"结算完成，删除购物车商品\n");
                [self headerRefreshAction];
             }];
             [self.navigationController pushViewController:settlement animated:YES];
         } else {
             [Alert showAlert:@"亲，请添加要购买商品~"];
         }
-        
     }];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(headerRefreshAction) name:kNotificationDeleteFromShoppingCar object:nil];
 }

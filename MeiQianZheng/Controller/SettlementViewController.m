@@ -14,8 +14,9 @@
 
 @property (nonatomic,strong) SettlementViewModel * viewModel;
 @property (nonatomic,strong) UITextView          * infoView;
-@property (nonatomic,copy) NSArray             * commodities;
-@property (nonnull,assign) refreshBack  refreshBack;
+@property (nonatomic,copy)   NSArray             * commodities;
+@property (nonatomic,strong) refreshBack           refreshBack;
+
 @end
 
 @implementation SettlementViewController
@@ -54,10 +55,7 @@
 
 #pragma  mark --模拟收银员扫描商品二维码
 - (void)scanCommoditiyBarcode{
-
     [_viewModel scanCommoditiyBarcode];
-    
-    
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         
@@ -81,6 +79,7 @@
         // 更新界面
         dispatch_sync(dispatch_get_main_queue(), ^{
             [_viewModel appendContent:billInfo textView:_infoView];
+            NSLog(@"billInfo = %@\n",billInfo);
             if (![billInfo isEqualToString:@"系统结算故障，请稍后重试~"]) {
                 [CommodityManageTool clearShoppingCar];
                 _refreshBack();
@@ -88,5 +87,4 @@
         });
     });
 }
-
 @end

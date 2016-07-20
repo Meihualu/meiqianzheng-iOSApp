@@ -26,7 +26,8 @@
     return self;
 }
 
-- (void)addElements {
+- (void)addElements
+{
     self.infoLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kDetailCellWidth, kDetailCellHeight)];
     self.infoLabel.font = [UIFont boldSystemFontOfSize:13.0f];
     self.infoLabel.textAlignment = NSTextAlignmentCenter;

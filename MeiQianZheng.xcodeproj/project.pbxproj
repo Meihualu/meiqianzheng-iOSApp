@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A122DA71D3F5777002E5196 /* CommodityManageToolSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A122DA61D3F5777002E5196 /* CommodityManageToolSpec.m */; };
 		7A271FD01D369D6A003DA7EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FCF1D369D6A003DA7EF /* main.m */; };
 		7A271FD31D369D6A003DA7EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FD21D369D6A003DA7EF /* AppDelegate.m */; };
 		7A271FD61D369D6A003DA7EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FD51D369D6A003DA7EF /* ViewController.m */; };
@@ -15,7 +16,6 @@
 		7A271FDE1D369D6A003DA7EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A271FDC1D369D6A003DA7EF /* LaunchScreen.storyboard */; };
 		7A271FE91D369D6A003DA7EF /* MeiQianZhengTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */; };
 		7A271FF41D369D6A003DA7EF /* MeiQianZhengUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FF31D369D6A003DA7EF /* MeiQianZhengUITests.m */; };
-		7A2720041D36A003003DA7EF /* SimpleStringSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2720031D36A003003DA7EF /* SimpleStringSpec.m */; };
 		7AB4DD2A1D3B9CA20071FAFB /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD1F1D3B9CA20071FAFB /* FMDatabase.m */; };
 		7AB4DD2B1D3B9CA20071FAFB /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD211D3B9CA20071FAFB /* FMDatabaseAdditions.m */; };
 		7AB4DD2C1D3B9CA20071FAFB /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AB4DD231D3B9CA20071FAFB /* FMDatabasePool.m */; };
@@ -140,6 +140,7 @@
 		272219F16413385326DA738F /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		3FCEF2F733CB37921B309166 /* Pods-MeiQianZhengTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeiQianZhengTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeiQianZhengTests/Pods-MeiQianZhengTests.release.xcconfig"; sourceTree = "<group>"; };
 		79D7B15A05F1047064B76F0F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7A122DA61D3F5777002E5196 /* CommodityManageToolSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityManageToolSpec.m; sourceTree = "<group>"; };
 		7A271FCB1D369D6A003DA7EF /* MeiQianZheng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeiQianZheng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A271FCF1D369D6A003DA7EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A271FD11D369D6A003DA7EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,7 +157,6 @@
 		7A271FEF1D369D6A003DA7EF /* MeiQianZhengUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MeiQianZhengUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A271FF31D369D6A003DA7EF /* MeiQianZhengUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeiQianZhengUITests.m; sourceTree = "<group>"; };
 		7A271FF51D369D6A003DA7EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A2720031D36A003003DA7EF /* SimpleStringSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleStringSpec.m; sourceTree = "<group>"; };
 		7A27200A1D36A248003DA7EF /* AFHTTPClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		7A27200B1D36A248003DA7EF /* AFHTTPClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		7A27200C1D36A248003DA7EF /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -760,6 +760,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A122DA51D3F5745002E5196 /* ToolTest */ = {
+			isa = PBXGroup;
+			children = (
+				7A122DA61D3F5777002E5196 /* CommodityManageToolSpec.m */,
+			);
+			path = ToolTest;
+			sourceTree = "<group>";
+		};
 		7A271FC21D369D6A003DA7EF = {
 			isa = PBXGroup;
 			children = (
@@ -822,8 +830,8 @@
 				7AD62EF71D3A7D02006FDBCC /* ViewModelTest */,
 				7AD62EF91D3A7D02006FDBCC /* ViewTest */,
 				7A271FE81D369D6A003DA7EF /* MeiQianZhengTests.m */,
+				7A122DA51D3F5745002E5196 /* ToolTest */,
 				7A271FEA1D369D6A003DA7EF /* Info.plist */,
-				7A2720031D36A003003DA7EF /* SimpleStringSpec.m */,
 			);
 			path = MeiQianZhengTests;
 			sourceTree = "<group>";
@@ -2167,13 +2175,13 @@
 				7AD62F9F1D3B95B3006FDBCC /* CommodityDetailViewModelSpec.m in Sources */,
 				7AB4DD671D3CB1610071FAFB /* SettlementViewModelSpec.m in Sources */,
 				7AD62EFF1D3A7D02006FDBCC /* CommodityListViewModelSpec.m in Sources */,
+				7A122DA71D3F5777002E5196 /* CommodityManageToolSpec.m in Sources */,
 				7AD62F991D3B9576006FDBCC /* CommodityDetaiViewControllerSpec.m in Sources */,
 				7AB4DD4C1D3BD82E0071FAFB /* ShoppingCarCellSpec.m in Sources */,
 				7AD62EFB1D3A7D02006FDBCC /* CommodityListViewControllerSpec.m in Sources */,
 				7AD62FA11D3B95C9006FDBCC /* CommodityDetailCellSpec.m in Sources */,
 				7A271FE91D369D6A003DA7EF /* MeiQianZhengTests.m in Sources */,
 				7AB4DD5E1D3C7D7A0071FAFB /* SettlementViewControllerSpec.m in Sources */,
-				7A2720041D36A003003DA7EF /* SimpleStringSpec.m in Sources */,
 				7AB4DD541D3BDAF80071FAFB /* ShoppingCarTableViewDelegateSpec.m in Sources */,
 				7AD62F001D3A7D02006FDBCC /* CommodityListCellSpec.m in Sources */,
 				7AD62EFD1D3A7D02006FDBCC /* ListTableViewDataSourceSpec.m in Sources */,

@@ -22,7 +22,6 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-//        [self addElements];
         _cellHeight = kListCellHeight;
         CGFloat imageY = (_cellHeight - kMargin * 1.5) / 2;
         _promotionImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kMargin, imageY, kMargin * 1.5, kMargin * 1.5)];

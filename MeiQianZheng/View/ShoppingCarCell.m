@@ -59,7 +59,6 @@
     
     RAC(_priceLabel,text) = [RACObserve(_countView, count) map:^id(id count) {
         [self setCount];
-        NSLog(@"_countView的count发生了变化\n");
         [CommodityManageTool addCommodityInShoppingCarAddOneOrReduceOne:_model];
         return [NSString stringWithFormat:@"%.02f元",[self calculatePerCommodityAmount]];
     }];
@@ -92,7 +91,7 @@
     }
 }
 
--(NSInteger)calculateRealAmountToPay
+- (NSInteger)calculateRealAmountToPay
 {
     NSInteger remainder = _model.count % 3;
     NSInteger divider = _model.count / 3;
@@ -107,23 +106,6 @@
 
 -(void)setCount{
     self.model.count = _countView.count;
-}
-
-/**
- *  当买二送一时，计算实际应该付款的商品的数量
- *
- *  @param n 购买的商品数量
- *
- *  @return 需要付款的商品的数量
- */
-int calculateAmountWhenBuyTwoGetOneFree(int n)
-{
-    int remainder = n % 3;
-    int divider = n / 3;
-    if (divider == 0)
-        return n;
-    else
-        return 2 * divider + remainder;
 }
 
 @end
