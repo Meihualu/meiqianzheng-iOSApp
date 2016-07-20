@@ -8,8 +8,8 @@
 
 #import <Kiwi/Kiwi.h>
 #import "ShoppingCarViewModel.h"
-#import "YiRefreshHeader.h"
-#import "YiRefreshFooter.h"
+#import "CommodityRefreshHeader.h"
+#import "CommodityRefreshFooter.h"
 
 SPEC_BEGIN(ShoppingCarViewModelSpec)
 
@@ -28,12 +28,12 @@ describe(@"ShoppingCarViewModel", ^{
     
     context(@"when created", ^{
         __block ShoppingCarViewModel * viewModel = nil;
-        __block YiRefreshFooter * refreshFooter = nil;
-        __block YiRefreshHeader * refreshHeader = nil;
+        __block CommodityRefreshFooter * refreshFooter = nil;
+        __block CommodityRefreshHeader * refreshHeader = nil;
         beforeEach(^{
             viewModel = [[ShoppingCarViewModel alloc] init];
-            refreshHeader = [[YiRefreshHeader alloc] init];
-            refreshFooter = [[YiRefreshFooter alloc] init];
+            refreshHeader = [[CommodityRefreshHeader alloc] init];
+            refreshFooter = [[CommodityRefreshFooter alloc] init];
         });
         
         afterEach(^{

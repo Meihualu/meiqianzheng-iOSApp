@@ -8,8 +8,8 @@
 
 #import "ShoppingCarViewController.h"
 #import "SettlementViewController.h"
-#import "YiRefreshHeader.h"
-#import "YiRefreshFooter.h"
+#import "CommodityRefreshHeader.h"
+#import "CommodityRefreshFooter.h"
 #import "ShoppingCarViewModel.h"
 #import "ShoppingCarTableViewDelegate.h"
 #import "ShoppingCarTableViewDataSource.h"
@@ -17,8 +17,8 @@
 
 @interface ShoppingCarViewController ()
 {
-    YiRefreshHeader                     * _refreshHeader;
-    YiRefreshFooter                     * _refreshFooter;
+    CommodityRefreshHeader                     * _refreshHeader;
+    CommodityRefreshFooter                     * _refreshFooter;
     
     NSMutableArray                      * _totalSource;
     NSMutableArray                      * _categories;
@@ -55,7 +55,7 @@
     _shoppingCarViewModel = [[ShoppingCarViewModel alloc] init];
     _totalSource = 0;
     
-    _refreshHeader = [[YiRefreshHeader alloc] init];
+    _refreshHeader = [[CommodityRefreshHeader alloc] init];
     _refreshHeader.scrollView = _tableView;
     [_refreshHeader header];
     __weak typeof(self) weakSelf = self;
@@ -67,7 +67,7 @@
     //是否在进入该界面的时候就开始进入刷新状态
     [_refreshHeader beginRefreshing];
     
-    _refreshFooter=[[YiRefreshFooter alloc] init];
+    _refreshFooter=[[CommodityRefreshFooter alloc] init];
     _refreshFooter.scrollView=_tableView;
     [_refreshFooter footer];
     

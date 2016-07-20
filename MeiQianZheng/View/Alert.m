@@ -1,9 +1,9 @@
 //
 //  Alert.m
-//  Test
+//  MeiQianZheng
 //
-//  Created by Sway on 13-9-11.
-//  Copyright (c) 2013年 Sway. All rights reserved.
+//  Created by msn on 16/7/16.
+//  Copyright © 2016年 ZYL. All rights reserved.
 //
 
 #import "Alert.h"
@@ -24,7 +24,6 @@
     [label setTextAlignment:NSTextAlignmentCenter];
     [label setFont:[UIFont boldSystemFontOfSize:15.0f]];
     
-    //增加换行，可显示两行alert  @张众
     label.lineBreakMode = NSLineBreakByCharWrapping;
     label.numberOfLines = 0;
 

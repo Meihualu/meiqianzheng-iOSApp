@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A122DA71D3F5777002E5196 /* CommodityManageToolSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A122DA61D3F5777002E5196 /* CommodityManageToolSpec.m */; };
+		7A122DB11D3FB328002E5196 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7A122DB01D3FB328002E5196 /* README.md */; };
 		7A271FD01D369D6A003DA7EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FCF1D369D6A003DA7EF /* main.m */; };
 		7A271FD31D369D6A003DA7EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FD21D369D6A003DA7EF /* AppDelegate.m */; };
 		7A271FD61D369D6A003DA7EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FD51D369D6A003DA7EF /* ViewController.m */; };
@@ -50,8 +51,8 @@
 		7AD62F191D3A7D18006FDBCC /* CommodityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F071D3A7D18006FDBCC /* CommodityModel.m */; };
 		7AD62F1A1D3A7D18006FDBCC /* ListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F0A1D3A7D18006FDBCC /* ListTableViewDataSource.m */; };
 		7AD62F1B1D3A7D18006FDBCC /* ListTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F0C1D3A7D18006FDBCC /* ListTableViewDelegate.m */; };
-		7AD62F1C1D3A7D18006FDBCC /* YiRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F0F1D3A7D18006FDBCC /* YiRefreshFooter.m */; };
-		7AD62F1D1D3A7D18006FDBCC /* YiRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F111D3A7D18006FDBCC /* YiRefreshHeader.m */; };
+		7AD62F1C1D3A7D18006FDBCC /* CommodityRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F0F1D3A7D18006FDBCC /* CommodityRefreshFooter.m */; };
+		7AD62F1D1D3A7D18006FDBCC /* CommodityRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F111D3A7D18006FDBCC /* CommodityRefreshHeader.m */; };
 		7AD62F1E1D3A7D18006FDBCC /* CommodityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F141D3A7D18006FDBCC /* CommodityListCell.m */; };
 		7AD62F1F1D3A7D18006FDBCC /* CommodityListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F171D3A7D18006FDBCC /* CommodityListViewModel.m */; };
 		7AD62F221D3A8AD9006FDBCC /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD62F211D3A8AD9006FDBCC /* HttpTool.m */; };
@@ -140,6 +141,7 @@
 		3FCEF2F733CB37921B309166 /* Pods-MeiQianZhengTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeiQianZhengTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeiQianZhengTests/Pods-MeiQianZhengTests.release.xcconfig"; sourceTree = "<group>"; };
 		79D7B15A05F1047064B76F0F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7A122DA61D3F5777002E5196 /* CommodityManageToolSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityManageToolSpec.m; sourceTree = "<group>"; };
+		7A122DB01D3FB328002E5196 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7A271FCB1D369D6A003DA7EF /* MeiQianZheng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeiQianZheng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A271FCF1D369D6A003DA7EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A271FD11D369D6A003DA7EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -702,10 +704,10 @@
 		7AD62F0A1D3A7D18006FDBCC /* ListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDataSource.m; sourceTree = "<group>"; };
 		7AD62F0B1D3A7D18006FDBCC /* ListTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewDelegate.h; sourceTree = "<group>"; };
 		7AD62F0C1D3A7D18006FDBCC /* ListTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDelegate.m; sourceTree = "<group>"; };
-		7AD62F0E1D3A7D18006FDBCC /* YiRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiRefreshFooter.h; sourceTree = "<group>"; };
-		7AD62F0F1D3A7D18006FDBCC /* YiRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiRefreshFooter.m; sourceTree = "<group>"; };
-		7AD62F101D3A7D18006FDBCC /* YiRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YiRefreshHeader.h; sourceTree = "<group>"; };
-		7AD62F111D3A7D18006FDBCC /* YiRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YiRefreshHeader.m; sourceTree = "<group>"; };
+		7AD62F0E1D3A7D18006FDBCC /* CommodityRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityRefreshFooter.h; sourceTree = "<group>"; };
+		7AD62F0F1D3A7D18006FDBCC /* CommodityRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityRefreshFooter.m; sourceTree = "<group>"; };
+		7AD62F101D3A7D18006FDBCC /* CommodityRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityRefreshHeader.h; sourceTree = "<group>"; };
+		7AD62F111D3A7D18006FDBCC /* CommodityRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityRefreshHeader.m; sourceTree = "<group>"; };
 		7AD62F131D3A7D18006FDBCC /* CommodityListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityListCell.h; sourceTree = "<group>"; };
 		7AD62F141D3A7D18006FDBCC /* CommodityListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommodityListCell.m; sourceTree = "<group>"; };
 		7AD62F161D3A7D18006FDBCC /* CommodityListViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommodityListViewModel.h; sourceTree = "<group>"; };
@@ -812,6 +814,7 @@
 			isa = PBXGroup;
 			children = (
 				7AD62F041D3A7D18006FDBCC /* MeiQianZheng.pch */,
+				7A122DB01D3FB328002E5196 /* README.md */,
 				7A271FCF1D369D6A003DA7EF /* main.m */,
 			);
 			name = "Supporting Files";
@@ -1761,10 +1764,10 @@
 				7AB4DD1D1D3B9CA20071FAFB /* FMDB */,
 				7AD62F201D3A8AD9006FDBCC /* HttpTool.h */,
 				7AD62F211D3A8AD9006FDBCC /* HttpTool.m */,
-				7AD62F0E1D3A7D18006FDBCC /* YiRefreshFooter.h */,
-				7AD62F0F1D3A7D18006FDBCC /* YiRefreshFooter.m */,
-				7AD62F101D3A7D18006FDBCC /* YiRefreshHeader.h */,
-				7AD62F111D3A7D18006FDBCC /* YiRefreshHeader.m */,
+				7AD62F0E1D3A7D18006FDBCC /* CommodityRefreshFooter.h */,
+				7AD62F0F1D3A7D18006FDBCC /* CommodityRefreshFooter.m */,
+				7AD62F101D3A7D18006FDBCC /* CommodityRefreshHeader.h */,
+				7AD62F111D3A7D18006FDBCC /* CommodityRefreshHeader.m */,
 				7AB4DD3B1D3BA5F50071FAFB /* CommodityManageTool.h */,
 				7AB4DD3C1D3BA5F50071FAFB /* CommodityManageTool.m */,
 			);
@@ -2123,6 +2126,7 @@
 				7AB4DD461D3BC2ED0071FAFB /* CommodityCountView.m in Sources */,
 				7AB4DD2A1D3B9CA20071FAFB /* FMDatabase.m in Sources */,
 				7AD62F181D3A7D18006FDBCC /* CommodityListViewController.m in Sources */,
+				7A122DB11D3FB328002E5196 /* README.md in Sources */,
 				7AD62F2C1D3B1771006FDBCC /* DetailTableViewDelegate.m in Sources */,
 				7AB4DD341D3B9E510071FAFB /* CommodityDetaiViewController.m in Sources */,
 				7A271FD61D369D6A003DA7EF /* ViewController.m in Sources */,
@@ -2131,10 +2135,10 @@
 				7A271FD31D369D6A003DA7EF /* AppDelegate.m in Sources */,
 				7AD62F2F1D3B177E006FDBCC /* CommodityDetailCell.m in Sources */,
 				7AB4DD3D1D3BA5F50071FAFB /* CommodityManageTool.m in Sources */,
-				7AD62F1C1D3A7D18006FDBCC /* YiRefreshFooter.m in Sources */,
+				7AD62F1C1D3A7D18006FDBCC /* CommodityRefreshFooter.m in Sources */,
 				7A271FD01D369D6A003DA7EF /* main.m in Sources */,
 				7AD62F1B1D3A7D18006FDBCC /* ListTableViewDelegate.m in Sources */,
-				7AD62F1D1D3A7D18006FDBCC /* YiRefreshHeader.m in Sources */,
+				7AD62F1D1D3A7D18006FDBCC /* CommodityRefreshHeader.m in Sources */,
 				7AB4DD5C1D3C71F30071FAFB /* SettlementViewController.m in Sources */,
 				7AB4DD521D3BD8A30071FAFB /* ShoppingCarTableViewDataSource.m in Sources */,
 				7AD62F2B1D3B1771006FDBCC /* DetailTableViewDataSource.m in Sources */,

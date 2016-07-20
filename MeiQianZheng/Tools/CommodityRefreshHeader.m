@@ -1,13 +1,13 @@
 //
 //  YiRefreshHeader.m
-//  YiRefresh
+//  MeiQianZheng
 //
-//  Created by apple on 15/3/6.
-//  Copyright (c) 2015年 coderyi. All rights reserved.
+//  Created by msn on 16/7/16.
+//  Copyright © 2016年 ZYL. All rights reserved.
 //
 
-#import "YiRefreshHeader.h"
-@interface YiRefreshHeader ()
+#import "CommodityRefreshHeader.h"
+@interface CommodityRefreshHeader ()
 {
     float                   _lastPosition;
     float                   _contentHeight;
@@ -21,7 +21,7 @@
 }
 @end
 
-@implementation YiRefreshHeader
+@implementation CommodityRefreshHeader
 -(void)header{
     _isRefresh=NO;
     _lastPosition=0;

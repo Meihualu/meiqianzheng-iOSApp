@@ -1,14 +1,14 @@
 
 //
 //  YiRefreshFooter.m
-//  YiRefresh
+//  MeiQianZheng
 //
-//  Created by apple on 15/3/6.
-//  Copyright (c) 2015年 coderyi. All rights reserved.
+//  Created by msn on 16/7/16.
+//  Copyright © 2016年 ZYL. All rights reserved.
 //
 
-#import "YiRefreshFooter.h"
-@interface YiRefreshFooter (){
+#import "CommodityRefreshFooter.h"
+@interface CommodityRefreshFooter (){
     float                   _contentHeight;
     float                   _scrollFrameHeight;
     float                   _footerHeight;
@@ -21,7 +21,7 @@
 }
 @end
 
-@implementation YiRefreshFooter
+@implementation CommodityRefreshFooter
 
 -(void)footer{
     _scrollWidth=_scrollView.frame.size.width;

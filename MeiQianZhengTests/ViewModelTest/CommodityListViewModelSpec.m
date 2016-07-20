@@ -8,8 +8,8 @@
 
 #import <Kiwi/Kiwi.h>
 #import "CommodityListViewModel.h"
-#import "YiRefreshHeader.h"
-#import "YiRefreshFooter.h"
+#import "CommodityRefreshHeader.h"
+#import "CommodityRefreshFooter.h"
 
 SPEC_BEGIN(CommodityListViewModelSpec)
 
@@ -28,12 +28,12 @@ describe(@"CommodityListViewModel", ^{
     
     context(@"when created", ^{
         __block CommodityListViewModel * viewModel = nil;
-        __block YiRefreshFooter * refreshFooter = nil;
-        __block YiRefreshHeader * refreshHeader = nil;
+        __block CommodityRefreshFooter * refreshFooter = nil;
+        __block CommodityRefreshHeader * refreshHeader = nil;
         beforeEach(^{
             viewModel = [[CommodityListViewModel alloc] init];
-            refreshHeader = [[YiRefreshHeader alloc] init];
-            refreshFooter = [[YiRefreshFooter alloc] init];
+            refreshHeader = [[CommodityRefreshHeader alloc] init];
+            refreshFooter = [[CommodityRefreshFooter alloc] init];
         });
         
         afterEach(^{

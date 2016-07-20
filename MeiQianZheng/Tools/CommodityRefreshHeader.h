@@ -1,9 +1,9 @@
 //
 //  YiRefreshHeader.h
-//  YiRefresh
+//  MeiQianZheng
 //
-//  Created by apple on 15/3/6.
-//  Copyright (c) 2015年 coderyi. All rights reserved.
+//  Created by msn on 16/7/16.
+//  Copyright © 2016年 ZYL. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,7 +11,7 @@
 
 typedef void (^BeginRefreshingBlock)(void);
 
-@interface YiRefreshHeader : NSObject
+@interface CommodityRefreshHeader : NSObject
 @property UIScrollView *scrollView;
 @property (nonatomic, copy) BeginRefreshingBlock beginRefreshingBlock;
 

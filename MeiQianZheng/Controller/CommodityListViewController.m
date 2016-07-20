@@ -8,8 +8,8 @@
 
 #import "CommodityListViewController.h"
 #import "ShoppingCarViewController.h"
-#import "YiRefreshHeader.h"
-#import "YiRefreshFooter.h"
+#import "CommodityRefreshHeader.h"
+#import "CommodityRefreshFooter.h"
 #import "CommodityListViewModel.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "ListTableViewDataSource.h"
@@ -17,8 +17,8 @@
 
 @interface CommodityListViewController ()
 {
-    YiRefreshHeader          * _refreshHeader;
-    YiRefreshFooter          * _refreshFooter;
+    CommodityRefreshHeader          * _refreshHeader;
+    CommodityRefreshFooter          * _refreshFooter;
     
     NSMutableArray           * _totalSource;
     NSMutableArray           * _categories;
@@ -55,9 +55,6 @@
     [self addSignals];
 }
 
-/**
- *  添加UITableView
- */
 - (void)addTableView
 {
     _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, kScreenHeight - 64) style:UITableViewStyleGrouped];
@@ -80,7 +77,7 @@
  */
 - (void)addRefresh
 {
-    _refreshHeader = [[YiRefreshHeader alloc] init];
+    _refreshHeader = [[CommodityRefreshHeader alloc] init];
     _refreshHeader.scrollView = _tableView;
     [_refreshHeader header];
     __weak typeof(self) weakSelf = self;
@@ -92,7 +89,7 @@
     //    是否在进入该界面的时候就开始进入刷新状态
     [_refreshHeader beginRefreshing];
     
-    _refreshFooter=[[YiRefreshFooter alloc] init];
+    _refreshFooter=[[CommodityRefreshFooter alloc] init];
     _refreshFooter.scrollView=_tableView;
     [_refreshFooter footer];
     

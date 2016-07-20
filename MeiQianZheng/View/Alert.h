@@ -1,13 +1,15 @@
 //
 //  Alert.h
-//  Crazy
+//  MeiQianZheng
 //
-//  Created by Sway on 13-9-11.
-//  Copyright (c) 2013年 Sway. All rights reserved.
+//  Created by msn on 16/7/16.
+//  Copyright © 2016年 ZYL. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @interface Alert : NSObject
+
 +(void)showAlert:(NSString*)message;
+
 @end
