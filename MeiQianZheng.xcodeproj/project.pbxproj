@@ -1898,6 +1898,7 @@
 				TargetAttributes = {
 					7A271FCA1D369D6A003DA7EF = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = C64LJ4RZPN;
 					};
 					7A271FE31D369D6A003DA7EF = {
 						CreatedOnToolsVersion = 7.2;
@@ -2305,6 +2306,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchScreen;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chunhua Xu (VLS28BF376)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2322,9 +2325,9 @@
 				INFOPLIST_FILE = MeiQianZheng/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = UESTC.MeiQianZheng;
+				PRODUCT_BUNDLE_IDENTIFIER = thoughtworks.thinking.MeiQianZheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7910f70e-4d9e-4d70-9ea6-23f934b30197";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
@@ -2335,6 +2338,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchScreen;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chunhua Xu (VLS28BF376)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2352,9 +2357,9 @@
 				INFOPLIST_FILE = MeiQianZheng/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = UESTC.MeiQianZheng;
+				PRODUCT_BUNDLE_IDENTIFIER = thoughtworks.thinking.MeiQianZheng;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7910f70e-4d9e-4d70-9ea6-23f934b30197";
+				PROVISIONING_PROFILE = "";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
@@ -2388,7 +2393,7 @@
 		7A271FFF1D369D6A003DA7EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = MeiQianZhengUITests/Info.plist;
+				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = UESTC.MeiQianZhengUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2400,7 +2405,7 @@
 		7A2720001D369D6A003DA7EF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				INFOPLIST_FILE = MeiQianZhengUITests/Info.plist;
+				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = UESTC.MeiQianZhengUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

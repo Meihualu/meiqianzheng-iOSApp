@@ -44,8 +44,8 @@
 - (void)addShoppingCar{
     if (_model.count > 0) {
         [CommodityManageTool addCommodityInShoppingCar:_model];
+        self.isAdd = YES;
     }
-    self.isAdd = YES;
 }
 
 /**

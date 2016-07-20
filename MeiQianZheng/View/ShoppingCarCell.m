@@ -85,7 +85,9 @@
     if ([_model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
         return [self calculateRealAmountToPay] * _model.price;
     } else if ([_model.promotionType[0] isEqualToString:@"ZHE_95"]){
-        return _model.count * 0.95;
+        return _model.count * 0.95 * _model.price;
+    } else if ([_model.promotionType[0] isEqualToString:@"salesAll"]){
+        return [self calculateRealAmountToPay] * _model.price;
     } else {
         return _model.count * _model.price;
     }
