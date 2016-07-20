@@ -9,7 +9,6 @@
 #import <Kiwi/Kiwi.h>
 #import "DetailTableViewDelegate.h"
 const static CGFloat kDetailCellHeight = 40.0f;
-const static CGFloat kDetailCellWidth = 100.0f;
 
 SPEC_BEGIN(DetailTableViewDelegateSpec)
 

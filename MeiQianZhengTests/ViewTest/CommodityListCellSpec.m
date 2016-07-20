@@ -67,7 +67,7 @@ describe(@"CommodityListCell", ^{
                                                  categoryId:1
                                                 subCategory:@"mysubcategory"
                                                       price:100.0f
-                                              promotionType: [NSArray arrayWithObjects:@"BuyTwoGetOneFree", nil]
+                                              promotionType: [NSArray arrayWithObjects:@"BUY_TWO_GET_ONE_FREE", nil]
                                                       count:3];
             
         CommodityListCell *  cell = [[CommodityListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reuseIdentifier"];

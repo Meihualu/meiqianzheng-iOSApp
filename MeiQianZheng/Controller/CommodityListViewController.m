@@ -123,19 +123,18 @@
     UIView * header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kViewWidth, kDetailCellHeight)];
     [header setBackgroundColor:[UIColor whiteColor]];
     _tableView.tableHeaderView = header;
-    
     CGFloat width = kViewWidth / 4;
-    _commodityAll = [self buttonWithFrame:CGRectMake(0, 0, width, kDetailCellHeight) title:@"全部商品"];
+    _commodityAll = [self buttonWithFrame:CGRectMake(0, 0, width, kDetailCellHeight) title:kAllCommoditiesInfoStr];
     [_commodityAll setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [header addSubview:_commodityAll];
     
-    _salesAll = [self buttonWithFrame:CGRectMake(width, 0, width, kDetailCellHeight) title:@"全部优惠"];
+    _salesAll = [self buttonWithFrame:CGRectMake(width, 0, width, kDetailCellHeight) title:kAllSalesInfoStr];
     [header addSubview:_salesAll];
     
-    _salesTwoPlusOne = [self buttonWithFrame:CGRectMake(width * 2, 0, width, kDetailCellHeight) title:@"买二送一"];
+    _salesTwoPlusOne = [self buttonWithFrame:CGRectMake(width * 2, 0, width, kDetailCellHeight) title:kDiscountBuyTwoGetOneFreeInfoStr];
     [header addSubview:_salesTwoPlusOne];
     
-    _sales95 = [self buttonWithFrame:CGRectMake(width * 3, 0, width, kDetailCellHeight) title:@"95折优惠"];
+    _sales95 = [self buttonWithFrame:CGRectMake(width * 3, 0, width, kDetailCellHeight) title:kPercentDiscountInfoStr];
     [header addSubview:_sales95];
 
 }
@@ -151,21 +150,21 @@
     }];
     
     [[_salesTwoPlusOne rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [_tableViewModel filterCommoditiesWithPromotionType:@"BuyTwoGetOneFree" callback:^(NSArray *categories, NSArray *dataSource) {
+        [_tableViewModel filterCommoditiesWithPromotionType:kDiscountTypeBuyTwoGetOneFree callback:^(NSArray *categories, NSArray *dataSource) {
             [self setButtonTitleColorRedColorWithButton:_salesTwoPlusOne];
             [self refreshWithCategories:categories dataSource:dataSource];
         }];
     }];
     
     [[_sales95 rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [_tableViewModel filterCommoditiesWithPromotionType:@"ZHE_95" callback:^(NSArray *categories, NSArray *dataSource) {
+        [_tableViewModel filterCommoditiesWithPromotionType:kDiscountPercentDiscount callback:^(NSArray *categories, NSArray *dataSource) {
             [self setButtonTitleColorRedColorWithButton:_sales95];
             [self refreshWithCategories:categories dataSource:dataSource];
         }];
     }];
     
     [[_salesAll rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        [_tableViewModel filterCommoditiesWithPromotionType:@"salesAll" callback:^(NSArray *categories, NSArray *dataSource) {
+        [_tableViewModel filterCommoditiesWithPromotionType:kDiscountAllTypes callback:^(NSArray *categories, NSArray *dataSource) {
             [self setButtonTitleColorRedColorWithButton:_salesAll];
             [self refreshWithCategories:categories dataSource:dataSource];
         }];

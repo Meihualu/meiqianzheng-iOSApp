@@ -25,16 +25,16 @@
     NSString * str = [NSString stringWithFormat:@"%.02f元/%@",model.price,model.unit];
     NSString * promotionType = nil;
     if (model.promotionType.count == 0) {
-        promotionType = @"暂无优惠";
+        promotionType = kNoDiscountInfoStr;
     }
-    if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
-        promotionType = @"买二赠一";
-    } else if ([model.promotionType[0] isEqualToString:@"ZHE_95"]){
-        promotionType = @"95折";
-    } else if ([model.promotionType[0] isEqualToString:@"salesAll"]){
-        promotionType = @"买二赠一　　95折";
+    if ([model.promotionType[0] isEqualToString:kDiscountTypeBuyTwoGetOneFree]) {
+        promotionType = kDiscountBuyTwoGetOneFreeInfoStr;
+    } else if ([model.promotionType[0] isEqualToString:kDiscountPercentDiscount]){
+        promotionType = kDiscountPercentDiscountInfoStr;
+    } else if ([model.promotionType[0] isEqualToString:kDiscountAllTypes]){
+        promotionType = kDiscountAllTypesInfoStr;
     } else {
-        promotionType = @"无优惠";
+        promotionType = kNoDiscountInfoStr;
     }
     
     _contentArray = [NSArray arrayWithObjects:model.name,model.category,model.subCategory,str,promotionType,nil];

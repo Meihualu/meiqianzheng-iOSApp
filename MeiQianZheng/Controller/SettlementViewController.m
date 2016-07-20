@@ -73,7 +73,7 @@
         // 更新界面
         dispatch_sync(dispatch_get_main_queue(), ^{
             [_viewModel appendContent:billInfo textView:_infoView];
-            if (![billInfo isEqualToString:@"系统结算故障，请稍后重试~"]) {
+            if (![billInfo isEqualToString:kPromptInfoStr]) {
                 [CommodityManageTool clearShoppingCar];
                 _refreshBack();
             }

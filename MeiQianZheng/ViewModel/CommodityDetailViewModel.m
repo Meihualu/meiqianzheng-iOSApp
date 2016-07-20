@@ -62,7 +62,7 @@
 - (NSString *)getPrompt{
     NSString * prompt = nil;
     if (_model.count == 0) {
-        prompt = @"请选择商品的数量";
+        prompt = kPromptWhenCountEqualZero;
     }else{
         prompt = [NSString stringWithFormat:@"已成功将商品添加进购物车：商品名：%@ 数量：%zd",_model.name,_model.count];
     }

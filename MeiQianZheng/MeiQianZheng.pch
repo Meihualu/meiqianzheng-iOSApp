@@ -38,5 +38,26 @@ const static CGFloat kDetailCellHeight = 40.0f;
 const static CGFloat kDetailCellWidth = 100.0f;
 const static CGFloat kListCellHeight = 45.0f;
 
+#define  kPromptInfoStr                 @"系统结算故障，请稍后重试~"
+#define  kScanInfoStr                   @"正在扫描..."
+#define  kSettlementInfoStr             @"\n正在结算，请稍后..."
+#define  kPromptWhenCountEqualZero      @"请选择商品的数量"
+
+#define  kPromptWhenSuccessAddToShoppingCarHeader  @"已成功将商品添加进购物车：商品名："
+#define  kPromptWhenSuccessAddToShoppingCarFooter  @"数量："
+
+#define  kNoDiscountInfoStr                 @"暂无优惠"
+#define  kDiscountBuyTwoGetOneFreeInfoStr   @"买二送一"
+#define  kDiscountPercentDiscountInfoStr    @"95折"
+#define  kDiscountAllTypesInfoStr           @"买二送一　　95折"
+
+#define  kDiscountTypeBuyTwoGetOneFree @"BUY_TWO_GET_ONE_FREE"
+#define  kDiscountPercentDiscount @"ZHE_95"
+#define  kDiscountAllTypes @"SALES_ALL"
+
+#define kAllCommoditiesInfoStr  @"全部商品"
+#define kAllSalesInfoStr        @"全部优惠"
+#define kPercentDiscountInfoStr @"95折优惠"
+
 #endif /* MeiQianZheng_pch */
 

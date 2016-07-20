@@ -55,7 +55,7 @@ static FMDatabase * _db;
     if (item.promotionType.count > 0) {
         promotionType = item.promotionType[0];
         if (item.promotionType.count > 1) {
-            promotionType = @"salesAll";
+            promotionType = kDiscountAllTypes;
         }
     }
     [_db executeUpdateWithFormat:@"INSERT INTO t_commodity_list (barcode,name,unit,categoryid,category,subcategory,price,discountype) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType];
@@ -72,7 +72,7 @@ static FMDatabase * _db;
     if (item.promotionType.count > 0) {
         promotionType = item.promotionType[0];
         if (item.promotionType.count > 1) {
-            promotionType = @"salesAll";
+            promotionType = kDiscountAllTypes;
         }
     }
     if (set.next) {
@@ -94,13 +94,13 @@ static FMDatabase * _db;
     if (item.promotionType.count > 0) {
         promotionType = item.promotionType[0];
         if (item.promotionType.count > 1) {
-            promotionType = @"salesAll";
+            promotionType = kDiscountAllTypes;
         }
     }
     if (set.next) {
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
         NSInteger count = [set intForColumn:@"count"];
-        [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %d WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,item.count + count , item.barcode];
+        [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %ld WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,item.count + count , item.barcode];
     } else {
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
         [_db executeUpdateWithFormat:@"INSERT INTO t_shoppingcar (barcode,name,unit,categoryid,category,subcategory,price,discountype,count) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@,%ld);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,(long)item.count];

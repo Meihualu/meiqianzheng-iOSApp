@@ -79,11 +79,11 @@
     [_nameLabel setText:model.name];
     [_categoryLabel setText:model.category];
     [_priceLabel setText:[NSString stringWithFormat:@"%.02f元/%@",model.price,model.unit]];
-    if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
+    if ([model.promotionType[0] isEqualToString:kDiscountTypeBuyTwoGetOneFree]) {
         [_promotionImageView setImage:[UIImage imageNamed:@"21"]];
-    } else if ([model.promotionType[0] isEqualToString:@"ZHE_95"]){
+    } else if ([model.promotionType[0] isEqualToString:kDiscountPercentDiscount]){
         [_promotionImageView setImage:[UIImage imageNamed:@"95"]];
-    } else if ([model.promotionType[0] isEqualToString:@"salesAll"]){
+    } else if ([model.promotionType[0] isEqualToString:kDiscountAllTypes]){
         [_promotionImageView setImage:[UIImage imageNamed:@"salesall"]];
     } else {
         [_promotionImageView setImage:[UIImage imageNamed:@"nosale"]];

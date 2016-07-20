@@ -34,8 +34,7 @@
             [HttpTool getWithBaseURL:baseUrl  path:productsPattern params:nil success:^(id JSON) {
                 NSMutableArray * result = [[NSMutableArray alloc] init];
                 [result addObjectsFromArray:JSON];
-//                NSLog(@"result = %@\n",result);
-                
+                NSLog(@"result = %@\n",result);
                 for (NSDictionary * dict in result) {
                     CommodityModel * item = [[CommodityModel alloc] initWithDict:dict];
                      [CommodityManageTool addCommodityInList:item];
@@ -51,7 +50,6 @@
                 callback(categories,_dataSource);
                 
             } failure:^(NSError *error) {
-                NSLog(@"error.localizedDescription = %@\n",error.localizedDescription);
                 callback([NSArray array],[NSArray array]);
             }];
            
@@ -76,7 +74,7 @@
 {
     [_dataSource removeAllObjects];
     NSArray * categories = nil;
-    if ([promotionType isEqualToString:@"salesAll"]) {
+    if ([promotionType isEqualToString:kDiscountAllTypes]) {
         categories = [CommodityManageTool categories];
         for (CommodityModel * item in categories) {
             NSArray * array = [CommodityManageTool allSalesCommoditiesWithCategory:item.categoryId];

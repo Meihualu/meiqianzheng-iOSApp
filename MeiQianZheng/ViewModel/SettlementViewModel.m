@@ -58,13 +58,13 @@
         NSString * str = result[@"output"];
         callback(str);
     } failure:^(NSError *error) {
-        callback(@"系统结算故障，请稍后重试~");
+        callback(kPromptInfoStr);
     }];
 }
 
 #pragma  mark --模拟收银员扫描商品二维码
 - (void)scanCommoditiyBarcode{
-    [_scanInfoArray addObject:@"正在扫描..."];
+    [_scanInfoArray addObject:kScanInfoStr];
     for (CommodityModel * item in _shoppingcarCommodities) {
         NSString * scanInfo = @"";
         NSString * info = nil;
@@ -77,7 +77,7 @@
         }
         [_scanInfoArray addObject:scanInfo];
     }
-    [_scanInfoArray addObject:@"\n正在结算，请稍后..."];
+    [_scanInfoArray addObject:kSettlementInfoStr];
 }
 
 #pragma mark -- 追加多行文本框内容

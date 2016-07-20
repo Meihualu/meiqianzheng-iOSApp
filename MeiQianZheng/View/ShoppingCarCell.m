@@ -69,11 +69,11 @@
     _model = model;
     [_nameLabel setText:model.name];
     [_priceLabel setText:[NSString stringWithFormat:@"%.02f",model.price * model.count]];
-    if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
+    if ([model.promotionType[0] isEqualToString:kDiscountTypeBuyTwoGetOneFree]) {
         [_promotionImageView setImage:[UIImage imageNamed:@"21"]];
-    } else if ([model.promotionType[0] isEqualToString:@"ZHE_95"]){
+    } else if ([model.promotionType[0] isEqualToString:kDiscountPercentDiscount]){
         [_promotionImageView setImage:[UIImage imageNamed:@"95"]];
-    } else if ([model.promotionType[0] isEqualToString:@"salesAll"]){
+    } else if ([model.promotionType[0] isEqualToString:kDiscountAllTypes]){
         [_promotionImageView setImage:[UIImage imageNamed:@"salesall"]];
     } else {
         [_promotionImageView setImage:[UIImage imageNamed:@"nosale"]];
@@ -82,11 +82,11 @@
 }
 
 - (CGFloat)calculatePerCommodityAmount{
-    if ([_model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
+    if ([_model.promotionType[0] isEqualToString:kDiscountTypeBuyTwoGetOneFree]) {
         return [self calculateRealAmountToPay] * _model.price;
-    } else if ([_model.promotionType[0] isEqualToString:@"ZHE_95"]){
+    } else if ([_model.promotionType[0] isEqualToString:kDiscountPercentDiscount]){
         return _model.count * 0.95 * _model.price;
-    } else if ([_model.promotionType[0] isEqualToString:@"salesAll"]){
+    } else if ([_model.promotionType[0] isEqualToString:kDiscountAllTypes]){
         return [self calculateRealAmountToPay] * _model.price;
     } else {
         return _model.count * _model.price;

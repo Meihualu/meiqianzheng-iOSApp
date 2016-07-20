@@ -11,7 +11,6 @@
 		7A122DB11D3FB328002E5196 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7A122DB01D3FB328002E5196 /* README.md */; };
 		7A271FD01D369D6A003DA7EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FCF1D369D6A003DA7EF /* main.m */; };
 		7A271FD31D369D6A003DA7EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FD21D369D6A003DA7EF /* AppDelegate.m */; };
-		7A271FD61D369D6A003DA7EF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A271FD51D369D6A003DA7EF /* ViewController.m */; };
 		7A271FD91D369D6A003DA7EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A271FD71D369D6A003DA7EF /* Main.storyboard */; };
 		7A271FDB1D369D6A003DA7EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A271FDA1D369D6A003DA7EF /* Assets.xcassets */; };
 		7A271FDE1D369D6A003DA7EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A271FDC1D369D6A003DA7EF /* LaunchScreen.storyboard */; };
@@ -146,8 +145,6 @@
 		7A271FCF1D369D6A003DA7EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A271FD11D369D6A003DA7EF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7A271FD21D369D6A003DA7EF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7A271FD41D369D6A003DA7EF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7A271FD51D369D6A003DA7EF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7A271FD81D369D6A003DA7EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A271FDA1D369D6A003DA7EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A271FDD1D369D6A003DA7EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -799,8 +796,6 @@
 				7AD62F151D3A7D18006FDBCC /* ViewModel */,
 				7A271FD11D369D6A003DA7EF /* AppDelegate.h */,
 				7A271FD21D369D6A003DA7EF /* AppDelegate.m */,
-				7A271FD41D369D6A003DA7EF /* ViewController.h */,
-				7A271FD51D369D6A003DA7EF /* ViewController.m */,
 				7A271FD71D369D6A003DA7EF /* Main.storyboard */,
 				7A271FDA1D369D6A003DA7EF /* Assets.xcassets */,
 				7A271FDC1D369D6A003DA7EF /* LaunchScreen.storyboard */,
@@ -2129,7 +2124,6 @@
 				7A122DB11D3FB328002E5196 /* README.md in Sources */,
 				7AD62F2C1D3B1771006FDBCC /* DetailTableViewDelegate.m in Sources */,
 				7AB4DD341D3B9E510071FAFB /* CommodityDetaiViewController.m in Sources */,
-				7A271FD61D369D6A003DA7EF /* ViewController.m in Sources */,
 				7AB4DD451D3BC2ED0071FAFB /* Alert.m in Sources */,
 				7AB4DD2E1D3B9CA20071FAFB /* FMResultSet.m in Sources */,
 				7A271FD31D369D6A003DA7EF /* AppDelegate.m in Sources */,
@@ -2399,7 +2393,8 @@
 			buildSettings = {
 				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = UESTC.MeiQianZhengUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = MeiQianZheng;
 				USES_XCTRUNNER = YES;
@@ -2411,7 +2406,8 @@
 			buildSettings = {
 				INFOPLIST_FILE = "";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = UESTC.MeiQianZhengUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = MeiQianZheng;
 				USES_XCTRUNNER = YES;
