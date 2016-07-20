@@ -3,7 +3,7 @@
  1.工程环境说明
             操作系统：mac 10.10.5
             IDE：Xcode 7.2 
-            模拟器：iPhone 5 、5s、6、6S
+            模拟器：iPhone 5 、5s、6、6S 、6plus 、6Splus
  
  2.项目启动说明
             请双击打开MeiQianZheng.xcworkspace打开整个项目
