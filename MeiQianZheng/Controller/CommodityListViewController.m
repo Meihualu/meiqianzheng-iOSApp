@@ -171,7 +171,7 @@
     
     [[_commodityAll rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         [_tableViewModel filterCommoditiesWithPromotionType:@"commodityAll" callback:^(NSArray *categories, NSArray *dataSource) {
-            NSLog(@"全部商品");
+//            NSLog(@"全部商品");
             [self refreshWithCategories:categories dataSource:dataSource];
         }];
     }];

@@ -60,7 +60,7 @@
             [HttpTool getWithBaseURL:baseUrl  path:productsPattern params:nil success:^(id JSON) {
                 NSMutableArray * result = [[NSMutableArray alloc] init];
                 [result addObjectsFromArray:JSON];
-                NSLog(@"result = %@\n",result);
+//                NSLog(@"result = %@\n",result);
                 
                 for (NSDictionary * dict in result) {
                     CommodityModel * item = [[CommodityModel alloc] initWithDict:dict];

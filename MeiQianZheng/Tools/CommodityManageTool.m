@@ -18,7 +18,7 @@ static FMDatabase * _db;
 {
     // 1.打开数据库
     NSString *path = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:@"shops.sqlite"];
-    NSLog(@"path = %@\n",path);
+//    NSLog(@"path = %@\n",path);
     NSFileManager *fileMgr = [NSFileManager defaultManager];
     if ([fileMgr fileExistsAtPath:path]) {
          [fileMgr removeItemAtPath:path error:nil];;
