@@ -54,13 +54,14 @@
     _countView = [[CommodityCountView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_priceLabel.frame) + 10, 5, width, _cellHeight - 10)];
     _countView.layer.cornerRadius = 5.0f;
     _countView.layer.borderColor = kDefaultColor.CGColor;
-    _countView.layer.borderWidth = 2.0f;
+    _countView.layer.borderWidth = 0.8f;
     [self.contentView addSubview:_countView];
     
     RAC(_priceLabel,text) = [RACObserve(_countView, count) map:^id(id count) {
         [self setCount];
+        NSLog(@"_countView的count发生了变化\n");
         [CommodityManageTool addCommodityInShoppingCarAddOneOrReduceOne:_model];
-        return [NSString stringWithFormat:@"%.02f",[self calculatePerCommodityAmount]];
+        return [NSString stringWithFormat:@"%.02f元",[self calculatePerCommodityAmount]];
     }];
 }
 
@@ -69,16 +70,14 @@
     _model = model;
     [_nameLabel setText:model.name];
     [_priceLabel setText:[NSString stringWithFormat:@"%.02f",model.price * model.count]];
-    if (model.promotionType.count == 1) {
-        if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
-            [_promotionImageView setImage:[UIImage imageNamed:@"21"]];
-        } else {
-            [_promotionImageView setImage:[UIImage imageNamed:@"95"]];
-        }
-    } else if(model.promotionType.count == 2){
-        [_promotionImageView setImage:[UIImage imageNamed:@""]];
+    if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
+        [_promotionImageView setImage:[UIImage imageNamed:@"21"]];
+    } else if ([model.promotionType[0] isEqualToString:@"ZHE_95"]){
+        [_promotionImageView setImage:[UIImage imageNamed:@"95"]];
+    } else if ([model.promotionType[0] isEqualToString:@"salesAll"]){
+        [_promotionImageView setImage:[UIImage imageNamed:@"salesall"]];
     } else {
-        [_promotionImageView setImage:[UIImage imageNamed:@""]];
+        [_promotionImageView setImage:[UIImage imageNamed:@"nosale"]];
     }
     _countView.count = _model.count;
 }
@@ -103,7 +102,6 @@
     } else {
         amount = 2 * divider + remainder;
     }
-    NSLog(@"_model.count = %zd,remainder = %zd,divider = %zd\n",_model.count,remainder,divider);
     return amount;
 }
 

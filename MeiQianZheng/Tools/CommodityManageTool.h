@@ -29,5 +29,5 @@
 + (void) addDiscount_3:(NSArray *)barcodeArray;
 
 + (void)deleteCommodityFromShoppingCar:(CommodityModel *)item;
-
++ (void)clearShoppingCar;
 @end

@@ -55,6 +55,7 @@
 {
     if (!self.isAdd) {
         [self addShoppingCar];
+        self.isAdd = NO;
     }
 }
 

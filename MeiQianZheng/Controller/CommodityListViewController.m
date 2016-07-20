@@ -96,7 +96,7 @@
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:customView.bounds];
     [customView addSubview:button];
-    [button setImageEdgeInsets:UIEdgeInsetsMake(8, 8, 8, 8)];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(8, 24, 8, -8)];
     [button setImage:[UIImage imageNamed:@"shoppingcar"] forState:UIControlStateNormal];
     _shoppingCarBtn = button;
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithCustomView:customView];

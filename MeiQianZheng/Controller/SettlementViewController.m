@@ -15,15 +15,17 @@
 @property (nonatomic,strong) SettlementViewModel * viewModel;
 @property (nonatomic,strong) UITextView          * infoView;
 @property (nonatomic,copy) NSArray             * commodities;
+@property (nonnull,assign) refreshBack  refreshBack;
 @end
 
 @implementation SettlementViewController
 
-- (instancetype)initWithCommodities:(NSArray *)commodities
+- (instancetype)initWithCommodities:(NSArray *)commodities settleBack:(refreshBack)refreshBack
 {
     self = [super init];
     if (self) {
         _commodities = [commodities copy];
+        _refreshBack = refreshBack;
     }
     return self;
 }
@@ -79,6 +81,10 @@
         // 更新界面
         dispatch_sync(dispatch_get_main_queue(), ^{
             [_viewModel appendContent:billInfo textView:_infoView];
+            if (![billInfo isEqualToString:@"系统结算故障，请稍后重试~"]) {
+                [CommodityManageTool clearShoppingCar];
+                _refreshBack();
+            }
         });
     });
 }

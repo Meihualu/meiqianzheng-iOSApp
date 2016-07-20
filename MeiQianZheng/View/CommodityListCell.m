@@ -23,7 +23,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
 //        [self addElements];
-        _cellHeight = 45.0f;
+        _cellHeight = kListCellHeight;
         CGFloat imageY = (_cellHeight - kMargin * 1.5) / 2;
         _promotionImageView = [[UIImageView alloc] initWithFrame:CGRectMake(kMargin, imageY, kMargin * 1.5, kMargin * 1.5)];
         _promotionImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -80,14 +80,11 @@
     [_nameLabel setText:model.name];
     [_categoryLabel setText:model.category];
     [_priceLabel setText:[NSString stringWithFormat:@"%.02f元/%@",model.price,model.unit]];
-    
-    if (model.promotionType.count == 1) {
-        if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
-            [_promotionImageView setImage:[UIImage imageNamed:@"21"]];
-        } else {
-            [_promotionImageView setImage:[UIImage imageNamed:@"95"]];
-        }
-    } else if (model.promotionType.count == 2){
+    if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
+        [_promotionImageView setImage:[UIImage imageNamed:@"21"]];
+    } else if ([model.promotionType[0] isEqualToString:@"ZHE_95"]){
+        [_promotionImageView setImage:[UIImage imageNamed:@"95"]];
+    } else if ([model.promotionType[0] isEqualToString:@"salesAll"]){
         [_promotionImageView setImage:[UIImage imageNamed:@"salesall"]];
     } else {
         [_promotionImageView setImage:[UIImage imageNamed:@"nosale"]];

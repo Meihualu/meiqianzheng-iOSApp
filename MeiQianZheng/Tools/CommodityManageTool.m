@@ -37,7 +37,7 @@ static FMDatabase * _db;
     [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_discount_3 (id integer PRIMARY KEY, barcode string NOT NULL)"];
     
     //5.创建购物车商品列表
-    [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_shoppingcar (id integer PRIMARY KEY, barcode string NOT NULL, name string,unit string,categoryid string,category string,subcategory string,price real,discountype string,count integer);"];
+    [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_shoppingcar (id integer PRIMARY KEY, barcode string , name string,unit string,categoryid string,category string,subcategory string,price real,discountype string,count integer);"];
     
     //6.创建购物车商品种类表
     [_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_shoppingcar_category (categoryid integer PRIMARY KEY,category string unique)"];
@@ -102,6 +102,9 @@ static FMDatabase * _db;
 + (void)addCommodityInShoppingCarAddOneOrReduceOne:(CommodityModel *)item {
     //1.首先到t_shoppingcar中查询，看是否已存在该item
     //得到结果集
+    NSLog(@"更新item = %@\n",item);
+    if(item.barcode == nil)
+        return;
     FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE barcode = %@",item.barcode];
     NSInteger categoryId;
     NSString * promotionType = @"";
@@ -111,14 +114,13 @@ static FMDatabase * _db;
             promotionType = @"salesAll";
         }
     }
+    NSLog(@"增加或删除一个");
     if (set.next) {
-        [_db executeQueryWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = %@",item.barcode];
+        NSLog(@"更新购物车商品信息");
+//        [_db executeQueryWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = %@",item.barcode];
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
         
         [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %ld WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,item.count , item.barcode];
-    } else {
-        categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
-        [_db executeUpdateWithFormat:@"INSERT INTO t_shoppingcar (barcode,name,unit,categoryid,category,subcategory,price,discountype,count) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@,%ld);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,item.count];
     }
     [_db executeUpdateWithFormat:@"update t_category set isExistInShoppingCar = %d WHERE category = %@",1,item.category];
 }
@@ -136,28 +138,34 @@ static FMDatabase * _db;
             promotionType = @"salesAll";
         }
     }
+    NSLog(@"set.next = %zd",set.next);
     if (set.next) {
-        [_db executeQueryWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = %@",item.barcode];
+        NSLog(@"更新购物车");
+//        [_db executeQueryWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = %@",item.barcode];
+
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
+        
         NSInteger count = [set intForColumn:@"count"];
         
         [_db executeUpdateWithFormat:@"UPDATE t_shoppingcar SET barcode = %@,name = %@,unit = %@,categoryid = %ld,category = %@,subcategory = %@,price = %f,discountype = %@,count = %ld WHERE barcode = %@", item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,item.count + count , item.barcode];
+        
     } else {
+        NSLog(@"新建商品");
         categoryId = [CommodityManageTool queryCategoryTypeWithCategoryName:item.category];
+        
         [_db executeUpdateWithFormat:@"INSERT INTO t_shoppingcar (barcode,name,unit,categoryid,category,subcategory,price,discountype,count) VALUES (%@,%@,%@,%ld,%@,%@,%f,%@,%ld);",item.barcode,item.name,item.unit,(long)categoryId,item.category,item.subCategory,item.price,promotionType,item.count];
     }
     [_db executeUpdateWithFormat:@"update t_category set isExistInShoppingCar = %d WHERE category = %@",1,item.category];
 }
 
 + (void)deleteCommodityFromShoppingCar:(CommodityModel *)item {
-   
     NSString * deleteStr = [NSString stringWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = '%@'",item.barcode];
     NSLog(@"deleteStr = %@\n",deleteStr);
     BOOL result =  [_db executeUpdate:deleteStr];
     NSLog(@"result = %zd\n",result);
-    
     FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE category = %@",item.category];
-    if (set.columnCount == 0) {
+    if (set.next) {
+    } else {
         [_db executeUpdateWithFormat:@"update t_category set isExistInShoppingCar = %d WHERE category = %@",0,item.category];
     }
 }
@@ -316,6 +324,12 @@ static FMDatabase * _db;
     return commodities;
 }
 
++ (void)clearShoppingCar
+{
+    BOOL result =  [_db executeUpdate:@"DELETE FROM t_shoppingcar"];
+    NSLog(@"result = %zd\n",result);
+    [_db executeUpdateWithFormat:@"update t_category set isExistInShoppingCar = %d ",0];
+}
 /*
  *
  */

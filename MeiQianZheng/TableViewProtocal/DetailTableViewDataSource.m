@@ -27,15 +27,14 @@
     if (model.promotionType.count == 0) {
         promotionType = @"暂无优惠";
     }
-    /*
-      “买二赠一”是指，每当买进两个商品，就可以免费再买一个相同商品。
-      “95折”是指，在计算小计的时候按单价的95%计算每个商品。
-     */
-//    promotionType = [model.promotionType[0] isEqualToString:@"BUY_TWO_GET_ONE_FREE"]?@"买二赠一":@"95折";
-    if (model.promotionType.count == 2) {
+    if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
+        promotionType = @"买二赠一";
+    } else if ([model.promotionType[0] isEqualToString:@"ZHE_95"]){
+        promotionType = @"95折";
+    } else if ([model.promotionType[0] isEqualToString:@"salesAll"]){
         promotionType = @"买二赠一　　95折";
     } else {
-        promotionType = [model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]?@"买二赠一":@"95折";
+        promotionType = @"无优惠";
     }
     
     _contentArray = [NSArray arrayWithObjects:model.name,model.category,model.subCategory,str,promotionType,nil];

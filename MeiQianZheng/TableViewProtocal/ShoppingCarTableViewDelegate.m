@@ -14,9 +14,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    NSArray * items = _array[indexPath.section];
-//    CommodityDetaiViewController * detailController = [[CommodityDetaiViewController alloc] initWithCommodityModel:items[indexPath.row]];
-//    [self.navController pushViewController:detailController animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section

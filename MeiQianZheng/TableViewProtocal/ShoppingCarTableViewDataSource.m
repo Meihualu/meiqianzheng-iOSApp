@@ -43,8 +43,12 @@
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
     NSMutableArray * rows = _dataSource[indexPath.section];
     CommodityModel * model = [rows objectAtIndex:indexPath.row];
+    
+    ShoppingCarCell * cell = (ShoppingCarCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
     if(editingStyle == UITableViewCellEditingStyleDelete){
+        
         [CommodityManageTool deleteCommodityFromShoppingCar:model];
+        cell.model.barcode = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationDeleteFromShoppingCar object:nil];
     }
 }

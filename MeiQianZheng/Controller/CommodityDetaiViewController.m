@@ -109,11 +109,11 @@ const CGFloat bottomHeight = 50.0f;
 
 - (void)addShoppingCarBtn
 {
-    UIImageView *customView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    UIImageView *customView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 44, 44)];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setFrame:customView.bounds];
     [customView addSubview:button];
-    [button setImageEdgeInsets:UIEdgeInsetsMake(8, 8, 8, 8)];
+    [button setImageEdgeInsets:UIEdgeInsetsMake(8, 24, 8, -8)];
     [button setImage:[UIImage imageNamed:@"shoppingcar"] forState:UIControlStateNormal];
     _shoppingCarBtn = button;
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithCustomView:customView];

@@ -99,7 +99,10 @@
     [[_settlement rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         
         if (_tableViewDataSource.dataSource.count > 0) {
-            SettlementViewController * settlement = [[SettlementViewController alloc] initWithCommodities:_tableViewDataSource.dataSource];
+            
+           SettlementViewController * settlement = [[SettlementViewController alloc] initWithCommodities:_tableViewDataSource.dataSource settleBack:^{
+               [self headerRefreshAction];
+            }];
             [self.navigationController pushViewController:settlement animated:YES];
         } else {
             [Alert showAlert:@"亲，请添加要购买商品~"];

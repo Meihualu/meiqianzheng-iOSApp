@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef void(^refreshBack)();
 @interface SettlementViewController : UIViewController
 
-- (instancetype)initWithCommodities:(NSArray *)commodities;
+
+- (instancetype)initWithCommodities:(NSArray *)commodities settleBack:(refreshBack)refreshBack;
 
 @end

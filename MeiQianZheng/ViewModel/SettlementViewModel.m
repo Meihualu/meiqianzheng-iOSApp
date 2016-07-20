@@ -60,6 +60,7 @@
         callback(str);
     } failure:^(NSError *error) {
         NSLog(@"结算失败%@\n",error.localizedDescription);
+        callback(@"系统结算故障，请稍后重试~");
     }];
 }
 
