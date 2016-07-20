@@ -38,7 +38,7 @@
     self.contentLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:self.contentLabel];
     
-    UILabel * sepline = [[UILabel alloc] initWithFrame:CGRectMake(0, kDetailCellHeight - 0.8, KScreenWidth - kMargin * 2, 0.8)];
+    UILabel * sepline = [[UILabel alloc] initWithFrame:CGRectMake(0, kDetailCellHeight - 0.8, KScreenWidth, 0.8)];
     [sepline setBackgroundColor:kDefaultColor];
     [self.contentView addSubview:sepline];
 }

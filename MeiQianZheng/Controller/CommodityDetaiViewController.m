@@ -27,6 +27,7 @@ const CGFloat bottomHeight = 50.0f;
 @property (nonatomic,strong) DetailTableViewDataSource * detailDataSource;
 @property (nonatomic,strong) CommodityDetailViewModel * viewModel;
 @property (nonatomic,strong) UIButton * shoppingCarBtn;
+
 @end
 
 @implementation CommodityDetaiViewController
@@ -50,7 +51,7 @@ const CGFloat bottomHeight = 50.0f;
     _detailDataSource = [[DetailTableViewDataSource alloc] init];
     _detailDataSource.model = _model;
     
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(kMargin, kMargin, kViewWidth - kMargin * 2, kViewHeight - kMargin * 2 - bottomHeight - kApplicationFrameHeight) style:UITableViewStyleGrouped];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kViewWidth, kViewHeight - bottomHeight - kApplicationFrameHeight) style:UITableViewStyleGrouped];
     _tableView.delegate = _detailDelegate;
     _tableView.dataSource = _detailDataSource;
     [self.view addSubview:_tableView];
@@ -159,7 +160,7 @@ const CGFloat bottomHeight = 50.0f;
 
 - (void) addBottomView
 {
-    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_tableView.frame) + kMargin, kViewWidth, bottomHeight)];
+    UIView * view = [[UIView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_tableView.frame), kViewWidth, bottomHeight)];
     [self.view addSubview:view];
     _addToShoppingCar = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kViewWidth / 2, bottomHeight)];
     [_addToShoppingCar setBackgroundImage:[UIImage imageNamed:@"addshoppingcar"] forState:UIControlStateNormal];

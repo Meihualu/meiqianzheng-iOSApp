@@ -125,6 +125,7 @@ static FMDatabase * _db;
 
 + (void)addCommodityInShoppingCar:(CommodityModel *)item {
     //1.首先到t_shoppingcar中查询，看是否已存在该item
+    NSLog(@"item = %@\n",item);
     //得到结果集
     FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE barcode = %@",item.barcode];
     NSInteger categoryId;
@@ -148,10 +149,11 @@ static FMDatabase * _db;
     [_db executeUpdateWithFormat:@"update t_category set isExistInShoppingCar = %d WHERE category = %@",1,item.category];
 }
 
-
 + (void)deleteCommodityFromShoppingCar:(CommodityModel *)item {
    
-    BOOL result =  [_db executeUpdateWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = '%@'",item.barcode];
+    NSString * deleteStr = [NSString stringWithFormat:@"DELETE FROM t_shoppingcar WHERE barcode = '%@'",item.barcode];
+    NSLog(@"deleteStr = %@\n",deleteStr);
+    BOOL result =  [_db executeUpdate:deleteStr];
     NSLog(@"result = %zd\n",result);
     
     FMResultSet * set = [_db executeQueryWithFormat:@"SELECT * FROM t_shoppingcar WHERE category = %@",item.category];

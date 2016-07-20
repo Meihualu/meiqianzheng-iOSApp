@@ -80,16 +80,17 @@
     [_nameLabel setText:model.name];
     [_categoryLabel setText:model.category];
     [_priceLabel setText:[NSString stringWithFormat:@"%.02f元/%@",model.price,model.unit]];
+    
     if (model.promotionType.count == 1) {
         if ([model.promotionType[0] isEqualToString:@"BuyTwoGetOneFree"]) {
             [_promotionImageView setImage:[UIImage imageNamed:@"21"]];
         } else {
             [_promotionImageView setImage:[UIImage imageNamed:@"95"]];
         }
-    } else if(model.promotionType.count == 2){
-        [_promotionImageView setImage:[UIImage imageNamed:@""]];
+    } else if (model.promotionType.count == 2){
+        [_promotionImageView setImage:[UIImage imageNamed:@"salesall"]];
     } else {
-        [_promotionImageView setImage:[UIImage imageNamed:@""]];
+        [_promotionImageView setImage:[UIImage imageNamed:@"nosale"]];
     }
 }
 
