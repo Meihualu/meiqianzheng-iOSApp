@@ -92,7 +92,14 @@
                        CommodityDetailCellSpec  商品详情单元格View测试文件
                        ShoppingCarCellSpec  购物车单元格View测试文件
  
- 5.项目截图
+ 5.项目截图 
+ ![](https://github.com/Meihualu/meiqianzheng-iOSApp/raw/master/ScreenShots/CommodityList.png)
+ ![](https://github.com/Meihualu/meiqianzheng-iOSApp/raw/master/ScreenShots/CommodityDetail.png)
+ ![](https://github.com/Meihualu/meiqianzheng-iOSApp/raw/master/ScreenShots/AddToShoppingCarPrompt.png)
+ ![](https://github.com/Meihualu/meiqianzheng-iOSApp/raw/master/ScreenShots/ShoppingCar.png)
+ ![](https://github.com/Meihualu/meiqianzheng-iOSApp/raw/master/ScreenShots/ScanInfo.png)
+ ![](https://github.com/Meihualu/meiqianzheng-iOSApp/raw/master/ScreenShots/SettlementInfo.png)
+ ![](https://github.com/Meihualu/meiqianzheng-iOSApp/raw/master/ScreenShots/)
  
  
  
