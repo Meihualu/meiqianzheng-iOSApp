@@ -20,7 +20,7 @@
             Podfile：CocoaPods配置文件
             Pods：CocoaPods生成的依赖库  
  
- 3.1源代码说明
+       4.1源代码说明
             Controller文件夹： 
             CommodityListViewController  商品列表
             CommodityDetaiViewController 商品详情页面
@@ -56,7 +56,7 @@
                        ShoppingCarViewModel 购物车列表ViewModel
                        SettlementViewModel 结算清单ViewModel
  
- 3.2测试文件说明
+      4.2测试文件说明
             ToolTest文件夹：
                        CommodityManageToolSpec  本地数据库操作类测试文件
  
@@ -92,6 +92,7 @@
                        CommodityDetailCellSpec  商品详情单元格View测试文件
                        ShoppingCarCellSpec  购物车单元格View测试文件
  
+ 5.项目截图
  
  
  
