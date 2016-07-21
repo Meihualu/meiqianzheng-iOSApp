@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/Meihualu/meiqianzheng-iOSApp.svg?branch=master)](https://travis-ci.org/Meihualu/meiqianzheng-iOSApp)
  
+ 本项目分为前后端两部分
+ 后台服务器github地址为：https://github.com/uniblackfire/meiqianzheng-backend/
  1.工程环境说明
             操作系统：mac 10.10.5
             IDE：Xcode 7.2 
@@ -92,7 +94,8 @@
                        CommodityDetailCellSpec  商品详情单元格View测试文件
                        ShoppingCarCellSpec  购物车单元格View测试文件
  
- 5.项目截图 
+ 5.项目截图                                                                               
+ 
  ![](https://github.com/Meihualu/meiqianzheng-iOSApp/raw/master/ScreenShots/CommodityList.png)
  ![](https://github.com/Meihualu/meiqianzheng-iOSApp/raw/master/ScreenShots/CommodityDetail.png)
  ![](https://github.com/Meihualu/meiqianzheng-iOSApp/raw/master/ScreenShots/AddToShoppingCarPrompt.png)
